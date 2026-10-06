@@ -1,0 +1,1 @@
+import {services} from "@/data/services";export default function Page(){return <div className="inner-page"><div className="eyebrow">DM STUDIO</div><h1>Послуги</h1><div className="inner-grid">{services.map(s=><div className="card inner-card" key={s.title}><h2>{s.title}</h2><p>{s.description}</p></div>)}</div></div>}
