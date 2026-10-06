@@ -1,0 +1,1 @@
+import {posts} from "@/data/posts";export default function Page(){return <div className="inner-page"><div className="eyebrow">INSIGHTS</div><h1>Блог</h1><div className="inner-grid">{posts.map(p=><div className="card inner-card" key={p.slug}><small>{p.category} · {p.date}</small><h2>{p.title}</h2></div>)}</div></div>}
