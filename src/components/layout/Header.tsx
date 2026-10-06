@@ -1,0 +1,2 @@
+import Container from "./Container";import {navigation} from "@/data/navigation";
+export default function Header(){return <Container className="header"><a className="brand" href="/dm-studio/"><span className="brand-mark">DM</span><span>DM STUDIO</span></a><nav className="nav">{navigation.map(x=><a key={x.label} href={x.href}>{x.label}</a>)}</nav><a className="btn btn-dark small" href="#contact">Обговорити проєкт <span>↗</span></a></Container>}
