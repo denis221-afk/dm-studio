@@ -1,0 +1,1 @@
+import type {MetadataRoute} from "next";export default function manifest():MetadataRoute.Manifest{return{name:"DM Studio",short_name:"DM Studio",description:"Websites, Automation & AI",start_url:"/dm-studio/",display:"standalone",background_color:"#f5f6f2",theme_color:"#151915"}}
