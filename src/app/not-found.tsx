@@ -1,0 +1,1 @@
+export default function NotFound(){return <div className="not-found"><span>404</span><h1>Сторінку не знайдено.</h1><p>Можливо, адреса змінилася або сторінки ще немає.</p><a className="btn btn-accent" href="/dm-studio/">На головну →</a></div>}
