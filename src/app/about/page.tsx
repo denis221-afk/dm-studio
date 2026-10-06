@@ -1,0 +1,1 @@
+export default function Page(){return <div className="inner-page"><div className="eyebrow">ABOUT</div><h1>Про DM Studio</h1><p>Digital Product & Automation Studio. Практичні digital-рішення з фокусом на бізнес-результат.</p></div>}
