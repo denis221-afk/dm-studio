@@ -1,0 +1,1 @@
+import {cases} from "@/data/cases";export default function Page(){return <div className="inner-page"><div className="eyebrow">PORTFOLIO</div><h1>Кейси</h1><div className="inner-grid">{cases.map(c=><div className="card inner-card" key={c.slug}><small>{c.category}</small><h2>{c.title}</h2><p>{c.description}</p></div>)}</div></div>}
