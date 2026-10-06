@@ -1,0 +1,1 @@
+export const navigation=[{label:"Послуги",href:"/#services"},{label:"Рішення",href:"/solutions/"},{label:"Кейси",href:"/cases/"},{label:"Блог",href:"/blog/"},{label:"Про нас",href:"/about/"}];
