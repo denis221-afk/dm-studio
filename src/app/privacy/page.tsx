@@ -1,0 +1,1 @@
+export default function Page(){return <div className="inner-page"><h1>Privacy Policy</h1><p>Політика конфіденційності DM Studio.</p></div>}
