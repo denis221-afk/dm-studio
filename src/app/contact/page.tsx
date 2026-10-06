@@ -1,0 +1,1 @@
+export default function Page(){return <div className="inner-page"><div className="eyebrow">CONTACT</div><h1>Обговоримо ваш проєкт</h1><p>Опишіть задачу — запропонуємо оптимальний формат реалізації.</p></div>}
