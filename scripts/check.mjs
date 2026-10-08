@@ -60,3 +60,22 @@ for (const language of ["ua", "en", "pl"]) {
 assert.ok(source.indexOf('id="services"') < source.indexOf('id="solutions"'));
 assert.ok(source.indexOf('id="solutions"') < source.indexOf('id="cases"'));
 console.info("Passed: solution category markup, localized details, accessible labels and section order.");
+
+
+const { renderCasePage } = await import("./render-cases.mjs");
+const { caseProjects } = await import("../src/data/cases.js");
+assert.equal(caseProjects.length, 2);
+for (const language of ["ua","en","pl"]) {
+ for (const slug of ["", ...caseProjects.map(project => project.slug)]) {
+  const page = renderCasePage(source,language,slug,"https://example.test/dm-studio/","/dm-studio/");
+  assert.equal((page.match(/<h1\b/g) || []).length,1);
+  const route = (language === "ua" ? "" : language + "/") + "cases/" + (slug ? slug + "/" : "");
+  assert.ok(page.includes('rel="canonical" href="https://example.test/dm-studio/' + route + '"'));
+  assert.ok(page.includes(translations[language].ui.casesClient));
+  const ids = [...page.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(ids.length,new Set(ids).size);
+  for (const [,key] of page.matchAll(/data-i18n="([^"]+)"/g)) assert.equal(typeof translations[language].ui[key],"string");
+  assert.ok(!page.includes("undefined"));
+ }
+}
+console.info("Passed: nine case routes, localization, client labels, canonicals and unique IDs.");

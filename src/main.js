@@ -5,11 +5,13 @@ import { initNavigation } from "./js/navigation.js";
 import { initBrief } from "./js/brief.js";
 import { initServices } from "./js/services.js";
 import { initSolutions } from "./js/solutions.js";
+import { initCases } from "./js/cases.js";
 function initSite() {
   initLoader();
   const t = applyTranslations();
   initServices(t);
   initSolutions(t);
+  initCases(t);
   initNavigation(t);
   initBrief(t);
   document

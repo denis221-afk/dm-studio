@@ -4,11 +4,12 @@ import en from "./en.js";
 
 import serviceTranslations from "./services.js";
 import solutionTranslations from "./solutions.js";
+import caseTranslations from "./cases.js";
 
 export const translations = Object.fromEntries(
   Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
     ...translation,
-    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui },
+    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui },
     services: serviceTranslations[language].details,
     solutions: solutionTranslations[language].details,
   }]),
@@ -32,7 +33,11 @@ export function getTranslations(language = getCurrentLanguage()) {
 export function changeLanguage(language) {
   if (!supportedLanguages.includes(language)) return;
   const destination = new URL(window.location.href);
-  destination.pathname = `${basePath}${language === "ua" ? "" : `${language}/`}`;
+  const relativePath = destination.pathname.startsWith(basePath) ? destination.pathname.slice(basePath.length) : destination.pathname.slice(1);
+  const parts = relativePath.split("/").filter(Boolean);
+  if (supportedLanguages.includes(parts[0])) parts.shift();
+  const suffix = parts.length ? parts.join("/") + "/" : "";
+  destination.pathname = `${basePath}${language === "ua" ? "" : `${language}/`}${suffix}`;
   window.location.assign(destination.href);
 }
 
@@ -53,6 +58,16 @@ export function applyTranslations(language = getCurrentLanguage()) {
     const value = t.ui[key];
     if (typeof value === "string") element.setAttribute(attribute, value);
   });
+  document.querySelectorAll("[data-locale-href]").forEach(element => {
+    element.setAttribute("href", `${basePath}${language === "ua" ? "" : language + "/"}${element.dataset.localeHref}`);
+  });
+  const page = document.querySelector("[data-case-page]")?.dataset.casePage;
+  if (page) {
+    const title = page === "index" ? t.ui.navCases : page === "nfc-menu" ? "Restaurant NFC Menu" : "RHome Ohio";
+    const description = page === "index" ? t.ui.casesIntro : page === "nfc-menu" ? t.ui.casesNfcDescription : t.ui.casesWpDescription;
+    document.title = `${title} — DM Studio`;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+  }
   const select = document.getElementById("language");
   if (select) select.value = language;
   return t;

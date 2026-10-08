@@ -1,5 +1,6 @@
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { renderHtml } from "./render-html.mjs";
+import { writeCasePages, caseRoutes } from "./render-cases.mjs";
 
 let siteUrl = process.env.SITE_URL || "";
 if (siteUrl) {
@@ -15,8 +16,9 @@ for (const language of ["ua", "en", "pl"]) {
   await writeFile(`dist/${language}/index.html`, html);
   if (language === "ua") await writeFile("dist/index.html", html);
 }
+await writeCasePages(source, siteUrl, process.env.BASE_PATH || "/");
 if (siteUrl) {
-  const urls = ["./", "en/", "pl/"].map((path) => new URL(path, siteUrl).href);
+  const urls = ["./", "en/", "pl/", ...["", "en/", "pl/"].flatMap(prefix => caseRoutes.map(route => prefix + route))].map((path) => new URL(path, siteUrl).href);
   await writeFile(
     "dist/sitemap.xml",
     `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${url.replaceAll("&", "&amp;")}</loc></url>`).join("")}</urlset>`,
