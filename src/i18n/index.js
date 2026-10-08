@@ -3,10 +3,15 @@ import pl from "./pl.js";
 import en from "./en.js";
 
 export const translations = { ua, pl, en };
+const basePath = import.meta.env?.BASE_URL ?? "/";
+
 export const supportedLanguages = ["ua", "pl", "en"];
 
 export function getCurrentLanguage(pathname = window.location.pathname) {
-  const segment = pathname.split("/").filter(Boolean)[0];
+  const relativePath = pathname.startsWith(basePath)
+    ? pathname.slice(basePath.length)
+    : pathname;
+  const segment = relativePath.split("/").filter(Boolean)[0];
   return supportedLanguages.includes(segment) ? segment : "ua";
 }
 
@@ -17,7 +22,7 @@ export function getTranslations(language = getCurrentLanguage()) {
 export function changeLanguage(language) {
   if (!supportedLanguages.includes(language)) return;
   const destination = new URL(window.location.href);
-  destination.pathname = language === "ua" ? "/" : `/${language}/`;
+  destination.pathname = `${basePath}${language === "ua" ? "" : `${language}/`}`;
   window.location.assign(destination.href);
 }
 

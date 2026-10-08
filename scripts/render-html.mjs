@@ -67,7 +67,7 @@ export function renderHtml(source, language, siteUrl = "") {
   };
   if (siteUrl)
     schema.url = new URL(
-      language === "ua" ? "/" : `/${language}/`,
+      language === "ua" ? "./" : `${language}/`,
       siteUrl,
     ).href;
   html = html.replace(
@@ -75,13 +75,13 @@ export function renderHtml(source, language, siteUrl = "") {
     `<script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script>`,
   );
   if (siteUrl) {
-    const pageUrl = new URL(language === "ua" ? "/" : `/${language}/`, siteUrl)
+    const pageUrl = new URL(language === "ua" ? "./" : `${language}/`, siteUrl)
       .href;
     const links = [
-      ["uk", "/"],
-      ["en", "/en/"],
-      ["pl", "/pl/"],
-      ["x-default", "/"],
+      ["uk", "./"],
+      ["en", "en/"],
+      ["pl", "pl/"],
+      ["x-default", "./"],
     ]
       .map(
         ([lang, path]) =>
@@ -93,8 +93,8 @@ export function renderHtml(source, language, siteUrl = "") {
       `<link rel="canonical" href="${pageUrl}">\n<meta property="og:url" content="${pageUrl}">\n${links}\n</head>`,
     );
     html = html.replaceAll(
-      'content="/images/og-image.jpg"',
-      `content="${new URL("/images/og-image.jpg", siteUrl).href}"`,
+      `content="${new URL(siteUrl).pathname}images/og-image.jpg"`,
+      `content="${new URL("images/og-image.jpg", siteUrl).href}"`,
     );
   }
   return html;

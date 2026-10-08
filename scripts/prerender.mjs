@@ -6,7 +6,7 @@ if (siteUrl) {
   const url = new URL(siteUrl);
   if (!["http:", "https:"].includes(url.protocol))
     throw new Error("SITE_URL must be an http(s) URL");
-  siteUrl = url.origin;
+  siteUrl = `${url.origin}${url.pathname.replace(/\/$/, "")}/`;
 }
 const source = await readFile("dist/index.html", "utf8");
 for (const language of ["ua", "en", "pl"]) {
@@ -16,14 +16,14 @@ for (const language of ["ua", "en", "pl"]) {
   if (language === "ua") await writeFile("dist/index.html", html);
 }
 if (siteUrl) {
-  const urls = ["/", "/en/", "/pl/"].map((path) => new URL(path, siteUrl).href);
+  const urls = ["./", "en/", "pl/"].map((path) => new URL(path, siteUrl).href);
   await writeFile(
     "dist/sitemap.xml",
     `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${url.replaceAll("&", "&amp;")}</loc></url>`).join("")}</urlset>`,
   );
   await writeFile(
     "dist/robots.txt",
-    `User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`,
+    `User-agent: *\nAllow: /\nSitemap: ${siteUrl}sitemap.xml\n`,
   );
 } else {
   await writeFile("dist/robots.txt", "User-agent: *\nAllow: /\n");
