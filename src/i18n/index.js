@@ -5,11 +5,12 @@ import en from "./en.js";
 import serviceTranslations from "./services.js";
 import solutionTranslations from "./solutions.js";
 import caseTranslations from "./cases.js";
+import aboutTranslations from "./about.js";
 
 export const translations = Object.fromEntries(
   Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
     ...translation,
-    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui },
+    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui },
     services: serviceTranslations[language].details,
     solutions: solutionTranslations[language].details,
   }]),
@@ -67,6 +68,10 @@ export function applyTranslations(language = getCurrentLanguage()) {
     const description = page === "index" ? t.ui.casesIntro : page === "nfc-menu" ? t.ui.casesNfcDescription : t.ui.casesWpDescription;
     document.title = `${title} — DM Studio`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+  }
+  if (document.querySelector("[data-about-page]")) {
+    document.title = t.ui.aboutMetaTitle;
+    document.querySelector('meta[name="description"]')?.setAttribute("content", t.ui.aboutMetaDescription);
   }
   const select = document.getElementById("language");
   if (select) select.value = language;

@@ -97,5 +97,7 @@ export function renderHtml(source, language, siteUrl = "") {
       `content="${new URL("images/og-image.jpg", siteUrl).href}"`,
     );
   }
+  const base = siteUrl ? new URL(siteUrl).pathname : process.env.BASE_PATH || "/";
+  html = html.replace(/<a\b[^>]*data-locale-href="([^"]*)"[^>]*>/g, (tag, path) => tag.replace(/href="[^"]*"/, 'href="' + base + (language === "ua" ? "" : language + "/") + path + '"'));
   return html;
 }

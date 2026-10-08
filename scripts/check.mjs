@@ -79,3 +79,20 @@ for (const language of ["ua","en","pl"]) {
  }
 }
 console.info("Passed: nine case routes, localization, client labels, canonicals and unique IDs.");
+
+const { renderAboutPage } = await import("./render-about.mjs");
+for (const language of ["ua","en","pl"]) {
+  const page = renderAboutPage(source,language,"https://example.test/dm-studio/","/dm-studio/");
+  assert.equal((page.match(/<h1\b/g) || []).length,1);
+  const prefix = language === "ua" ? "" : language + "/";
+  assert.ok(page.includes('rel="canonical" href="https://example.test/dm-studio/' + prefix + 'about/"'));
+  assert.ok(page.includes(translations[language].ui.aboutMetaTitle));
+  assert.ok(page.includes('data-locale-href="about/" class="is-current" aria-current="page"'));
+  const ids = [...page.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(ids.length,new Set(ids).size);
+  for (const [,key] of page.matchAll(/data-i18n="([^"]+)"/g)) assert.equal(typeof translations[language].ui[key],"string");
+  assert.ok(!page.includes("undefined"));
+  const schemas = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+  assert.ok(schemas.some(schema => schema["@type"] === "ProfilePage" && schema.mainEntity["@type"] === "Person"));
+}
+console.info("Passed: three about routes, profile schema, localized metadata and active navigation.");
