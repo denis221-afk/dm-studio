@@ -73,7 +73,9 @@ export default {
       "casesWpResultTitle": "Результат співпраці",
       "casesWpResultDescription": "Завершене доопрацювання комерційного сайту та позитивний відгук реального замовника зі США.",
       "casesWpScreenshotAlt": "Скриншот головної сторінки RHome Ohio",
-      "casesWpScreenshot": "Справжній скриншот сайту RHome Ohio."
+      "casesWpScreenshot": "Справжній скриншот сайту RHome Ohio.",
+      "casesNfcScreenshotAlt": "Справжній екран NFC Food AI у рамці телефона",
+      "casesNfcScreenshot": "Скриншот вебсервісу NFC Food AI у рамці телефона."
     }
   },
   "en": {
@@ -150,7 +152,9 @@ export default {
       "casesWpResultTitle": "Collaboration outcome",
       "casesWpResultDescription": "Completed improvements to a commercial website and positive feedback from a real US client.",
       "casesWpScreenshotAlt": "Screenshot of the RHome Ohio homepage",
-      "casesWpScreenshot": "Actual screenshot of the RHome Ohio website."
+      "casesWpScreenshot": "Actual screenshot of the RHome Ohio website.",
+      "casesNfcScreenshotAlt": "Actual NFC Food AI screen in a phone frame",
+      "casesNfcScreenshot": "Screenshot of the NFC Food AI web app in a phone frame."
     }
   },
   "pl": {
@@ -227,7 +231,9 @@ export default {
       "casesWpResultTitle": "Rezultat współpracy",
       "casesWpResultDescription": "Ukończone poprawki komercyjnej strony oraz pozytywna opinia rzeczywistego klienta z USA.",
       "casesWpScreenshotAlt": "Zrzut ekranu strony głównej RHome Ohio",
-      "casesWpScreenshot": "Rzeczywisty zrzut ekranu strony RHome Ohio."
+      "casesWpScreenshot": "Rzeczywisty zrzut ekranu strony RHome Ohio.",
+      "casesNfcScreenshotAlt": "Rzeczywisty ekran NFC Food AI w ramce telefonu",
+      "casesNfcScreenshot": "Zrzut ekranu aplikacji NFC Food AI w ramce telefonu."
     }
   }
 };
