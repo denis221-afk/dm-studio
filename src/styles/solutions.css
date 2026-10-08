@@ -55,12 +55,12 @@
 @media(max-width:380px){.sol-card--booking,.sol-card--leads,.sol__grid.is-filtered .sol-card--booking,.sol__grid.is-filtered .sol-card--leads{grid-template-columns:1fr;padding-bottom:74px}.sol-booking,.sol-leads{max-width:245px}.sol-card--restaurant{min-height:555px}.sol-restaurant{top:160px}.sol-phone{right:7%}.sol-table-tent{right:53%}.sol-card__note{left:22px;font-size:12px}.sol__cta h3{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.sol-card__arrow{transition:none}}
 
-.sol-actual-phone{position:absolute;right:5%;top:50%;width:190px;transform:translateY(-50%) rotate(7deg)}
+.sol-restaurant .sol-actual-phone{position:absolute;right:5%;top:50%;width:190px;transform:translateY(-50%) rotate(7deg)}
 .sol-restaurant--actual{pointer-events:none}
-@media(min-width:1550px){.sol-actual-phone{width:215px}}
-@media(max-width:1100px){.sol-actual-phone{width:155px;right:10%}}
-@media(max-width:700px){.sol-actual-phone{width:170px;right:15%}.sol-restaurant--actual{top:170px;bottom:40px}.sol__grid.is-filtered .sol-restaurant--actual{top:170px}}
-@media(max-width:380px){.sol-actual-phone{width:155px}}
+@media(min-width:1550px){.sol-restaurant .sol-actual-phone{width:215px}}
+@media(max-width:1100px){.sol-restaurant .sol-actual-phone{width:155px;right:10%}}
+@media(max-width:700px){.sol-restaurant .sol-actual-phone{width:170px;right:15%}.sol-restaurant--actual{top:170px;bottom:40px}.sol__grid.is-filtered .sol-restaurant--actual{top:170px}}
+@media(max-width:380px){.sol-restaurant .sol-actual-phone{width:155px}}
 
 @media(max-width:1100px){.sol-restaurant--actual{top:230px;bottom:60px}}
 @media(max-width:700px){.sol-card--restaurant,.sol__grid.is-filtered .sol-card--restaurant{min-height:660px}.sol-restaurant--actual,.sol__grid.is-filtered .sol-restaurant--actual{top:240px;bottom:65px}}
