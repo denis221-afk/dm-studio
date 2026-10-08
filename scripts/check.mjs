@@ -39,3 +39,24 @@ for (const [, symbol] of source.matchAll(/\/icons\.svg#([^"\s]+)/g))
 console.info(
   "Passed: translations, static routes, schema, anchors and SVG symbols.",
 );
+
+for (const language of ["ua", "en", "pl"]) {
+  const t = translations[language];
+  for (const category of ["restaurant", "booking", "leads"]) {
+    assert.equal(t.solutions[category].length, 4, language + ": " + category);
+    assert.ok(t.solutions[category].every(item => typeof item === "string" && item.length > 0));
+    assert.ok(source.includes('data-solution="' + category + '"'));
+    assert.ok(source.includes('data-solution-filter="' + category + '"'));
+    assert.ok(source.includes('data-solution-open="' + category + '"'));
+  }
+  for (const [, key] of source.matchAll(/data-i18n-attr="[^:"]+:([^"]+)"/g)) {
+    assert.equal(typeof t.ui[key], "string", language + ": accessible label " + key);
+  }
+  const translated = renderHtml(source, language, "https://example.test/dm-studio/");
+  assert.ok(translated.includes(t.ui.solRestaurantTitle));
+  assert.ok(translated.includes(t.ui.solBookingTitle));
+  assert.ok(translated.includes(t.ui.solLeadsTitle));
+}
+assert.ok(source.indexOf('id="services"') < source.indexOf('id="solutions"'));
+assert.ok(source.indexOf('id="solutions"') < source.indexOf('id="cases"'));
+console.info("Passed: solution category markup, localized details, accessible labels and section order.");

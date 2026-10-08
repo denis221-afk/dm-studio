@@ -4,10 +4,12 @@ import { initLoader } from "./js/loader.js";
 import { initNavigation } from "./js/navigation.js";
 import { initBrief } from "./js/brief.js";
 import { initServices } from "./js/services.js";
+import { initSolutions } from "./js/solutions.js";
 function initSite() {
   initLoader();
   const t = applyTranslations();
   initServices(t);
+  initSolutions(t);
   initNavigation(t);
   initBrief(t);
   document

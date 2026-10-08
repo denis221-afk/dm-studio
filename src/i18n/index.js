@@ -3,12 +3,14 @@ import pl from "./pl.js";
 import en from "./en.js";
 
 import serviceTranslations from "./services.js";
+import solutionTranslations from "./solutions.js";
 
 export const translations = Object.fromEntries(
   Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
     ...translation,
-    ui: { ...translation.ui, ...serviceTranslations[language].ui },
+    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui },
     services: serviceTranslations[language].details,
+    solutions: solutionTranslations[language].details,
   }]),
 );
 const basePath = import.meta.env?.BASE_URL ?? "/";
