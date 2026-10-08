@@ -20,6 +20,9 @@ export function initNavigation(t) {
         active = item;
       }
     }
+    const last = targets.find(item => item.link.hash === "#contact");
+    const atBottom = window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+    if (last && atBottom) active = last;
     for (const item of targets) {
       const selected = item === active;
       item.link.classList.toggle("is-current", selected);

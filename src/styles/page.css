@@ -1018,3 +1018,9 @@ html[lang="uk"] .hero__buttons {
 .eyebrow {
   color: #656569;
 }
+
+/* Fit all navigation links alongside the language and contact controls. */
+@media (min-width: 781px) {
+  .header { gap: clamp(16px, 2.2vw, 36px); }
+  .navigation { gap: clamp(12px, 1.4vw, 24px); font-size: 15px; }
+}

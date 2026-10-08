@@ -11,6 +11,7 @@ export default {
     navServices: "Usługi",
     navSolutions: "Rozwiązania",
     navCases: "Projekty",
+    navContact: "Kontakt",
     navAbout: "O mnie",
     letsTalk: "Porozmawiajmy",
     eyebrow: "ROZWIĄZANIA CYFROWE\nDLA MAŁYCH FIRM",
