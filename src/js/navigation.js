@@ -2,6 +2,41 @@ export function initNavigation(t) {
   const button = document.querySelector(".menu-toggle");
   const navigation = document.getElementById("navigation");
   if (!button || !navigation) return;
+  const header = document.querySelector(".header");
+  const links = [...navigation.querySelectorAll('a[href^="#"]')];
+  const targets = links.map(link => ({
+    link, target: document.getElementById(link.hash.slice(1)),
+  })).filter(item => item.target);
+  let frame = 0;
+  function updateCurrent() {
+    frame = 0;
+    const height = header?.getBoundingClientRect().height ?? 0;
+    document.documentElement.style.setProperty("--sticky-header-height", `${height}px`);
+    const marker = height + 40;
+    let active = targets[0];
+    for (const item of targets) {
+      const top = item.target.getBoundingClientRect().top;
+      if (top <= marker && (!active || top > active.target.getBoundingClientRect().top)) {
+        active = item;
+      }
+    }
+    for (const item of targets) {
+      const selected = item === active;
+      item.link.classList.toggle("is-current", selected);
+      if (selected) item.link.setAttribute("aria-current", "location");
+      else item.link.removeAttribute("aria-current");
+    }
+  }
+  function scheduleUpdate() {
+    if (!frame) frame = requestAnimationFrame(updateCurrent);
+  }
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  window.addEventListener("hashchange", scheduleUpdate);
+  const observer = new ResizeObserver(scheduleUpdate);
+  if (header) observer.observe(header);
+  targets.forEach(({ target }) => observer.observe(target));
+  updateCurrent();
 
   function setOpen(open) {
     button.setAttribute("aria-expanded", String(open));

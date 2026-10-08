@@ -9,7 +9,7 @@ html {
 }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 28px;
+  scroll-padding-top: calc(var(--sticky-header-height, 120px) + 20px);
 }
 body {
   margin: 0;

@@ -2,7 +2,15 @@ import ua from "./ua.js";
 import pl from "./pl.js";
 import en from "./en.js";
 
-export const translations = { ua, pl, en };
+import serviceTranslations from "./services.js";
+
+export const translations = Object.fromEntries(
+  Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
+    ...translation,
+    ui: { ...translation.ui, ...serviceTranslations[language].ui },
+    services: serviceTranslations[language].details,
+  }]),
+);
 const basePath = import.meta.env?.BASE_URL ?? "/";
 
 export const supportedLanguages = ["ua", "pl", "en"];

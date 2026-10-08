@@ -1,56 +1,8 @@
 // src/js/services.js
 
-const SERVICE_DETAILS = {
-  web: {
-    title: "Сайт, який працює на ваш бізнес",
-    description:
-      "Допомагаємо представити продукт, пояснити його цінність та зробити шлях до заявки простим.",
-    items: [
-      "Структура під вашу бізнес-задачу.",
-      "Адаптивний дизайн для телефону та комп’ютера.",
-      "Форми заявок і потрібні інтеграції.",
-      "Базова SEO-підготовка та оптимізація швидкості.",
-    ],
-  },
 
-  bots: {
-    title: "Ваш бізнес — у Telegram",
-    description:
-      "Збирайте заявки, відповідайте на типові запитання й допомагайте клієнтам без постійної ручної роботи.",
-    items: [
-      "Зрозумілий сценарій взаємодії з клієнтом.",
-      "Заявки, запис та повідомлення.",
-      "Підключення таблиць і зовнішніх сервісів.",
-      "Адміністрування та інструкція користування.",
-    ],
-  },
-
-  automation: {
-    title: "Менше ручної роботи щодня",
-    description:
-      "Поєднуємо ваші інструменти та автоматизуємо повторювані дії, щоб команда зосередилася на важливому.",
-    items: [
-      "Аналіз процесу та пошук зайвих ручних дій.",
-      "Сценарії в n8n та інтеграції через API.",
-      "Передавання даних і автоматичні сповіщення.",
-      "Обробка помилок і документація сценарію.",
-    ],
-  },
-
-  ai: {
-    title: "AI для конкретної задачі",
-    description:
-      "Підбираємо застосування AI під ваш процес: підтримка, робота з текстами чи аналіз інформації.",
-    items: [
-      "Визначення задачі та меж роботи AI.",
-      "Асистент із потрібними інструкціями.",
-      "Інтеграція у ваш робочий процес.",
-      "Перевірка результатів на реальних прикладах.",
-    ],
-  },
-};
-
-export function initServices() {
+export function initServices(t) {
+  const details = t.services;
   // Знаходимо саме секцію послуг, а не елемент усередині hero.
   const section = document.querySelector("section.svc");
 
@@ -113,7 +65,7 @@ export function initServices() {
     const link = document.createElement("a");
     link.className = "button button--lime";
     link.href = "#contact";
-    link.textContent = "Обговорити цю послугу →";
+    link.textContent = `${t.ui.svcText27} →`;
     detail.append(link);
   }
 
@@ -133,7 +85,7 @@ export function initServices() {
 
     if (
       !showAll &&
-      !Object.prototype.hasOwnProperty.call(SERVICE_DETAILS, service)
+      !Object.prototype.hasOwnProperty.call(details, service)
     ) {
       return;
     }
@@ -153,7 +105,7 @@ export function initServices() {
     detail.hidden = showAll;
 
     if (!showAll) {
-      const content = SERVICE_DETAILS[service];
+      const content = details[service];
 
       title.textContent = content.title;
       description.textContent = content.description;
@@ -175,8 +127,8 @@ export function initServices() {
       );
 
       status.textContent = showAll
-        ? `Показано всі послуги: ${cards.length}.`
-        : `Показано послугу: ${activeButton?.textContent.trim() ?? service}.`;
+        ? `${t.ui.svcAllStatus} ${cards.length}.`
+        : `${t.ui.svcSelectedStatus} ${activeButton?.textContent.trim() ?? service}.`;
     }
   }
 
@@ -238,7 +190,7 @@ export function initServices() {
     const arrow = card.querySelector(".svc-card__arrow");
     const service = card.dataset.service;
 
-    if (!arrow || !SERVICE_DETAILS[service]) return;
+    if (!arrow || !details[service]) return;
 
     // Замінюємо посилання кнопкою: це перемикання, а не перехід.
     const button = document.createElement("button");
@@ -248,7 +200,7 @@ export function initServices() {
     button.setAttribute("aria-controls", grid.id);
     button.setAttribute(
       "aria-label",
-      `Детальніше про послугу: ${card.querySelector("h3")?.textContent.trim()}`,
+      `${t.ui.svcDetailsLabel} ${card.querySelector("h3")?.textContent.trim()}`,
     );
 
     button.append(...arrow.childNodes);

@@ -7,6 +7,7 @@ import { initServices } from "./js/services.js";
 function initSite() {
   initLoader();
   const t = applyTranslations();
+  initServices(t);
   initNavigation(t);
   initBrief(t);
   document
@@ -22,4 +23,3 @@ if (document.readyState === "loading") {
   initSite();
 }
 
-initServices();
