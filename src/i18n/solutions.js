@@ -6,13 +6,13 @@ export default {
       "solTitleAccent": "до готового рішення",
       "solIntro": "Практичні сценарії, які допомагають залучати клієнтів, економити час і покращувати сервіс.",
       "solAll": "Усі рішення",
-      "solRestaurants": "Ресторани",
+      "solRestaurants": "Харчування та AI",
       "solServices": "Послуги",
       "solSales": "Продажі",
-      "solRestaurantTag": "ДЛЯ КАФЕ ТА РЕСТОРАНІВ",
-      "solRestaurantTitle": "Розумне меню для вашого закладу",
-      "solRestaurantDescription": "NFC-меню та AI-аналіз страв.",
-      "solRestaurantNote": "Оновлюйте меню за кілька кліків.",
+      "solRestaurantTag": "РЕАЛЬНИЙ КЛІЄНТСЬКИЙ ПРОЄКТ",
+      "solRestaurantTitle": "AI-аналіз їжі за фотографією",
+      "solRestaurantDescription": "NFC Food AI: приблизна оцінка калорій, білків, жирів і вуглеводів та історія аналізів.",
+      "solRestaurantNote": "Фото → AI-аналіз → КБЖВ → історія.",
       "solServicesTag": "ДЛЯ БІЗНЕСУ ПОСЛУГ",
       "solBookingTitle": "Онлайн-запис без зайвих дзвінків",
       "solBookingDescription": "Клієнт обирає час. Ви отримуєте заявку.",
@@ -41,14 +41,18 @@ export default {
       "solInProgress": "У роботі",
       "solDone": "Завершено",
       "solEnquiry": "Заявка",
-      "solExample": "Приклад інтерфейсу"
+      "solExample": "Приклад інтерфейсу",
+      "solClientProof": "Реалізовано для клієнта: NFC Food AI. Оцінка за фотографією приблизна.",
+      "solDelivered": "Що реалізовано",
+      "solProjectCase": "Переглянути кейс",
+      "solScreenAlt": "Справжній екран вебсервісу NFC Food AI"
     },
     "details": {
       "restaurant": [
-        "Відкриття меню через NFC або QR без встановлення застосунку.",
-        "Категорії, фото страв, актуальні ціни та інформація про склад.",
-        "Редагування меню та інтеграція із системою замовлень за потреби.",
-        "AI-оцінка харчової цінності як орієнтовна інформація, а не точний вимір."
+        "Завантаження фото страви та відображення результатів AI-аналізу.",
+        "Адмін-конструктор для редагування текстів, зображень, кольорів і оформлення.",
+        "Інтеграції Telegram і SendPulse для роботи з користувачами та результатами.",
+        "Історія аналізів і дані клієнтів у Google Sheets; backend API та деплой на Railway."
       ],
       "booking": [
         "Вибір послуги, спеціаліста та доступного часу.",
@@ -71,13 +75,13 @@ export default {
       "solTitleAccent": "to a working solution",
       "solIntro": "Practical solutions to attract customers, save time and improve service.",
       "solAll": "All solutions",
-      "solRestaurants": "Restaurants",
+      "solRestaurants": "Food & AI",
       "solServices": "Services",
       "solSales": "Sales",
-      "solRestaurantTag": "FOR CAFÉS AND RESTAURANTS",
-      "solRestaurantTitle": "A smarter menu for your restaurant",
-      "solRestaurantDescription": "NFC menus and AI-assisted food analysis.",
-      "solRestaurantNote": "Update your menu in a few clicks.",
+      "solRestaurantTag": "REAL CLIENT PROJECT",
+      "solRestaurantTitle": "AI food analysis from a photo",
+      "solRestaurantDescription": "NFC Food AI: approximate calories, protein, fat and carbohydrate estimates with analysis history.",
+      "solRestaurantNote": "Photo → AI analysis → nutrition → history.",
       "solServicesTag": "FOR SERVICE BUSINESSES",
       "solBookingTitle": "Online bookings without extra calls",
       "solBookingDescription": "Customers choose a time. You receive a booking.",
@@ -106,14 +110,18 @@ export default {
       "solInProgress": "In progress",
       "solDone": "Done",
       "solEnquiry": "Enquiry",
-      "solExample": "Example interface"
+      "solExample": "Example interface",
+      "solClientProof": "Delivered for a client: NFC Food AI. Photo-based estimates are approximate.",
+      "solDelivered": "What we delivered",
+      "solProjectCase": "View the case study",
+      "solScreenAlt": "Actual screen of the NFC Food AI web app"
     },
     "details": {
       "restaurant": [
-        "Open the menu using NFC or QR without installing an app.",
-        "Categories, dish photos, current prices and ingredient information.",
-        "Menu editing and optional integration with your ordering system.",
-        "AI nutrition estimates as approximate information, rather than exact measurements."
+        "Upload a food photo and display AI analysis results.",
+        "Admin builder for editing text, images, colours and appearance.",
+        "Telegram and SendPulse integrations for users and their results.",
+        "Analysis history and customer data in Google Sheets; backend API and Railway deployment."
       ],
       "booking": [
         "Choose a service, specialist and available time.",
@@ -136,13 +144,13 @@ export default {
       "solTitleAccent": "do gotowego rozwiązania",
       "solIntro": "Praktyczne rozwiązania, które pomagają zdobywać klientów, oszczędzać czas i usprawniać obsługę.",
       "solAll": "Wszystkie rozwiązania",
-      "solRestaurants": "Restauracje",
+      "solRestaurants": "Żywienie i AI",
       "solServices": "Usługi",
       "solSales": "Sprzedaż",
-      "solRestaurantTag": "DLA KAWIARNI I RESTAURACJI",
-      "solRestaurantTitle": "Inteligentne menu dla Twojego lokalu",
-      "solRestaurantDescription": "Menu NFC i analiza potraw z AI.",
-      "solRestaurantNote": "Aktualizuj menu kilkoma kliknięciami.",
+      "solRestaurantTag": "RZECZYWISTY PROJEKT KLIENTA",
+      "solRestaurantTitle": "Analiza jedzenia ze zdjęcia z AI",
+      "solRestaurantDescription": "NFC Food AI: szacowanie kalorii, białka, tłuszczów i węglowodanów oraz historia analiz.",
+      "solRestaurantNote": "Zdjęcie → analiza AI → wartości odżywcze → historia.",
       "solServicesTag": "DLA FIRM USŁUGOWYCH",
       "solBookingTitle": "Rezerwacje online bez zbędnych telefonów",
       "solBookingDescription": "Klient wybiera termin. Ty otrzymujesz zgłoszenie.",
@@ -171,14 +179,18 @@ export default {
       "solInProgress": "W trakcie",
       "solDone": "Zakończone",
       "solEnquiry": "Zapytanie",
-      "solExample": "Przykładowy interfejs"
+      "solExample": "Przykładowy interfejs",
+      "solClientProof": "Zrealizowano dla klienta: NFC Food AI. Ocena ze zdjęcia jest orientacyjna.",
+      "solDelivered": "Co zrealizowaliśmy",
+      "solProjectCase": "Zobacz projekt",
+      "solScreenAlt": "Rzeczywisty ekran aplikacji NFC Food AI"
     },
     "details": {
       "restaurant": [
-        "Otwieranie menu przez NFC lub QR bez instalowania aplikacji.",
-        "Kategorie, zdjęcia potraw, aktualne ceny i informacje o składnikach.",
-        "Edycja menu i opcjonalna integracja z systemem zamówień.",
-        "Szacunkowa wartość odżywcza z AI, a nie dokładny pomiar."
+        "Przesyłanie zdjęcia potrawy i wyświetlanie wyników analizy AI.",
+        "Panel edycji tekstów, zdjęć, kolorów i wyglądu.",
+        "Integracje Telegram i SendPulse do pracy z użytkownikami i wynikami.",
+        "Historia analiz i dane klientów w Google Sheets; backend API i wdrożenie na Railway."
       ],
       "booking": [
         "Wybór usługi, specjalisty i dostępnego terminu.",

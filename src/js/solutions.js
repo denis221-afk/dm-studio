@@ -56,6 +56,10 @@ export function initSolutions(t) {
         li.textContent = text;
         return li;
       }));
+      const clientProject = key === "restaurant";
+      dialog.querySelector("h3 span").textContent = clientProject ? t.ui.solDelivered : t.ui.solIncluded;
+      dialog.querySelector(".sol-dialog__concept span").textContent = clientProject ? t.ui.solClientProof : t.ui.solConcept;
+      dialog.querySelector("[data-solution-case]").hidden = !clientProject;
       dialog.showModal();
       title.focus();
     });
