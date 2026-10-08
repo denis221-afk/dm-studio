@@ -71,7 +71,9 @@ export default {
       "casesNfcFutureDescription": "Адаптація для кафе, ресторанів, фітнес-клубів або дієтологів, персональна історія харчування та рекомендації — можливі напрямки розвитку, а не заявлені реалізовані функції.",
       "casesNfcPhoto": "Фото → AI → КБЖВ → Історія",
       "casesWpResultTitle": "Результат співпраці",
-      "casesWpResultDescription": "Завершене доопрацювання комерційного сайту та позитивний відгук реального замовника зі США."
+      "casesWpResultDescription": "Завершене доопрацювання комерційного сайту та позитивний відгук реального замовника зі США.",
+      "casesWpScreenshotAlt": "Скриншот головної сторінки RHome Ohio",
+      "casesWpScreenshot": "Справжній скриншот сайту RHome Ohio."
     }
   },
   "en": {
@@ -146,7 +148,9 @@ export default {
       "casesNfcFutureDescription": "Adaptation for cafés, restaurants, fitness clubs or nutritionists, personal nutrition history and recommendations are possible future directions, not features claimed as already implemented.",
       "casesNfcPhoto": "Photo → AI → Macros → History",
       "casesWpResultTitle": "Collaboration outcome",
-      "casesWpResultDescription": "Completed improvements to a commercial website and positive feedback from a real US client."
+      "casesWpResultDescription": "Completed improvements to a commercial website and positive feedback from a real US client.",
+      "casesWpScreenshotAlt": "Screenshot of the RHome Ohio homepage",
+      "casesWpScreenshot": "Actual screenshot of the RHome Ohio website."
     }
   },
   "pl": {
@@ -221,7 +225,9 @@ export default {
       "casesNfcFutureDescription": "Adaptacja dla kawiarni, restauracji, klubów fitness lub dietetyków, osobista historia żywienia i rekomendacje to możliwe kierunki rozwoju, a nie funkcje deklarowane jako już wdrożone.",
       "casesNfcPhoto": "Zdjęcie → AI → Makroskładniki → Historia",
       "casesWpResultTitle": "Rezultat współpracy",
-      "casesWpResultDescription": "Ukończone poprawki komercyjnej strony oraz pozytywna opinia rzeczywistego klienta z USA."
+      "casesWpResultDescription": "Ukończone poprawki komercyjnej strony oraz pozytywna opinia rzeczywistego klienta z USA.",
+      "casesWpScreenshotAlt": "Zrzut ekranu strony głównej RHome Ohio",
+      "casesWpScreenshot": "Rzeczywisty zrzut ekranu strony RHome Ohio."
     }
   }
 };
