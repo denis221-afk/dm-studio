@@ -63,7 +63,7 @@ export function applyTranslations(language = getCurrentLanguage()) {
   });
   const page = document.querySelector("[data-case-page]")?.dataset.casePage;
   if (page) {
-    const title = page === "index" ? t.ui.navCases : page === "nfc-menu" ? "Restaurant NFC Menu" : "RHome Ohio";
+    const title = page === "index" ? t.ui.navCases : page === "nfc-menu" ? "NFC Food AI" : "RHome Ohio";
     const description = page === "index" ? t.ui.casesIntro : page === "nfc-menu" ? t.ui.casesNfcDescription : t.ui.casesWpDescription;
     document.title = `${title} — DM Studio`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);

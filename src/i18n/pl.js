@@ -38,10 +38,9 @@ export default {
     projectsLabel: "ukończone projekty",
     reviewsLabel: "opinie klientów",
     latestProject: "Najnowszy projekt",
-    caseDescription: "Cyfrowe menu z analizą żywienia AI i automatyzacją",
+    caseDescription: "Platforma AI do analizy żywności i automatyzacji danych klientów",
     featuredSolution: "PRZYKŁADOWE ROZWIĄZANIE",
-    caseDetails:
-      "Koncepcja cyfrowego menu restauracji: otwieranie przez NFC, przeglądanie dań i analiza żywienia wspierana przez AI.",
+    caseDetails: "Interfejs do przesyłania zdjęć i przeglądania wyników, backend API oraz integracje Telegram, SendPulse i Google Sheets. Panel administracyjny pozwala edytować teksty, obrazy, kolory i wygląd.",
     contactTitle: "Porozmawiajmy o projekcie",
     contactDescription:
       "Opisz potrzeby swojej firmy. Skopiuj ten krótki brief i wyślij go w naszej dotychczasowej rozmowie.",

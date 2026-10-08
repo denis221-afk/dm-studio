@@ -38,10 +38,9 @@ export default {
     projectsLabel: "completed projects",
     reviewsLabel: "client reviews",
     latestProject: "Latest project",
-    caseDescription: "Digital menu with AI nutrition and automation",
+    caseDescription: "AI food analysis platform with automated customer data",
     featuredSolution: "FEATURED SOLUTION",
-    caseDetails:
-      "A digital restaurant menu concept: open a menu using an NFC tag, explore dishes and use AI-assisted nutrition analysis.",
+    caseDetails: "A web interface for uploading photos and viewing results, a backend API and Telegram, SendPulse and Google Sheets integrations. The admin builder supports editing text, images, colours and visual settings.",
     contactTitle: "Let’s discuss your project",
     contactDescription:
       "Tell me what your business needs. Copy this brief and send it through our existing conversation.",
