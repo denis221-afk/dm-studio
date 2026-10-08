@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DM Studio — Сайти, автоматизація та AI-рішення для бізнесу</title>
+    <meta
+      name="description"
+      content="DM Studio створює сайти, Telegram-боти, інтеграції та AI-автоматизації для малого бізнесу. Від бізнес-задачі до готового рішення."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="DM Studio" />
+    <meta name="theme-color" content="#f5f5f5" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DM Studio" />
+    <meta
+      property="og:title"
+      content="DM Studio — Сайти, автоматизація та AI-рішення для бізнесу"
+    />
+    <meta
+      property="og:description"
+      content="DM Studio створює сайти, Telegram-боти, інтеграції та AI-автоматизації для малого бізнесу. Від бізнес-задачі до готового рішення."
+    />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="DM Studio — Сайти, автоматизація та AI-рішення для бізнесу"
+    />
+    <meta
+      name="twitter:description"
+      content="DM Studio створює сайти, Telegram-боти, інтеграції та AI-автоматизації для малого бізнесу. Від бізнес-задачі до готового рішення."
+    />
+    <meta name="twitter:image" content="/images/og-image.jpg" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/images/denys.webp"
+      as="image"
+      type="image/webp"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DM Studio",
+        "description": "DM Studio створює сайти, Telegram-боти, інтеграції та AI-автоматизації для малого бізнесу. Від бізнес-задачі до готового рішення.",
+        "knowsAbout": [
+          "Web development",
+          "Telegram bots",
+          "Workflow automation",
+          "AI assistants"
+        ]
+      }
+    </script>
+    <noscript>
+      <style>
+        .menu-toggle,
+        #brief-form button {
+          display: none;
+        }
+        @media (max-width: 780px) {
+          .header {
+            height: auto;
+            min-height: 90px;
+            flex-wrap: wrap;
+            padding-block: 20px;
+          }
+          .navigation {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            order: 3;
+            width: 100%;
+            gap: 8px;
+            box-shadow: none;
+          }
+        }
+      </style>
+    </noscript>
+    <!-- Показуємо фон заставки ще до першого відображення сторінки. -->
+    <style>
+      html.intro-pending #site-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid !important;
+        place-items: center;
+        overflow: hidden;
+        background: #070807;
+        color: #fff;
+      }
+      html.intro-pending #site-loader[hidden] > * {
+        visibility: hidden;
+      }
+    </style>
+    <script>
+      (() => {
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        if (reducedMotion) return;
+        document.documentElement.classList.add("intro-pending");
+        // Якщо основний JS не завантажиться, відкриваємо сторінку.
+        window.__dmIntroFallback = window.setTimeout(() => {
+          document.documentElement.classList.remove("intro-pending");
+          document.getElementById("site-loader")?.remove();
+        }, 4500);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skip"
+      >Перейти до основного вмісту</a
+    >
+    <div class="loader" id="site-loader" hidden>
+      <div class="loader__rays" aria-hidden="true"></div>
+      <button class="loader__skip" type="button" data-i18n="skipIntro">
+        Пропустити заставку
+      </button>
+      <div class="loader__content" aria-hidden="true">
+        <div class="loader__brand">DM<span class="loader__dot">.</span></div>
+        <div class="loader__services">
+          WEB <span>·</span> AUTOMATION <span>·</span> AI
+        </div>
+        <div class="loader__final">DM<span>Studio</span><i></i></div>
+      </div>
+    </div>
+    <header class="header container">
+      <a class="brand" href="#home" aria-label="DM Studio home"
+        >DM Studio<span class="brand__dot"></span
+      ></a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navigation"
+        aria-label="Відкрити меню"
+        data-i18n-attr="aria-label:openMenu"
+      >
+        <span></span><span></span>
+      </button>
+      <nav
+        class="navigation"
+        id="navigation"
+        aria-label="Основна навігація"
+        data-i18n-attr="aria-label:navLabel"
+      >
+        <a
+          class="is-current"
+          href="#home"
+          aria-current="page"
+          data-i18n="navHome"
+          >Головна</a
+        ><a href="#services" data-i18n="navServices">Послуги</a
+        ><a href="#solutions" data-i18n="navSolutions">Рішення</a
+        ><a href="#cases" data-i18n="navCases">Кейси</a
+        ><a href="#about" data-i18n="navAbout">Про мене</a>
+      </nav>
+      <div class="header__actions">
+        <label class="language"
+          ><svg aria-hidden="true"><use href="/icons.svg#globe" /></svg
+          ><span class="sr-only">Language / Мова</span
+          ><select
+            id="language"
+            aria-label="Оберіть мову"
+            data-i18n-attr="aria-label:chooseLanguage"
+          >
+            <option value="en">EN</option>
+            <option value="ua" selected>UA</option>
+            <option value="pl">PL</option>
+          </select></label
+        ><a class="button button--dark" href="#contact"
+          ><span data-i18n="letsTalk">Поговорімо</span
+          ><span class="button__circle" aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero container" id="home" aria-labelledby="hero-title">
+        <div class="hero__intro">
+          <p class="eyebrow" data-i18n="eyebrow">
+            ЦИФРОВІ РІШЕННЯ<br />ДЛЯ МАЛОГО БІЗНЕСУ
+          </p>
+          <h1 id="hero-title">
+            <span data-i18n="titleWeb">Сайти</span
+            ><span data-i18n="titleAutomation">Автоматизація</span
+            ><span data-i18n="titleAi">AI-рішення</span>
+          </h1>
+          <p class="hero__description" data-i18n="heroDescription">
+            Допомагаю малому бізнесу залучати клієнтів, автоматизувати рутинні
+            завдання та зростати завдяки сучасним цифровим рішенням.
+          </p>
+          <div class="hero__buttons">
+            <a class="button button--lime" href="#contact"
+              ><span data-i18n="discussProject">Обговорімо ваш проєкт</span
+              ><span aria-hidden="true">→</span></a
+            ><a class="button button--light" href="#cases"
+              ><span aria-hidden="true">▶</span
+              ><span data-i18n="seeCases">Дивитись кейси</span></a
+            >
+          </div>
+          <div class="social-proof">
+            <div class="avatars" aria-hidden="true">
+              <img
+                src="/images/avatar-1.webp"
+                alt=""
+                width="60"
+                height="60"
+              /><img
+                src="/images/avatar-2.webp"
+                alt=""
+                width="60"
+                height="60"
+              /><img
+                src="/images/avatar-3.webp"
+                alt=""
+                width="60"
+                height="60"
+              />
+            </div>
+            <p>
+              <strong>2</strong
+              ><span data-i18n="proofLabel">виконані проєкти</span>
+            </p>
+          </div>
+        </div>
+        <div class="hero__visual" id="hero-services">
+          <div class="orbit" aria-hidden="true"></div>
+          <img
+            class="portrait"
+            src="/images/denys.webp"
+            alt="Денис — засновник DM Studio"
+            data-i18n-attr="alt:portraitAlt"
+            width="817"
+            height="1472"
+            fetchpriority="high"
+          />
+          <ul
+            class="services"
+            aria-label="Послуги"
+            data-i18n-attr="aria-label:servicesLabel"
+          >
+            <li class="service service--web">
+              <span class="service__icon icon--blue"
+                ><svg aria-hidden="true"><use href="/icons.svg#globe" /></svg
+              ></span>
+              <div>
+                <h2 data-i18n="serviceWeb">Сайти</h2>
+                <p data-i18n="serviceWebDescription">
+                  Лендінги<br />та інтернет-магазини
+                </p>
+              </div>
+            </li>
+            <li class="service service--bots">
+              <span class="service__icon icon--purple"
+                ><svg aria-hidden="true"><use href="/icons.svg#bot" /></svg
+              ></span>
+              <div>
+                <h2 data-i18n="serviceBots">Боти</h2>
+                <p data-i18n="serviceBotsDescription">
+                  Telegram-боти<br />та інтеграції
+                </p>
+              </div>
+            </li>
+            <li class="service service--automation">
+              <span class="service__icon icon--black"
+                ><svg aria-hidden="true"><use href="/icons.svg#bolt" /></svg
+              ></span>
+              <div>
+                <h2 data-i18n="serviceAutomation">Автоматизація</h2>
+                <p>
+                  n8n, APIs<br /><span data-i18n="serviceAutomationDescription"
+                    >та робочі процеси</span
+                  >
+                </p>
+              </div>
+            </li>
+            <li class="service service--ai">
+              <span class="service__icon icon--white"
+                ><svg aria-hidden="true"><use href="/icons.svg#sparkles" /></svg
+              ></span>
+              <div>
+                <h2 data-i18n="serviceAi">AI-рішення</h2>
+                <p data-i18n="serviceAiDescription">
+                  AI-агенти<br />та асистенти
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="hero__about" id="about">
+          <h2 data-i18n="hello">Привіт, я Денис</h2>
+          <p class="availability">
+            <span aria-hidden="true"></span
+            ><span data-i18n="availability">Відкритий до нових проєктів</span>
+          </p>
+          <p
+            class="about__description"
+            id="solutions"
+            data-i18n="aboutDescription"
+          >
+            Створюю сайти, ботів та AI-автоматизації, які вирішують реальні
+            завдання бізнесу.
+          </p>
+          <dl class="stats">
+            <div>
+              <dt data-i18n="projectsLabel">виконані проєкти</dt>
+              <dd>
+                <span class="stats__icon"
+                  ><svg aria-hidden="true">
+                    <use href="/icons.svg#chart" /></svg></span
+                ><span class="stats__value">2+</span>
+              </dd>
+            </div>
+            <div>
+              <dt data-i18n="reviewsLabel">відгуки клієнтів</dt>
+              <dd>
+                <span class="stats__icon"
+                  ><svg aria-hidden="true">
+                    <use href="/icons.svg#star" /></svg></span
+                ><span class="stats__value">2</span>
+              </dd>
+            </div>
+          </dl>
+          <a class="case" href="#case-details"
+            ><img
+              src="/images/case.webp"
+              alt="Restaurant NFC Menu interface"
+              width="159"
+              height="141"
+            />
+            <div>
+              <span class="case__label" data-i18n="latestProject"
+                >Останній проєкт</span
+              >
+              <h3>Restaurant NFC Menu</h3>
+              <p data-i18n="caseDescription">
+                Цифрове меню з AI-аналізом харчування та автоматизацією
+              </p>
+            </div>
+            <span class="case__arrow" aria-hidden="true">›</span></a
+          >
+        </div>
+      </section>
+      <!-- Блок послуг -->
+      <section
+        class="svc container"
+        id="services"
+        aria-labelledby="services-title"
+      >
+        <header class="svc__header">
+          <div>
+            <p class="svc__eyebrow">// ПОСЛУГИ</p>
+            <h2 class="svc__title" id="services-title">
+              Digital-рішення<br />
+              для <span>реальних бізнес-задач</span>
+            </h2>
+          </div>
+          <div class="svc__intro">
+            <p>
+              Створюємо не просто сайти чи ботів, а інструменти, які допомагають
+              бізнесу залучати клієнтів, економити час і розвиватися.
+            </p>
+            <a class="svc__intro-link" href="#contact">
+              Обговорити задачу
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </header>
+        <div
+          class="svc__filters"
+          role="group"
+          aria-label="Оберіть напрям послуг"
+          hidden
+        >
+          <button
+            class="svc__filter is-active"
+            type="button"
+            data-service-filter="all"
+            aria-pressed="true"
+            aria-controls="service-grid"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect
+                x="3"
+                y="3"
+                width="7"
+                height="7"
+                rx="2"
+                fill="currentColor"
+              />
+              <rect
+                x="14"
+                y="3"
+                width="7"
+                height="7"
+                rx="2"
+                fill="currentColor"
+              />
+              <rect
+                x="3"
+                y="14"
+                width="7"
+                height="7"
+                rx="2"
+                fill="currentColor"
+              />
+              <rect
+                x="14"
+                y="14"
+                width="7"
+                height="7"
+                rx="2"
+                fill="currentColor"
+              />
+            </svg>
+            Усі послуги
+          </button>
+          <button
+            class="svc__filter"
+            type="button"
+            data-service-filter="web"
+            aria-pressed="false"
+            aria-controls="service-grid"
+          >
+            <svg aria-hidden="true"><use href="/icons.svg#globe"></use></svg>
+            Сайти
+          </button>
+          <button
+            class="svc__filter"
+            type="button"
+            data-service-filter="bots"
+            aria-pressed="false"
+            aria-controls="service-grid"
+          >
+            <svg aria-hidden="true"><use href="/icons.svg#bot"></use></svg>
+            Боти
+          </button>
+          <button
+            class="svc__filter"
+            type="button"
+            data-service-filter="automation"
+            aria-pressed="false"
+            aria-controls="service-grid"
+          >
+            <svg aria-hidden="true"><use href="/icons.svg#bolt"></use></svg>
+            Автоматизація
+          </button>
+          <button
+            class="svc__filter"
+            type="button"
+            data-service-filter="ai"
+            aria-pressed="false"
+            aria-controls="service-grid"
+          >
+            <svg aria-hidden="true"><use href="/icons.svg#sparkles"></use></svg>
+            AI-рішення
+          </button>
+        </div>
+        <p
+          class="svc__sr-only"
+          id="service-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+        <div class="svc__grid" id="service-grid">
+          <article class="svc-card svc-card--web" data-service="web">
+            <div class="svc-card__top">
+              <span class="svc-card__icon svc-card__icon--blue">
+                <svg aria-hidden="true">
+                  <use href="/icons.svg#globe"></use>
+                </svg>
+              </span>
+              <div class="svc-card__content">
+                <span class="svc-card__number" aria-hidden="true">01</span>
+                <h3>Сайти</h3>
+                <p>
+                  Лендінги, корпоративні сайти, інтернет-магазини. Сучасний
+                  дизайн і фокус на результат.
+                </p>
+              </div>
+              <a
+                class="svc-card__arrow"
+                href="#contact"
+                aria-label="Обговорити створення сайту"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <ul class="svc-card__tags" aria-label="Типи сайтів">
+              <li>Landing page</li>
+              <li>Корпоративний сайт</li>
+              <li>eCommerce</li>
+            </ul>
+          </article>
+          <article class="svc-card svc-card--bots" data-service="bots">
+            <div class="svc-card__top">
+              <span class="svc-card__icon svc-card__icon--purple">
+                <svg aria-hidden="true"><use href="/icons.svg#bot"></use></svg>
+              </span>
+              <div class="svc-card__content">
+                <span class="svc-card__number" aria-hidden="true">02</span>
+                <h3>Telegram-боти</h3>
+                <p>
+                  Боти для продажів, підтримки клієнтів та автоматизації
+                  бізнес-процесів.
+                </p>
+              </div>
+              <a
+                class="svc-card__arrow"
+                href="#contact"
+                aria-label="Обговорити створення Telegram-бота"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <ul class="svc-card__tags" aria-label="Завдання ботів">
+              <li>Продажі</li>
+              <li>Підтримка</li>
+              <li>Інтеграції</li>
+            </ul>
+          </article>
+          <article
+            class="svc-card svc-card--automation"
+            data-service="automation"
+          >
+            <div class="svc-card__top">
+              <span class="svc-card__icon svc-card__icon--dark">
+                <svg aria-hidden="true"><use href="/icons.svg#bolt"></use></svg>
+              </span>
+              <div class="svc-card__content">
+                <span class="svc-card__number" aria-hidden="true">03</span>
+                <h3>Автоматизація</h3>
+                <p>
+                  Налаштовуємо процеси, інтеграції та сценарії, щоб ваш бізнес
+                  працював швидше й ефективніше.
+                </p>
+              </div>
+              <a
+                class="svc-card__arrow"
+                href="#contact"
+                aria-label="Обговорити автоматизацію бізнесу"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <ul class="svc-card__tags" aria-label="Інструменти автоматизації">
+              <li>n8n</li>
+              <li>API</li>
+              <li>Google Sheets</li>
+              <li>Інтеграції</li>
+            </ul>
+          </article>
+          <article class="svc-card svc-card--ai" data-service="ai">
+            <div class="svc-card__top">
+              <span class="svc-card__icon svc-card__icon--white">
+                <svg aria-hidden="true">
+                  <use href="/icons.svg#sparkles"></use>
+                </svg>
+              </span>
+              <div class="svc-card__content">
+                <span class="svc-card__number" aria-hidden="true">04</span>
+                <h3>AI-рішення</h3>
+                <p>
+                  AI-асистенти, генерація контенту, аналіз інформації та рішення
+                  на базі штучного інтелекту.
+                </p>
+              </div>
+              <a
+                class="svc-card__arrow"
+                href="#contact"
+                aria-label="Обговорити AI-рішення"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m9 5 7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+            <ul class="svc-card__tags" aria-label="Напрями AI">
+              <li>AI-агенти</li>
+              <li>Генерація контенту</li>
+              <li>Аналітика</li>
+            </ul>
+          </article>
+          <!-- Декоративна центральна композиція -->
+          <div class="svc-visual" aria-hidden="true">
+            <div class="svc-visual__orbit svc-visual__orbit--outer"></div>
+            <div class="svc-visual__orbit svc-visual__orbit--middle"></div>
+            <div class="svc-visual__orbit svc-visual__orbit--inner"></div>
+            <span class="svc-visual__node svc-visual__node--one"></span>
+            <span class="svc-visual__node svc-visual__node--two"></span>
+            <span class="svc-visual__node svc-visual__node--three"></span>
+            <span class="svc-visual__node svc-visual__node--four"></span>
+            <div class="svc-visual__stack">
+              <div class="svc-visual__tile svc-visual__tile--bottom"></div>
+              <div class="svc-visual__tile svc-visual__tile--middle"></div>
+              <div class="svc-visual__tile svc-visual__tile--top">
+                <div class="svc-visual__brand">
+                  <strong>DM<span></span></strong>
+                  <span>Studio</span>
+                </div>
+              </div>
+            </div>
+            <div class="svc-visual__badge svc-visual__badge--top">
+              <svg><use href="/icons.svg#chart"></use></svg>
+              Більше клієнтів
+            </div>
+            <div class="svc-visual__badge svc-visual__badge--right">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+              </svg>
+              Менше рутини
+            </div>
+            <div class="svc-visual__badge svc-visual__badge--bottom">
+              <span>↗</span>
+              Зростання бізнесу
+            </div>
+          </div>
+          <!-- З’являється при виборі конкретної послуги -->
+          <aside
+            class="svc-detail"
+            id="service-detail"
+            hidden
+            aria-labelledby="service-detail-title"
+          >
+            <p class="svc__eyebrow">РІШЕННЯ ДЛЯ ВАШОГО БІЗНЕСУ</p>
+            <h3 id="service-detail-title"></h3>
+            <p class="svc-detail__description"></p>
+            <ul class="svc-detail__list"></ul>
+            <a class="button button--lime" href="#contact">
+              Обговорити цю послугу
+              <span aria-hidden="true">→</span>
+            </a>
+          </aside>
+        </div>
+        <footer class="svc__footer">
+          <div class="svc__proof">
+            <div class="svc__avatars" aria-hidden="true">
+              <img
+                src="/images/avatar-1.webp"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <img
+                src="/images/avatar-2.webp"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <img
+                src="/images/avatar-3.webp"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <strong>Особистий підхід</strong>
+              <span>від ідеї до запуску</span>
+            </div>
+          </div>
+          <div class="svc__metric">
+            <svg aria-hidden="true"><use href="/icons.svg#chart"></use></svg>
+            <div><strong>2</strong><span>виконані проєкти</span></div>
+          </div>
+          <div class="svc__metric">
+            <svg aria-hidden="true"><use href="/icons.svg#star"></use></svg>
+            <div><strong>2</strong><span>відгуки клієнтів</span></div>
+          </div>
+          <a class="button button--lime svc__cta" href="#contact">
+            Обговорити проєкт
+            <span aria-hidden="true">→</span>
+          </a>
+        </footer>
+      </section>
+      <section
+        class="details container"
+        id="cases"
+        aria-labelledby="case-details"
+      >
+        <div>
+          <p class="eyebrow" data-i18n="featuredSolution">ПРИКЛАД РІШЕННЯ</p>
+          <h2 id="case-details">Restaurant NFC Menu</h2>
+          <p data-i18n="caseDetails">
+            Концепт цифрового меню ресторану: відкриття через NFC-мітку,
+            перегляд страв та аналіз харчування за допомогою AI.
+          </p>
+        </div>
+        <img
+          src="/images/case.webp"
+          alt="Preview of the restaurant digital menu"
+          width="159"
+          height="141"
+          loading="lazy"
+        />
+      </section>
+      <section
+        class="contact container"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <p class="eyebrow">DM STUDIO</p>
+        <h2 id="contact-title" data-i18n="contactTitle">
+          Обговорімо ваш проєкт
+        </h2>
+        <p data-i18n="contactDescription">
+          Розкажіть, що потрібно вашому бізнесу. Скопіюйте цей короткий бриф і
+          надішліть у нашому поточному листуванні.
+        </p>
+        <form id="brief-form">
+          <label for="brief" data-i18n="briefLabel" data-i18n="fieldLabel"
+            >Ваш проєкт</label
+          ><textarea
+            id="brief"
+            name="brief"
+            rows="4"
+            maxlength="3000"
+            required
+            placeholder="Бізнес, задача, термін, бюджет"
+            data-i18n-attr="placeholder:placeholder"
+          ></textarea
+          ><button
+            class="button button--lime"
+            type="submit"
+            data-i18n="copyBrief"
+          >
+            Скопіювати бриф
+          </button>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <noscript
+      ><p class="container">
+        JavaScript вимкнено. Мови: <a href="/">Українська</a> ·
+        <a href="/en/">English</a> · <a href="/pl/">Polski</a>. Текст брифу
+        можна скопіювати вручну.
+      </p></noscript
+    >
+    <footer class="footer container">
+      <span>© <span id="year">2026</span> DM Studio</span
+      ><a href="#home" data-i18n="backToTop">Нагору ↑</a>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

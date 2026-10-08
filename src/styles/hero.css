@@ -1,0 +1,159 @@
+/* src/styles/hero.css */
+
+:root {
+  --header-height: 120px;
+}
+
+/* Комп’ютер: шапка + hero займають увесь перший екран. */
+@media (min-width: 1101px) {
+  .header {
+    height: var(--header-height);
+  }
+
+  .hero {
+    height: calc(100vh - var(--header-height));
+    height: calc(100svh - var(--header-height));
+    min-height: 0;
+    max-height: none;
+    align-items: stretch;
+  }
+
+  .hero__visual {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    align-self: stretch;
+  }
+
+  /* Фото прикріплене до нижнього краю hero. */
+  .portrait {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 18%;
+
+    width: 82%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+
+    object-fit: contain;
+    object-position: left bottom;
+  }
+
+  .hero__intro {
+    padding-top: clamp(
+      28px,
+      calc((100svh - var(--header-height)) * 0.088),
+      88px
+    );
+  }
+
+  .hero__about {
+    padding-top: clamp(
+      42px,
+      calc((100svh - var(--header-height)) * 0.19),
+      175px
+    );
+  }
+}
+
+/* Ноутбуки з невисоким екраном. */
+@media (min-width: 1101px) and (max-height: 850px) {
+  :root {
+    --header-height: 96px;
+  }
+
+  .hero h1,
+  html[lang="uk"] .hero h1 {
+    font-size: clamp(40px, min(4.2vw, 7.3svh), 62px);
+    line-height: 0.98;
+    margin-block: 18px;
+  }
+
+  .hero__description,
+  .about__description {
+    font-size: clamp(16px, 2.3svh, 19px);
+  }
+
+  .hero__about {
+    padding-top: clamp(
+      24px,
+      calc((100svh - var(--header-height)) * 0.12),
+      85px
+    );
+  }
+
+  .hero__about > h2 {
+    font-size: clamp(29px, 3vw, 43px);
+  }
+
+  .hero__buttons {
+    margin-top: 24px;
+  }
+
+  .hero__buttons .button {
+    min-height: 52px;
+    padding-block: 12px;
+  }
+
+  .social-proof {
+    margin-top: 24px;
+  }
+
+  .stats {
+    margin-block: 24px 18px;
+  }
+
+  .case {
+    padding: 16px;
+  }
+
+  .case > img {
+    max-height: 115px;
+    object-fit: cover;
+  }
+
+  .service__icon {
+    width: clamp(58px, 9.5svh, 76px);
+    height: clamp(58px, 9.5svh, 76px);
+  }
+}
+
+/* Планшети й телефони: контент залишається читабельним. */
+@media (max-width: 1100px) {
+  :root {
+    --header-height: 100px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: calc(100svh - var(--header-height));
+  }
+
+  .portrait {
+    bottom: 0;
+    margin-bottom: 0;
+    object-position: center bottom;
+  }
+}
+
+@media (max-width: 780px) {
+  :root {
+    --header-height: 90px;
+  }
+}
+
+/* Дуже низьке вікно: дозволяємо прокрутку замість обрізання тексту. */
+@media (min-width: 1101px) and (max-height: 620px) {
+  .hero {
+    height: auto;
+    min-height: max(540px, calc(100svh - var(--header-height)));
+  }
+
+  .hero__visual {
+    height: auto;
+  }
+}

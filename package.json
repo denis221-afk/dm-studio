@@ -1,0 +1,19 @@
+{
+  "name": "dm-studio",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "check": "node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.9",
+    "vite": "^8.3.0"
+  },
+  "dependencies": {
+    "@fontsource/manrope": "^5.3.0"
+  }
+}
