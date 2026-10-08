@@ -1,1 +1,0 @@
-export default function Page(){return <div className="inner-page"><div className="eyebrow">SOLUTIONS</div><h1>Рішення для бізнесу</h1><p>Для локального бізнесу, e-commerce, сфери послуг та малого бізнесу.</p></div>}

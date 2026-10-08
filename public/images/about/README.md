@@ -1,1 +1,0 @@
-Studio and about imagery.

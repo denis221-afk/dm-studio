@@ -1,1 +1,0 @@
-export const navigation=[{label:"Послуги",href:"/dm-studio/#services"},{label:"Рішення",href:"/dm-studio/#solutions"},{label:"Кейси",href:"/dm-studio/#cases"},{label:"Процес",href:"/dm-studio/#process"},{label:"Блог",href:"/dm-studio/#blog"}];

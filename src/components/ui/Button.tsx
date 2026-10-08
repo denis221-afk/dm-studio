@@ -1,2 +1,0 @@
-import type {ReactNode} from "react";
-export default function Button({href,children,light=false}:{href:string;children:ReactNode;light?:boolean}){return <a className={`btn ${light?"btn-light":"btn-dark"}`} href={href}>{children}</a>}

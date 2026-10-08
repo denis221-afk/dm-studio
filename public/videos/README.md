@@ -1,1 +1,0 @@
-Optimized video assets.

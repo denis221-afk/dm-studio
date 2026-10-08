@@ -1,1 +1,0 @@
-Static icon assets.

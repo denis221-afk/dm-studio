@@ -1,1 +1,0 @@
-export default function Page(){return <div className="inner-page"><div className="eyebrow">PROCESS</div><h1>Як ми працюємо</h1><p>Від знайомства та аналізу до запуску і підтримки.</p></div>}

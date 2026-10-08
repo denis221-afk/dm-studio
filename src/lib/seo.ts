@@ -1,1 +1,0 @@
-export const site={title:"DM Studio — Websites, Automation & AI",description:"Сайти, автоматизація та AI-рішення для розвитку бізнесу."};

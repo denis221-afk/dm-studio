@@ -1,1 +1,0 @@
-export const company={name:"DM Studio",email:"hello@dmstudio.dev",tagline:"Digital Products & Automation Studio",description:"Сайти, автоматизація та AI-рішення для розвитку бізнесу."};

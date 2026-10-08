@@ -1,1 +1,0 @@
-import Container from "@/components/layout/Container";export default function TrustBar(){return <section className="trust"><Container className="trust-inner"><span>РОЗРОБКА</span><span>АВТОМАТИЗАЦІЯ</span><span>AI</span><span>ІНТЕГРАЦІЇ</span><span>ПІДТРИМКА</span></Container></section>}
