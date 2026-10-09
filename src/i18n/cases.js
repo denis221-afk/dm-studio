@@ -75,7 +75,16 @@ export default {
       "casesWpScreenshotAlt": "Скриншот головної сторінки RHome Ohio",
       "casesWpScreenshot": "Справжній скриншот сайту RHome Ohio.",
       "casesNfcScreenshotAlt": "Справжній екран NFC Food AI у рамці телефона",
-      "casesNfcScreenshot": "Скриншот вебсервісу NFC Food AI у рамці телефона."
+      "casesNfcScreenshot": "Скриншот вебсервісу NFC Food AI у рамці телефона.",
+      "casesTeploDescription": "Сайт компанії з утеплення будинків із формою зворотного зв’язку",
+      "casesTeploSector": "Утеплення будинків · Локальні послуги",
+      "casesTeploTaskTitle": "Представити послуги й спростити звернення",
+      "casesTeploTask": "Створити сайт для компанії з утеплення: пояснити послуги, показати фотографії робіт і надати можливість замовити зворотний дзвінок.",
+      "casesTeploSolutionTitle": "Лендинг із інтерактивними блоками",
+      "casesTeploSolution": "HTML, SCSS і JavaScript: блоки послуг, вкладки, галерея, модальне вікно та форма. У вихідному проєкті передбачений PHP-обробник надсилання заявок у Telegram.",
+      "casesTeploPreview": "Фото, використане в оригінальному сайті PPTeploDim.",
+      "casesTeploDemo": "Відкрити демо",
+      "casesTeploNote": "Оригінальний клієнтський сайт зараз недоступний. Для портфоліо відновлено окрему демонстрацію та доопрацьовано мобільні стилі. Форми в демо не зберігають і не надсилають дані."
     }
   },
   "en": {
@@ -154,7 +163,16 @@ export default {
       "casesWpScreenshotAlt": "Screenshot of the RHome Ohio homepage",
       "casesWpScreenshot": "Actual screenshot of the RHome Ohio website.",
       "casesNfcScreenshotAlt": "Actual NFC Food AI screen in a phone frame",
-      "casesNfcScreenshot": "Screenshot of the NFC Food AI web app in a phone frame."
+      "casesNfcScreenshot": "Screenshot of the NFC Food AI web app in a phone frame.",
+      "casesTeploDescription": "A home insulation company website with a callback form",
+      "casesTeploSector": "Home insulation · Local services",
+      "casesTeploTaskTitle": "Present services and make enquiries easier",
+      "casesTeploTask": "Build a website for an insulation company: explain the services, display work photos and provide a callback request form.",
+      "casesTeploSolutionTitle": "Landing page with interactive sections",
+      "casesTeploSolution": "HTML, SCSS and JavaScript: service sections, tabs, a gallery, a modal and a form. The original project includes a PHP handler for sending enquiries to Telegram.",
+      "casesTeploPreview": "A photo used on the original PPTeploDim website.",
+      "casesTeploDemo": "Open demo",
+      "casesTeploNote": "The original client website is currently unavailable. A separate portfolio demo has been restored with mobile styling improvements. Demo forms do not store or send data."
     }
   },
   "pl": {
@@ -233,7 +251,16 @@ export default {
       "casesWpScreenshotAlt": "Zrzut ekranu strony głównej RHome Ohio",
       "casesWpScreenshot": "Rzeczywisty zrzut ekranu strony RHome Ohio.",
       "casesNfcScreenshotAlt": "Rzeczywisty ekran NFC Food AI w ramce telefonu",
-      "casesNfcScreenshot": "Zrzut ekranu aplikacji NFC Food AI w ramce telefonu."
+      "casesNfcScreenshot": "Zrzut ekranu aplikacji NFC Food AI w ramce telefonu.",
+      "casesTeploDescription": "Strona firmy ocieplającej domy z formularzem kontaktowym",
+      "casesTeploSector": "Ocieplanie domów · Usługi lokalne",
+      "casesTeploTaskTitle": "Prezentacja usług i łatwiejszy kontakt",
+      "casesTeploTask": "Stworzyć stronę firmy zajmującej się ocieplaniem: wyjaśnić usługi, pokazać zdjęcia realizacji i umożliwić zamówienie rozmowy telefonicznej.",
+      "casesTeploSolutionTitle": "Landing page z interaktywnymi sekcjami",
+      "casesTeploSolution": "HTML, SCSS i JavaScript: usługi, zakładki, galeria, okno modalne i formularz. Oryginalny projekt zawiera obsługę PHP do wysyłania zgłoszeń do Telegrama.",
+      "casesTeploPreview": "Zdjęcie użyte na oryginalnej stronie PPTeploDim.",
+      "casesTeploDemo": "Otwórz demo",
+      "casesTeploNote": "Oryginalna strona klienta jest obecnie niedostępna. Odtworzono demonstrację do portfolio i poprawiono style mobilne. Formularze demo nie zapisują ani nie wysyłają danych."
     }
   }
 };

@@ -64,7 +64,7 @@ console.info("Passed: solution category markup, localized details, accessible la
 
 const { renderCasePage } = await import("./render-cases.mjs");
 const { caseProjects } = await import("../src/data/cases.js");
-assert.equal(caseProjects.length, 2);
+assert.equal(caseProjects.length, 3);
 for (const language of ["ua","en","pl"]) {
  for (const slug of ["", ...caseProjects.map(project => project.slug)]) {
   const page = renderCasePage(source,language,slug,"https://example.test/dm-studio/","/dm-studio/");
@@ -78,7 +78,7 @@ for (const language of ["ua","en","pl"]) {
   assert.ok(!page.includes("undefined"));
  }
 }
-console.info("Passed: nine case routes, localization, client labels, canonicals and unique IDs.");
+console.info("Passed: twelve case routes, localization, client labels, canonicals and unique IDs.");
 
 const { renderAboutPage } = await import("./render-about.mjs");
 for (const language of ["ua","en","pl"]) {
