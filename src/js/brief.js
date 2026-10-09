@@ -1,4 +1,5 @@
 
+import { briefEndpoint } from "../data/forms.js";
 import { studioContacts } from "../data/contacts.js";
 const serviceLabels = {web:"ctWeb",bot:"ctBot",automation:"ctAutomation",ai:"ctAI",other:"ctElse"};
 
@@ -25,6 +26,13 @@ export function initBrief(t) {
   const draft = form.querySelector("#ct-draft");
   const draftWrapper = form.querySelector("[data-contact-draft]");
   if (!submit || !buttonLabel || !draft || !draftWrapper) return;
+  const sendingEnabled = /^https:\/\//.test(briefEndpoint);
+  if (sendingEnabled) {
+    buttonLabel.textContent = t.ui.ctSend;
+    buttonLabel.removeAttribute("data-i18n");
+    const notice = form.querySelector('[data-i18n="ctPrivacy"]');
+    if (notice) { notice.textContent = t.ui.ctSendPrivacy; notice.removeAttribute("data-i18n"); }
+  }
   let telegramAvailable = false;
   let otherAvailable = false;
   for (const link of section.querySelectorAll("[data-contact-channel]")) {
@@ -54,21 +62,36 @@ export function initBrief(t) {
     const values = Object.fromEntries(["service","name","contact","task","budget","deadline"].map(key => [key,String(data.get(key) ?? "").trim()]));
     const text = composeBrief(values,t.ui);
     submit.disabled = true;
-    buttonLabel.textContent = t.ui.ctCopying;
+    form.setAttribute("aria-busy", "true");
+    buttonLabel.textContent = sendingEnabled ? t.ui.ctSending : t.ui.ctCopying;
     try {
-      await navigator.clipboard.writeText(text);
-      status.textContent = t.ui.ctCopied;
+      if (sendingEnabled) {
+        const response = await fetch(briefEndpoint, {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...values, language: document.documentElement.lang }),
+          signal: AbortSignal.timeout(15000),
+        });
+        const result = await response.json();
+        if (!response.ok || result.ok !== true) throw new Error("delivery-failed");
+        status.textContent = t.ui.ctSent;
+        form.reset();
+      } else {
+        await navigator.clipboard.writeText(text);
+        status.textContent = t.ui.ctCopied;
+      }
     } catch {
       draft.value = text;
       draftWrapper.hidden = false;
-      status.textContent = t.ui.ctFallback;
+      status.textContent = sendingEnabled ? t.ui.ctSendError : t.ui.ctFallback;
       draft.focus();
       draft.select();
     } finally {
       submit.disabled = false;
-      buttonLabel.textContent = t.ui.ctCopy;
+      form.removeAttribute("aria-busy");
+      buttonLabel.textContent = sendingEnabled ? t.ui.ctSend : t.ui.ctCopy;
     }
   });
   submit.disabled = false;
   form.dataset.briefReady = "true";
 }
+

@@ -1,6 +1,11 @@
 export default {
   "ua": {
     "ui": {
+      "ctSend": "Надіслати заявку",
+      "ctSending": "Надсилаю…",
+      "ctSent": "Заявку надіслано. Зв’яжуся з вами за вказаним контактом.",
+      "ctSendError": "Не вдалося підтвердити надсилання. Ваш бриф збережено нижче: скопіюйте його й напишіть у Telegram.",
+      "ctSendPrivacy": "Натискаючи кнопку, ви передаєте вказані дані DM Studio через Telegram для відповіді на вашу заявку.",
       "ctEyebrow": "// КОНТАКТИ",
       "ctTitle": "Поговорімо про",
       "ctAccent": "ваш проєкт.",
@@ -58,6 +63,11 @@ export default {
   },
   "en": {
     "ui": {
+      "ctSend": "Send enquiry",
+      "ctSending": "Sending…",
+      "ctSent": "Your enquiry was sent. I will contact you using the details provided.",
+      "ctSendError": "Delivery could not be confirmed. Copy your brief below and contact me on Telegram.",
+      "ctSendPrivacy": "By submitting, you share these details with DM Studio via Telegram to receive a response to your enquiry.",
       "ctEyebrow": "// CONTACT",
       "ctTitle": "Let's talk about",
       "ctAccent": "your project.",
@@ -115,6 +125,11 @@ export default {
   },
   "pl": {
     "ui": {
+      "ctSend": "Wyślij zapytanie",
+      "ctSending": "Wysyłam…",
+      "ctSent": "Zapytanie zostało wysłane. Skontaktuję się z Tobą pod wskazanym kontaktem.",
+      "ctSendError": "Nie udało się potwierdzić wysłania. Skopiuj brief poniżej i napisz na Telegramie.",
+      "ctSendPrivacy": "Wysyłając formularz, przekazujesz te dane DM Studio przez Telegram w celu otrzymania odpowiedzi.",
       "ctEyebrow": "// KONTAKT",
       "ctTitle": "Porozmawiajmy o",
       "ctAccent": "Twoim projekcie.",
@@ -171,3 +186,4 @@ export default {
     }
   }
 };
+
