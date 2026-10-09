@@ -21,3 +21,7 @@ The sticky header background used 100vw, including scrollbar width. This added a
 ## Limits
 
 Responsive breakpoints were reviewed in source. This browser session provides a fixed desktop viewport; mobile-device rendering, touch interaction, reduced-motion emulation and no-JavaScript rendering are not claimed as tested. No load test or exhaustive security assessment was performed. Timing through this environment's network proxy is not a reliable customer performance measurement.
+
+## Additional runtime finding
+
+The prerenderer matched the href substring inside data-locale-href when that data attribute preceded href. Runtime translation then doubled the locale prefix on case breadcrumbs, contact CTAs and next-case links. The render-html matcher now targets only the real href attribute. Regression checks cover both attribute orders in all three languages. Case filters were verified: Websites shows both projects (both include website work), AI shows NFC Food AI, All shows both.
