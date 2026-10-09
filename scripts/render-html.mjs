@@ -98,6 +98,6 @@ export function renderHtml(source, language, siteUrl = "") {
     );
   }
   const base = siteUrl ? new URL(siteUrl).pathname : process.env.BASE_PATH || "/";
-  html = html.replace(/<a\b[^>]*data-locale-href="([^"]*)"[^>]*>/g, (tag, path) => tag.replace(/href="[^"]*"/, 'href="' + base + (language === "ua" ? "" : language + "/") + path + '"'));
+  html = html.replace(/<a\b[^>]*data-locale-href="([^"]*)"[^>]*>/g, (tag, path) => tag.replace(/(?<![-\w])href="[^"]*"/, 'href="' + base + (language === "ua" ? "" : language + "/") + path + '"'));
   return html;
 }
