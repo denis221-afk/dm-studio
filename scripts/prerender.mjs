@@ -3,6 +3,7 @@ import { renderHtml } from "./render-html.mjs";
 import { writeCasePages, caseRoutes } from "./render-cases.mjs";
 import { writeAboutPages } from "./render-about.mjs";
 import { writeBlogPages, blogRoutes } from "./render-blog.mjs";
+import { writePrivacyPages } from "./render-privacy.mjs";
 import { blogPreview } from "./blog-template.mjs";
 
 let siteUrl = process.env.SITE_URL || "";
@@ -23,8 +24,9 @@ for (const language of ["ua", "en", "pl"]) {
 await writeCasePages(source, siteUrl, process.env.BASE_PATH || "/");
 await writeAboutPages(source, siteUrl, process.env.BASE_PATH || "/");
 await writeBlogPages(source, siteUrl, process.env.BASE_PATH || "/");
+await writePrivacyPages(source, siteUrl, process.env.BASE_PATH || "/");
 if (siteUrl) {
-  const urls = ["./", "en/", "pl/", ...["", "en/", "pl/"].flatMap(prefix => [...caseRoutes, "about/", ...blogRoutes].map(route => prefix + route))].map((path) => new URL(path, siteUrl).href);
+  const urls = ["./", "en/", "pl/", ...["", "en/", "pl/"].flatMap(prefix => [...caseRoutes, "about/", "privacy/", ...blogRoutes].map(route => prefix + route))].map((path) => new URL(path, siteUrl).href);
   await writeFile(
     "dist/sitemap.xml",
     `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${url.replaceAll("&", "&amp;")}</loc></url>`).join("")}</urlset>`,

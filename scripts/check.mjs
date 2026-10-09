@@ -152,3 +152,24 @@ for (const language of ["ua", "en", "pl"]) {
   }
 }
 console.info("Passed: locale route data preserved with both link attribute orders.");
+
+const { renderPrivacyPage } = await import('./render-privacy.mjs');
+for (const language of ['ua','en','pl']) {
+  const page = renderPrivacyPage(source,language,'https://example.test/dm-studio/','/dm-studio/');
+  const prefix = language==='ua'?'':language+'/';
+  assert.equal((page.match(/<h1\b/g)||[]).length,1);
+  assert.ok(page.includes('data-privacy-page'));
+  assert.ok(page.includes('rel="canonical" href="https://example.test/dm-studio/'+prefix+'privacy/"'));
+  assert.ok(page.includes(translations[language].ui.privacyTitle));
+  assert.ok(page.includes('data-locale-href="privacy/"'));
+  assert.ok(page.includes('https://telegram.org/privacy'));
+  assert.ok(page.includes('mailto:denis.mazuryk@gmail.com'));
+  assert.ok(!page.includes('"@type":"ProfilePage"'));
+  assert.ok(!page.match(/data-locale-href="about\/"[^>]*aria-current="page"/));
+  for (const [,tag] of page.matchAll(/(<a\b[^>]*data-locale-href="[^"]*"[^>]*>)/g)) {
+    const relative=tag.match(/data-locale-href="([^"]*)"/)[1];
+    const href=tag.match(/(?<![-\w])href="([^"]*)"/)[1];
+    assert.equal(href,'/dm-studio/'+prefix+relative);
+  }
+}
+console.info('Passed: three privacy routes, localized metadata, provider links and footer navigation.');

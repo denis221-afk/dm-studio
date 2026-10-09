@@ -7,13 +7,14 @@ import solutionTranslations from "./solutions.js";
 import caseTranslations from "./cases.js";
 import aboutTranslations from "./about.js";
 import contactTranslations from "./contact.js";
+import { privacyContent } from "../data/privacy.js";
 import blogTranslations from "./blog.js";
 import { blogPosts, postUi } from "../data/blog.js";
 
 export const translations = Object.fromEntries(
   Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
     ...translation,
-    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui, ...contactTranslations[language].ui, ...blogTranslations[language].ui, ...Object.assign({}, ...blogPosts.map(post => postUi(post, language, blogTranslations[language].ui))) },
+    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui, ...contactTranslations[language].ui, ...privacyContent[language].ui, ...blogTranslations[language].ui, ...Object.assign({}, ...blogPosts.map(post => postUi(post, language, blogTranslations[language].ui))) },
     services: serviceTranslations[language].details,
     solutions: solutionTranslations[language].details,
   }]),
@@ -75,6 +76,10 @@ export function applyTranslations(language = getCurrentLanguage()) {
   if (document.querySelector("[data-about-page]")) {
     document.title = t.ui.aboutMetaTitle;
     document.querySelector('meta[name="description"]')?.setAttribute("content", t.ui.aboutMetaDescription);
+  }
+  if (document.querySelector("[data-privacy-page]")) {
+    document.title = t.ui.privacyTitle + " — DM Studio";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", t.ui.privacyMeta);
   }
   const blogPage = document.querySelector("[data-blog-page]")?.dataset.blogPage;
   if (blogPage) {
