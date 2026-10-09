@@ -1,8 +1,6 @@
-// Public contact details. Empty values are not displayed.
-// Telegram: https://t.me/your_username
-// Instagram: https://www.instagram.com/your_username/
+// Public contact details displayed in the homepage contact section.
 export const studioContacts = Object.freeze({
-  telegram: "",
-  email: "",
-  instagram: "",
+  telegram: "https://t.me/MazurykD",
+  email: "denis.mazuryk@gmail.com",
+  instagram: "https://www.instagram.com/den4ik.life/",
 });
