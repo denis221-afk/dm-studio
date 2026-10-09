@@ -28,3 +28,7 @@ Until an endpoint is configured, the existing copy-brief behaviour is preserved.
 - Update the allowed origin if the website moves to a custom domain. Keep one instance until adding shared rate limiting.
 
 References: https://core.telegram.org/bots/api#sendmessage and https://docs.railway.com/variables
+
+## Combined Railway deployment
+
+The root railway.json now builds the complete website and runs npm start, serving dist/ and /api/brief from one process. For this mode leave Railway Root Directory empty (repository root). Remove a manually overridden static start command if set. The public domain is dm-studio-production.up.railway.app. ALLOWED_ORIGIN defaults to this Railway origin. The frontend enables automatic delivery only on this domain; the GitHub Pages deployment retains copy-brief mode. Configure TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in this service, then redeploy. Test actual delivery after deployment.
