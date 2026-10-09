@@ -1,3 +1,5 @@
-// Set the HTTPS URL of your deployed form server to enable automatic delivery.
-// Bot tokens belong only in the server environment, never in Vite variables.
-export const briefEndpoint = '';
+// Automatic delivery runs only on the DM Studio Railway deployment.
+// No bot credentials are exposed to the browser.
+export const briefEndpoint = typeof window !== "undefined" && window.location.hostname === "dm-studio-production.up.railway.app"
+  ? "https://dm-studio-production.up.railway.app/api/brief"
+  : "";

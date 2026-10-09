@@ -1,7 +1,9 @@
 import { createServer } from 'node:http';
+import { serveStatic } from './static.mjs';
 import { validateBrief, telegramText } from './validation.mjs';
 
-const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ALLOWED_ORIGIN } = process.env;
+const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = process.env;
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || `https://${process.env.RAILWAY_PUBLIC_DOMAIN || "dm-studio-production.up.railway.app"}`;
 if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID || !ALLOWED_ORIGIN) throw new Error('Configure TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID and ALLOWED_ORIGIN');
 if (new URL(ALLOWED_ORIGIN).origin !== ALLOWED_ORIGIN) throw new Error('ALLOWED_ORIGIN must contain only the origin');
 const attempts = new Map();
@@ -15,7 +17,7 @@ const server = createServer(async (req, res) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
   const reply = (code, body) => { res.writeHead(code, {'Content-Type':'application/json; charset=utf-8'}); res.end(JSON.stringify(body)); };
   if (req.url === '/health' && req.method === 'GET') return reply(200, {ok:true});
-  if (req.url !== '/api/brief') return reply(404, {ok:false});
+  if (req.url !== '/api/brief') return serveStatic(req, res);
   if (req.headers.origin !== ALLOWED_ORIGIN) return reply(403, {ok:false});
   res.setHeader('Access-Control-Allow-Origin', ALLOWED_ORIGIN);
   res.setHeader('Vary', 'Origin');

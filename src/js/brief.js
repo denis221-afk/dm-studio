@@ -28,6 +28,11 @@ export function initBrief(t) {
   if (!submit || !buttonLabel || !draft || !draftWrapper) return;
   const sendingEnabled = /^https:\/\//.test(briefEndpoint);
   if (sendingEnabled) {
+    for (const [name, length] of Object.entries({name:100, contact:200, task:2200, budget:100, deadline:100})) {
+      const field = form.elements.namedItem(name);
+      if (field) field.maxLength = length;
+    }
+    form.elements.namedItem("contact").pattern = "(?:[^\\s@]+@[^\\s@]+\\.[^\\s@]+|@[a-zA-Z][a-zA-Z0-9_]{4,31})";
     buttonLabel.textContent = t.ui.ctSend;
     buttonLabel.removeAttribute("data-i18n");
     const notice = form.querySelector('[data-i18n="ctPrivacy"]');
