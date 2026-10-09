@@ -137,3 +137,18 @@ for (const language of ["ua","en","pl"]) {
   }
 }
 console.info("Passed: blog and article routes, translations, contents links, canonical URLs and article schema.");
+
+
+// Locale data must remain relative regardless of HTML attribute order.
+for (const language of ["ua", "en", "pl"]) {
+  const destination = "/dm-studio/" + (language === "ua" ? "" : language + "/") + "#contact";
+  for (const markup of [
+    '<a data-locale-href="#contact" href="/old/#contact">Contact</a>',
+    '<a href="/old/#contact" data-locale-href="#contact">Contact</a>',
+  ]) {
+    const rendered = renderHtml(markup, language, "https://example.test/dm-studio/");
+    assert.ok(rendered.includes('data-locale-href="#contact"'));
+    assert.ok(rendered.includes(' href="' + destination + '"'));
+  }
+}
+console.info("Passed: locale route data preserved with both link attribute orders.");
