@@ -19,8 +19,8 @@ body {
   content: "";
   position: absolute;
   inset-block: 0;
-  left: calc((100vw - 100%) / -2);
-  width: 100vw;
+  left: calc((100% - var(--viewport-width, 100%)) / 2);
+  width: var(--viewport-width, 100%);
   z-index: -1;
   background: rgb(245 245 245 / 96%);
 }

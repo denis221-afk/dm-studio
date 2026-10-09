@@ -12,6 +12,7 @@ export function initNavigation(t) {
     frame = 0;
     const height = header?.getBoundingClientRect().height ?? 0;
     document.documentElement.style.setProperty("--sticky-header-height", `${height}px`);
+    document.documentElement.style.setProperty("--viewport-width", `${document.documentElement.clientWidth}px`);
     const marker = height + 40;
     let active = targets[0];
     for (const item of targets) {
