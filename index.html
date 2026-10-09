@@ -662,41 +662,30 @@
 </section>
 <section class="cases-preview container" id="cases" aria-labelledby="cases-preview-title"><header class="cases-preview__header"><div><p class="eyebrow"><span data-i18n="casesEyebrow">// КЕЙСИ</span></p><h2 id="cases-preview-title"><span data-i18n="casesTitle">Ідеї, які стали</span><br><span><span data-i18n="casesTitleAccent">цифровими рішеннями</span></span></h2></div><a class="button button--light" href="%BASE_URL%cases/" data-locale-href="cases/"><span data-i18n="casesViewAll">Усі кейси</span> →</a></header><div class="cases-grid"><article class="case-card" data-case-categories="web ai"><a class="case-card__link" href="%BASE_URL%cases/nfc-menu/" data-locale-href="cases/nfc-menu/"><div class="case-visual case-visual--nfc case-visual--phone"><div class="case-ai-integrations" aria-hidden="true"><span>Telegram</span><span>SendPulse</span><span>Google Sheets</span><span>API</span></div><div class="case-phone"><img src="%BASE_URL%images/nfc-real.webp" alt="Справжній екран NFC Food AI у рамці телефона" data-i18n-attr="alt:casesNfcScreenshotAlt" width="459" height="860" loading="lazy" decoding="async"></div><div class="case-visual__leaf" aria-hidden="true"></div></div><div class="case-card__body"><div class="case-card__tags"><span class="case-client"><span data-i18n="casesClient">КЛІЄНТСЬКИЙ ПРОЄКТ</span></span><span>AI · Telegram · SendPulse · Google Sheets</span></div><h3>NFC Food AI</h3><p><span data-i18n="casesNfcDescription">AI-платформа аналізу харчування з автоматизацією клієнтських даних</span></p><span class="case-card__arrow" aria-hidden="true">→</span><span class="sr-only"><span data-i18n="casesMore">Детальніше про кейс</span>: NFC Food AI</span></div></a></article><article class="case-card" data-case-categories="web"><a class="case-card__link" href="%BASE_URL%cases/rhome-ohio/" data-locale-href="cases/rhome-ohio/"><div class="case-visual case-visual--screenshot"><img src="%BASE_URL%images/rhome-real.webp" alt="Скриншот головної сторінки RHome Ohio" data-i18n-attr="alt:casesWpScreenshotAlt" width="1333" height="926" loading="lazy" decoding="async"></div><div class="case-card__body"><div class="case-card__tags"><span class="case-client"><span data-i18n="casesClient">КЛІЄНТСЬКИЙ ПРОЄКТ</span></span><span>WordPress · Elementor</span></div><h3>RHome Ohio</h3><p><span data-i18n="casesWpDescription">Адаптивні правки сайту на WordPress</span></p><span class="case-card__arrow" aria-hidden="true">→</span><span class="sr-only"><span data-i18n="casesMore">Детальніше про кейс</span>: RHome Ohio</span></div></a></article></div></section>
 
-      <section
-        class="contact container"
-        id="contact"
-        aria-labelledby="contact-title"
-      >
-        <p class="eyebrow">DM STUDIO</p>
-        <h2 id="contact-title" data-i18n="contactTitle">
-          Обговорімо ваш проєкт
-        </h2>
-        <p data-i18n="contactDescription">
-          Розкажіть, що потрібно вашому бізнесу. Скопіюйте цей короткий бриф і
-          надішліть у нашому поточному листуванні.
-        </p>
-        <form id="brief-form">
-          <label for="brief" data-i18n="briefLabel" data-i18n="fieldLabel"
-            >Ваш проєкт</label
-          ><textarea
-            id="brief"
-            name="brief"
-            rows="4"
-            maxlength="3000"
-            required
-            placeholder="Бізнес, задача, термін, бюджет"
-            data-i18n-attr="placeholder:placeholder"
-          ></textarea
-          ><button
-            class="button button--lime"
-            type="submit"
-            data-i18n="copyBrief"
-          >
-            Скопіювати бриф
-          </button>
-          <p id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </section>
+      
+<section class="contact-block container" id="contact" aria-labelledby="contact-title">
+  <header class="ct-heading"><p class="eyebrow"><span data-i18n="ctEyebrow">// КОНТАКТИ</span></p><h2 id="contact-title"><span data-i18n="ctTitle">Поговорімо про</span><br><span><span data-i18n="ctAccent">ваш проєкт.</span></span></h2><p><span data-i18n="ctIntro">Розкажіть про задачу — знайдемо рішення для вашого бізнесу.</span></p></header>
+  <div class="ct-grid"><aside class="ct-aside">
+    <div class="ct-card ct-primary" data-contact-telegram-card hidden><span class="ct-icon ct-icon--lime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7Z"/><path d="m10 14 11-11"/></svg></span><h3><span data-i18n="ctTelegramTitle">Напишіть у Telegram</span></h3><p><span data-i18n="ctTelegramText">Обговоримо задачу, терміни та наступний крок.</span></p><a class="ct-channel-button" data-contact-channel="telegram" href="#" hidden target="_blank" rel="noopener noreferrer"><span data-i18n="ctStart">Почати розмову</span><span aria-hidden="true">↗</span></a></div>
+    <div class="ct-card ct-primary" data-contact-prepare><span class="ct-icon ct-icon--lime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-7 18-4-7-7-4 18-7Z"/><path d="m10 14 11-11"/></svg></span><h3><span data-i18n="ctPrepareTitle">Почнімо з вашої задачі</span></h3><p><span data-i18n="ctPrepareText">Заповніть короткий бриф. Скопіюйте його та надішліть у нашому листуванні.</span></p><a class="ct-channel-button" href="#brief-form"><span data-i18n="ctPrepare">Підготувати бриф</span><span aria-hidden="true">↗</span></a></div>
+    <div class="ct-card ct-other" data-contact-other hidden><h3><span data-i18n="ctOther">Інші способи зв’язку</span></h3><a class="ct-channel" data-contact-channel="email" href="#" hidden><span class="ct-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span><span>Email</span><span aria-hidden="true">→</span></a><a class="ct-channel" data-contact-channel="instagram" href="#" hidden target="_blank" rel="noopener noreferrer"><span class="ct-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></span><span>Instagram</span><span aria-hidden="true">→</span></a></div>
+    <div class="ct-card ct-location"><span class="ct-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h3><span data-i18n="ctLocation">Калуш, Україна</span></h3><p><span data-i18n="ctRemote">Працюю дистанційно</span></p></div></div>
+  </aside>
+  <form class="ct-form ct-card" id="brief-form" aria-labelledby="ct-form-title">
+    <h3 id="ct-form-title"><span data-i18n="ctFormTitle">Коротко про вашу задачу</span></h3>
+    <fieldset class="ct-services"><legend class="sr-only"><span data-i18n="ctService">Що вас цікавить?</span></legend><div><label class="ct-option"><input type="radio" name="service" value="web" checked><span><span data-i18n="ctWeb">Сайт</span></span></label><label class="ct-option"><input type="radio" name="service" value="bot"><span><span data-i18n="ctBot">Telegram-бот</span></span></label><label class="ct-option"><input type="radio" name="service" value="automation"><span><span data-i18n="ctAutomation">Автоматизація</span></span></label><label class="ct-option"><input type="radio" name="service" value="ai"><span><span data-i18n="ctAI">AI-рішення</span></span></label><label class="ct-option"><input type="radio" name="service" value="other"><span><span data-i18n="ctElse">Інше</span></span></label></div></fieldset>
+    <div class="ct-field"><label for="ct-name"><span data-i18n="ctName">Ваше ім’я</span></label><input id="ct-name" name="name" type="text" maxlength="180" required placeholder="Як вас звати?" data-i18n-attr="placeholder:ctNameHint" autocomplete="name"></div><div class="ct-field"><label for="ct-contact"><span data-i18n="ctContact">Email або Telegram</span></label><input id="ct-contact" name="contact" type="text" maxlength="180" required placeholder="Зручний спосіб зв’язку" data-i18n-attr="placeholder:ctContactHint" autocomplete="off" spellcheck="false"></div>
+    <div class="ct-field"><label for="brief"><span data-i18n="ctTask">Що потрібно зробити?</span></label><textarea id="brief" name="task" rows="4" minlength="5" maxlength="3000" required placeholder="Розкажіть про ваш бізнес, задачу та очікуваний результат…" data-i18n-attr="placeholder:ctTaskHint"></textarea></div>
+    <div class="ct-form-row"><div class="ct-field"><label for="ct-budget"><span data-i18n="ctBudget">Орієнтовний бюджет</span> <small>(<span data-i18n="ctOptional">необов’язково</span>)</small></label><input id="ct-budget" name="budget" type="text" maxlength="180"  placeholder="Наприклад, 500–1000 $" data-i18n-attr="placeholder:ctBudgetHint"></div><div class="ct-field"><label for="ct-deadline"><span data-i18n="ctDeadline">Бажаний термін</span> <small>(<span data-i18n="ctOptional">необов’язково</span>)</small></label><input id="ct-deadline" name="deadline" type="text" maxlength="180"  placeholder="Наприклад, протягом місяця" data-i18n-attr="placeholder:ctDeadlineHint"></div></div>
+    <button class="button button--lime ct-submit" type="submit" disabled><span data-i18n="ctCopy">Скопіювати бриф</span><span aria-hidden="true">↗</span></button>
+    <p class="ct-privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-i18n="ctPrivacy">Бриф не надсилається автоматично. Ви копіюєте його та самостійно надсилаєте у листуванні.</span></p>
+    <p class="ct-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+    <div class="ct-field" data-contact-draft hidden><label for="ct-draft"><span data-i18n="ctDraft">Готовий бриф</span></label><textarea id="ct-draft" readonly rows="8" aria-describedby="form-status"></textarea></div>
+    <noscript><p class="ct-status">Для копіювання брифу увімкніть JavaScript. Ви також можете написати свою задачу безпосередньо у нашому листуванні.</p></noscript>
+  </form></div>
+  <ol class="ct-process"><li><span class="ct-step" aria-hidden="true">01</span><div><h3><span data-i18n="ctStep1">Розберемо задачу</span></h3><p><span data-i18n="ctStep1Text">Уточнимо цілі, вимоги та очікування.</span></p></div></li><li><span class="ct-step" aria-hidden="true">02</span><div><h3><span data-i18n="ctStep2">Узгодимо план</span></h3><p><span data-i18n="ctStep2Text">Обговоримо рішення, обсяг, бюджет і терміни.</span></p></div></li><li><span class="ct-step" aria-hidden="true">03</span><div><h3><span data-i18n="ctStep3">Почнемо роботу</span></h3><p><span data-i18n="ctStep3Text">Після узгодження деталей перейдемо до реалізації.</span></p></div></li></ol>
+  <section class="ct-faq" aria-labelledby="ct-faq-title"><p class="eyebrow">// FAQ</p><h3 id="ct-faq-title"><span data-i18n="ctFaqTitle">Перед початком</span> <span><span data-i18n="ctFaqAccent">співпраці</span></span></h3><div class="ct-faq-list"><details><summary><span data-i18n="ctFaq1">З якими проєктами ви працюєте?</span><span class="ct-faq-plus" aria-hidden="true">+</span></summary><p><span data-i18n="ctAnswer1">Створюю невеликі сайти, Telegram-боти, інтеграції та AI-автоматизації. Також доопрацьовую готові сайти, зокрема на WordPress та Elementor.</span></p></details><details><summary><span data-i18n="ctFaq2">Чи можна почати з невеликої задачі?</span><span class="ct-faq-plus" aria-hidden="true">+</span></summary><p><span data-i18n="ctAnswer2">Так. Можемо почати з конкретної правки, форми, інтеграції або невеликого етапу. Перед початком узгодимо обсяг, бюджет і критерії готовності.</span></p></details><details><summary><span data-i18n="ctFaq3">Що підготувати для першої розмови?</span><span class="ct-faq-plus" aria-hidden="true">+</span></summary><p><span data-i18n="ctAnswer3">Коротко опишіть свій бізнес, задачу й очікуваний результат. Якщо є сайт, приклади, бажаний термін або бюджет — додайте їх. Детальне технічне завдання не обов’язкове.</span></p></details></div></section>
+</section>
     </main>
     <noscript
       ><p class="container">

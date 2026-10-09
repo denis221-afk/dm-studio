@@ -6,11 +6,12 @@ import serviceTranslations from "./services.js";
 import solutionTranslations from "./solutions.js";
 import caseTranslations from "./cases.js";
 import aboutTranslations from "./about.js";
+import contactTranslations from "./contact.js";
 
 export const translations = Object.fromEntries(
   Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
     ...translation,
-    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui },
+    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui, ...contactTranslations[language].ui },
     services: serviceTranslations[language].details,
     solutions: solutionTranslations[language].details,
   }]),

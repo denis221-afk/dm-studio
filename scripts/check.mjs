@@ -96,3 +96,17 @@ for (const language of ["ua","en","pl"]) {
   assert.ok(schemas.some(schema => schema["@type"] === "ProfilePage" && schema.mainEntity["@type"] === "Person"));
 }
 console.info("Passed: three about routes, profile schema, localized metadata and active navigation.");
+
+const { composeBrief } = await import("../src/js/brief.js");
+for (const language of ["ua","en","pl"]) {
+  const ui = translations[language].ui;
+  const brief = composeBrief({service:"ai",name:"Client",contact:"@client",task:"First line\nSecond line",budget:"",deadline:""},ui);
+  assert.ok(brief.includes(ui.ctAI));
+  assert.ok(brief.includes("First line\nSecond line"));
+  assert.ok(!brief.includes(ui.ctBudget + ":"));
+  const html = renderHtml(source,language,"https://example.test/dm-studio/");
+  assert.ok(html.includes(ui.ctPrivacy));
+  assert.equal((html.match(/id="brief-form"/g) || []).length,1);
+  assert.equal((html.match(/<details>/g) || []).length,3);
+}
+console.info("Passed: contact localization, brief contents, optional fields and accessible form structure.");
