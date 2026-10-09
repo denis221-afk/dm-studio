@@ -2,6 +2,8 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { renderHtml } from "./render-html.mjs";
 import { writeCasePages, caseRoutes } from "./render-cases.mjs";
 import { writeAboutPages } from "./render-about.mjs";
+import { writeBlogPages, blogRoutes } from "./render-blog.mjs";
+import { blogPreview } from "./blog-template.mjs";
 
 let siteUrl = process.env.SITE_URL || "";
 if (siteUrl) {
@@ -10,7 +12,8 @@ if (siteUrl) {
     throw new Error("SITE_URL must be an http(s) URL");
   siteUrl = `${url.origin}${url.pathname.replace(/\/$/, "")}/`;
 }
-const source = await readFile("dist/index.html", "utf8");
+const rawSource = await readFile("dist/index.html", "utf8");
+const source = rawSource.replace(/<section\b[^>]*id="blog"[\s\S]*?<\/section>/, blogPreview(process.env.BASE_PATH || "/"));
 for (const language of ["ua", "en", "pl"]) {
   const html = renderHtml(source, language, siteUrl);
   await mkdir(`dist/${language}`, { recursive: true });
@@ -19,8 +22,9 @@ for (const language of ["ua", "en", "pl"]) {
 }
 await writeCasePages(source, siteUrl, process.env.BASE_PATH || "/");
 await writeAboutPages(source, siteUrl, process.env.BASE_PATH || "/");
+await writeBlogPages(source, siteUrl, process.env.BASE_PATH || "/");
 if (siteUrl) {
-  const urls = ["./", "en/", "pl/", ...["", "en/", "pl/"].flatMap(prefix => [...caseRoutes, "about/"].map(route => prefix + route))].map((path) => new URL(path, siteUrl).href);
+  const urls = ["./", "en/", "pl/", ...["", "en/", "pl/"].flatMap(prefix => [...caseRoutes, "about/", ...blogRoutes].map(route => prefix + route))].map((path) => new URL(path, siteUrl).href);
   await writeFile(
     "dist/sitemap.xml",
     `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((url) => `<url><loc>${url.replaceAll("&", "&amp;")}</loc></url>`).join("")}</urlset>`,

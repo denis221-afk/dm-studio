@@ -110,3 +110,30 @@ for (const language of ["ua","en","pl"]) {
   assert.equal((html.match(/<details>/g) || []).length,3);
 }
 console.info("Passed: contact localization, brief contents, optional fields and accessible form structure.");
+
+const { renderBlogPage } = await import("./render-blog.mjs");
+const { blogPosts } = await import("../src/data/blog.js");
+for (const language of ["ua","en","pl"]) {
+  for (const slug of ["",...blogPosts.map(post=>post.slug)]) {
+    const page = renderBlogPage(source,language,slug,"https://example.test/dm-studio/","/dm-studio/");
+    assert.equal((page.match(/<h1\b/g) || []).length,1);
+    const path = (language==="ua"?"":language+"/")+"blog/"+(slug?slug+"/":"");
+    assert.ok(page.includes('rel="canonical" href="https://example.test/dm-studio/'+path+'"'));
+    assert.ok(page.includes('data-locale-href="blog/" class="is-current" aria-current="page"'));
+    const ids = [...page.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]);
+    assert.equal(ids.length,new Set(ids).size);
+    for (const [,key] of page.matchAll(/data-i18n="([^"]+)"/g)) assert.equal(typeof translations[language].ui[key],"string");
+    for (const [,id] of page.matchAll(/\shref="#([^"]+)"/g)) assert.ok(ids.includes(id));
+    assert.ok(!page.includes("undefined"));
+    const schemas = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(match=>JSON.parse(match[1]));
+    assert.ok(schemas.some(schema=>schema["@type"]===(slug?"BlogPosting":"Blog")));
+    if (slug) {
+      const post = blogPosts.find(item=>item.slug===slug);
+      const schema = schemas.find(item=>item["@type"]==="BlogPosting");
+      assert.equal(schema.headline,post[language].title);
+      assert.equal(schema.datePublished,post.date);
+      assert.ok(page.includes(post[language].sections[0].paragraphs[0]));
+    }
+  }
+}
+console.info("Passed: blog and article routes, translations, contents links, canonical URLs and article schema.");

@@ -10,10 +10,10 @@ export function renderAboutPage(source, language, siteUrl = "", base = "/") {
   let html = source.replace(/<main\b[^>]*>[\s\S]*?<\/main>/, '<main id="main">' + aboutContent(base,language) + '</main>');
   html = html.replace(/<nav\b[^>]*id="navigation"[^>]*>[\s\S]*?<\/nav>/, nav => {
     let result = nav.replace(/\sclass="is-current"/g,"").replace(/\saria-current="[^"]*"/g,"");
-    result = result.replace(/href="#([^"]+)"/g, (_,id) => 'href="' + home + (id === "cases" ? 'cases/' : '#' + id) + '" data-locale-href="' + (id === "cases" ? 'cases/' : '#' + id) + '"');
+    result = result.replace(/(?<![-\w])href="#([^"]+)"/g, (_,id) => 'href="' + home + (["cases","blog"].includes(id) ? id + "/" : "#" + id) + '" data-locale-href="' + (["cases","blog"].includes(id) ? id + "/" : "#" + id) + '"');
     return result.replace(/(<a\b[^>]*data-locale-href="about\/")/, '$1 class="is-current" aria-current="page"');
   });
-  html = html.replace(/href="#home"/g, 'href="' + home + '#home" data-locale-href="#home"').replace(/href="#contact"/g, 'href="' + home + '#contact" data-locale-href="#contact"');
+  html = html.replace(/(?<![-\w])href="#home"/g, 'href="' + home + '#home" data-locale-href="#home"').replace(/(?<![-\w])href="#contact"/g, 'href="' + home + '#contact" data-locale-href="#contact"');
   html = html.replace(/<noscript[\s\S]*?<\/noscript>/g, block => block.includes("Мови:") ? '<noscript><p class="container">' + ["ua","en","pl"].map(lang => '<a href="' + base + (lang === "ua" ? "" : lang + "/") + 'about/">' + {ua:"Українська",en:"English",pl:"Polski"}[lang] + '</a>').join(" · ") + '</p></noscript>' : block);
   html = renderHtml(html,language,siteUrl);
   const t = translations[language].ui;
