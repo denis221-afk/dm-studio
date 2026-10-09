@@ -170,3 +170,9 @@
 .loader__brand {
   font-weight: 800;
 }
+
+/* Decorative animation must not intercept the skip control on touch screens. */
+.loader__content,
+.loader__rays {
+  pointer-events: none;
+}

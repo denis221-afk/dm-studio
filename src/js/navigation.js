@@ -85,7 +85,7 @@ export function initNavigation(t) {
     if (!navigation.contains(event.target) && !button.contains(event.target))
       setOpen(false);
   });
-  matchMedia("(min-width: 781px)").addEventListener("change", () =>
+  matchMedia("(min-width: 1101px)").addEventListener("change", () =>
     setOpen(false),
   );
 }

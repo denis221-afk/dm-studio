@@ -10,3 +10,9 @@ Tested the current production build in Chromium mobile/touch emulation. Browser 
 - Screenshots of the 390-pixel homepage and privacy page visually reviewed.
 
 These are emulated browser checks, not physical iOS Safari or Android-device tests. Existing live Telegram delivery was verified separately before this change.
+
+## Landscape and tablet follow-up
+
+- 72 additional route/viewport checks: all 24 routes at 844, 1024 and 1100 pixels with a 390-pixel height. No overflow, missing H1, broken image or JavaScript page error after the fixes.
+- Fixed two issues found by the extra checks: the loader decoration could intercept touches, and the full navigation exceeded landscape/tablet width. Decorative loader elements now ignore pointer events; a compact menu is used up to 1100 pixels and the JavaScript breakpoint matches.
+- Privacy-page axe checks against WCAG A/AA tags found no violations in the tested mobile view. This is automated coverage, not certification.

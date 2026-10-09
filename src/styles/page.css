@@ -1028,3 +1028,18 @@ html[lang="uk"] .hero__buttons {
 .latest-project-phone{display:block;flex:none;width:75px;padding:4px;border:1px solid #74746f;border-radius:15px;background:#171817;box-shadow:3px 4px 10px #0002;transform:rotate(-5deg)}
 .latest-project-phone img{display:block;width:100%;height:auto;border-radius:10px}
 @media(max-width:380px){.latest-project-phone{width:60px}}
+
+/* Use the compact header on tablets and phones in landscape as well. */
+@media (min-width: 781px) and (max-width: 1100px) {
+  .header { gap: 16px; justify-content: space-between; }
+  .header__actions { margin-left: auto; }
+  .header__actions > .button { display: none; }
+  .menu-toggle { display: grid; place-content: center; gap: 6px; width: 44px; height: 44px; background: white; border-radius: 14px; order: 3; flex: none; }
+  .menu-toggle span { display: block; width: 20px; height: 2px; background: #111; transition: transform .2s; }
+  .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(4px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4px) rotate(-45deg); }
+  .navigation { display: none; position: absolute; top: calc(100% - 10px); left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: #fff; padding: 18px; border-radius: 20px; box-shadow: 0 20px 40px #0002; }
+  .navigation.is-open { display: flex; }
+  .navigation a { min-height: 44px; padding: 12px; }
+  .navigation .is-current::after { left: auto; right: 12px; bottom: calc(50% - 3px); }
+}
