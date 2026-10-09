@@ -1,3 +1,4 @@
+import { caseProjects } from "../data/cases.js";
 import ua from "./ua.js";
 import pl from "./pl.js";
 import en from "./en.js";
@@ -68,8 +69,9 @@ export function applyTranslations(language = getCurrentLanguage()) {
   });
   const page = document.querySelector("[data-case-page]")?.dataset.casePage;
   if (page) {
-    const title = page === "index" ? t.ui.navCases : page === "nfc-menu" ? "NFC Food AI" : "RHome Ohio";
-    const description = page === "index" ? t.ui.casesIntro : page === "nfc-menu" ? t.ui.casesNfcDescription : t.ui.casesWpDescription;
+    const project = caseProjects.find(item => item.slug === page);
+    const title = page === "index" ? t.ui.navCases : project?.name ?? t.ui.navCases;
+    const description = project ? t.ui[project.descriptionKey] : t.ui.casesIntro;
     document.title = `${title} — DM Studio`;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   }
