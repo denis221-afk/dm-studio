@@ -1,4 +1,4 @@
-import {services,packages,extras,carTypes,symptoms,calculateQuiz,packagePrice,validPhone,validYear,bookingDateOK,money} from './model.mjs';
+import {services,packages,extras,carTypes,symptoms,calculateQuiz,packagePrice,validPhone,validYear,bookingDateOK,money} from './model.mjs?v=1';
 const asset=f=>new URL(f,import.meta.url).href;
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeRead=(key,fallback)=>{try{return JSON.parse(sessionStorage.getItem(key))??fallback}catch{return fallback}},write=(key,value)=>{try{sessionStorage.setItem(key,JSON.stringify(value))}catch{}};
