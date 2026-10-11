@@ -2,7 +2,7 @@ import { stat } from 'node:fs/promises';
 import { createReadStream } from 'node:fs';
 import { resolve, sep, extname } from 'node:path';
 const root = resolve(new URL('../dist/', import.meta.url).pathname);
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.woff2':'font/woff2','.xml':'application/xml','.txt':'text/plain; charset=utf-8','.mp4':'video/mp4','.ico':'image/x-icon'};
+const types = {'.mjs':'text/javascript; charset=utf-8','.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.jpg':'image/jpeg','.woff2':'font/woff2','.xml':'application/xml','.txt':'text/plain; charset=utf-8','.mp4':'video/mp4','.ico':'image/x-icon'};
 export async function serveStatic(req, res) {
   if (!['GET','HEAD'].includes(req.method)) { res.writeHead(405); res.end(); return; }
   try {
