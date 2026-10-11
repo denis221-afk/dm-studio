@@ -92,7 +92,21 @@ export default {
       "casesTeploSolution": "HTML, SCSS і JavaScript: блоки послуг, вкладки, галерея, модальне вікно та форма. У вихідному проєкті передбачений PHP-обробник надсилання заявок у Telegram.",
       "casesTeploPreview": "Фото, використане в оригінальному сайті PPTeploDim.",
       "casesTeploDemo": "Відкрити демо",
-      "casesTeploNote": "Оригінальний клієнтський сайт зараз недоступний. Для портфоліо відновлено окрему демонстрацію та доопрацьовано мобільні стилі. Форми в демо не зберігають і не надсилають дані."
+      "casesTeploNote": "Оригінальний клієнтський сайт зараз недоступний. Для портфоліо відновлено окрему демонстрацію та доопрацьовано мобільні стилі. Форми в демо не зберігають і не надсилають дані.",
+      "casesOwn": "Власний проєкт",
+      "casesFlowDescription": "Сайт автосервісу: квіз, оцінка вартості, запис і пакети обслуговування",
+      "casesFlowSector": "Автосервіс · Локальний бізнес",
+      "casesFlowPreview": "Інтерактивне демо ServiceFlow та підготовлений WordPress-пакет.",
+      "casesFlowTaskTitle": "Перетворити симптом на зрозумілий наступний крок",
+      "casesFlowTask": "Людина не завжди знає, яка послуга потрібна. Сайт допомагає описати проблему, побачити попередній діапазон ціни, обрати час або готовий пакет обслуговування.",
+      "casesFlowSolutionTitle": "Три сценарії в одному продукті",
+      "casesFlowSolution": "Умовний квіз із калькуляцією та збереженням прогресу, форма онлайн-запису, пакети з опціями, кошик, симуляція checkout та демокабінет. Для WordPress підготовлено дочірню тему Hello Elementor, шаблони Elementor та плагін із заявками, WooCommerce і чергою інтеграцій.",
+      "casesFlowNote": "Публічне демо перевіряє сценарії без реальних оплат, бронювань і зовнішньої передачі даних. WordPress-пакет підготовлений у коді; встановлення на хостинг, Telegram/Sheets/SMTP, GA4/GSC та sandbox провайдера потребують окремого підключення й перевірки. Реальні клієнти, відгуки або результати продажів не заявляються.",
+      "casesFlowFlowTitle": "Шлях клієнта",
+      "casesFlowFlow": "Головна → квіз → попередня оцінка → заявка → кабінет. Альтернативи: послуга → запис; пакет → кошик → тестовий checkout.",
+      "casesFlowIntegrationTitle": "Архітектура інтеграцій",
+      "casesFlowIntegration": "WordPress → збереження lead_id → outbox / retry → n8n webhook → Google Sheets / Telegram / email. Контракт підготовлений; фактична доставка не підтверджена без облікових даних.",
+      "casesFlowRepo": "Переглянути код і стан backlog"
     }
   },
   "en": {
@@ -188,7 +202,21 @@ export default {
       "casesTeploSolution": "HTML, SCSS and JavaScript: service sections, tabs, a gallery, a modal and a form. The original project includes a PHP handler for sending enquiries to Telegram.",
       "casesTeploPreview": "A photo used on the original PPTeploDim website.",
       "casesTeploDemo": "Open demo",
-      "casesTeploNote": "The original client website is currently unavailable. A separate portfolio demo has been restored with mobile styling improvements. Demo forms do not store or send data."
+      "casesTeploNote": "The original client website is currently unavailable. A separate portfolio demo has been restored with mobile styling improvements. Demo forms do not store or send data.",
+      "casesOwn": "Independent project",
+      "casesFlowDescription": "Automotive service website: quiz, estimate, booking and service packages",
+      "casesFlowSector": "Automotive service · Local business",
+      "casesFlowPreview": "Interactive ServiceFlow demo and a prepared WordPress package.",
+      "casesFlowTaskTitle": "Turn a symptom into a clear next step",
+      "casesFlowTask": "Drivers may not know which service they need. The website helps describe the issue, see an indicative price range, choose a time or select a service package.",
+      "casesFlowSolutionTitle": "Three customer journeys in one product",
+      "casesFlowSolution": "A branching quiz with estimates and saved progress, booking form, configurable packages, cart, simulated checkout and demo account. The WordPress package includes a Hello Elementor child theme, Elementor templates and a plugin for leads, WooCommerce and an integration outbox.",
+      "casesFlowNote": "The public demo verifies interaction flows without real payments, bookings or external data delivery. WordPress code is prepared; hosting installation, Telegram/Sheets/SMTP, GA4/GSC and provider sandbox require separate configuration and validation. No real clients, reviews or sales results are claimed.",
+      "casesFlowFlowTitle": "Customer journey",
+      "casesFlowFlow": "Home → quiz → indicative estimate → lead → account. Alternatives: service → booking; package → cart → test checkout.",
+      "casesFlowIntegrationTitle": "Integration architecture",
+      "casesFlowIntegration": "WordPress → lead_id persistence → outbox / retry → n8n webhook → Google Sheets / Telegram / email. The contract is prepared; delivery is unverified without credentials.",
+      "casesFlowRepo": "View code and backlog status"
     }
   },
   "pl": {
@@ -284,7 +312,21 @@ export default {
       "casesTeploSolution": "HTML, SCSS i JavaScript: usługi, zakładki, galeria, okno modalne i formularz. Oryginalny projekt zawiera obsługę PHP do wysyłania zgłoszeń do Telegrama.",
       "casesTeploPreview": "Zdjęcie użyte na oryginalnej stronie PPTeploDim.",
       "casesTeploDemo": "Otwórz demo",
-      "casesTeploNote": "Oryginalna strona klienta jest obecnie niedostępna. Odtworzono demonstrację do portfolio i poprawiono style mobilne. Formularze demo nie zapisują ani nie wysyłają danych."
+      "casesTeploNote": "Oryginalna strona klienta jest obecnie niedostępna. Odtworzono demonstrację do portfolio i poprawiono style mobilne. Formularze demo nie zapisują ani nie wysyłają danych.",
+      "casesOwn": "Projekt własny",
+      "casesFlowDescription": "Strona serwisu samochodowego: quiz, wycena, zapis i pakiety usług",
+      "casesFlowSector": "Serwis samochodowy · Biznes lokalny",
+      "casesFlowPreview": "Interaktywne demo ServiceFlow i przygotowany pakiet WordPress.",
+      "casesFlowTaskTitle": "Od objawu do jasnego następnego kroku",
+      "casesFlowTask": "Kierowca nie zawsze wie, jakiej usługi potrzebuje. Strona pomaga opisać problem, poznać orientacyjny zakres ceny, wybrać termin lub pakiet obsługi.",
+      "casesFlowSolutionTitle": "Trzy ścieżki klienta w jednym produkcie",
+      "casesFlowSolution": "Quiz z logiką warunkową i wyceną, zapis postępu, formularz rezerwacji, pakiety z opcjami, koszyk, symulacja checkout i konto demonstracyjne. Pakiet WordPress zawiera motyw potomny Hello Elementor, szablony Elementor i wtyczkę do zgłoszeń, WooCommerce oraz kolejki integracji.",
+      "casesFlowNote": "Publiczne demo pokazuje interakcje bez realnych płatności, rezerwacji i zewnętrznej transmisji danych. Kod WordPress jest przygotowany; hosting, Telegram/Sheets/SMTP, GA4/GSC i sandbox operatora wymagają konfiguracji oraz testów. Nie deklarujemy realnych klientów, opinii ani wyników sprzedaży.",
+      "casesFlowFlowTitle": "Ścieżka klienta",
+      "casesFlowFlow": "Strona główna → quiz → orientacyjna wycena → zgłoszenie → konto. Alternatywy: usługa → zapis; pakiet → koszyk → testowy checkout.",
+      "casesFlowIntegrationTitle": "Architektura integracji",
+      "casesFlowIntegration": "WordPress → zapis lead_id → outbox / retry → n8n webhook → Google Sheets / Telegram / email. Kontrakt gotowy; dostarczenie niepotwierdzone bez danych dostępowych.",
+      "casesFlowRepo": "Kod i stan backlogu"
     }
   }
 };
