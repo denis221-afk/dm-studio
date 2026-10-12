@@ -72,7 +72,7 @@ for (const language of ["ua","en","pl"]) {
   assert.equal((page.match(/<h1\b/g) || []).length,1);
   const route = (language === "ua" ? "" : language + "/") + "cases/" + (slug ? slug + "/" : "");
   assert.ok(page.includes('rel="canonical" href="https://example.test/dm-studio/' + route + '"'));
-  if (!["woodeco","serviceflow"].includes(slug)) assert.ok(page.includes(translations[language].ui.casesClient));
+  if (!["woodeco","serviceflow","autora"].includes(slug)) assert.ok(page.includes(translations[language].ui.casesClient));
   const ids = [...page.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
   assert.equal(ids.length,new Set(ids).size);
   for (const [,key] of page.matchAll(/data-i18n="([^"]+)"/g)) assert.equal(typeof translations[language].ui[key],"string");

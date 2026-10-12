@@ -79,5 +79,22 @@ export const caseProjects = [
     "type": "serviceflow",
     "url": "demos/serviceflow/",
     "own": true
+  },
+  {
+    "slug": "autora",
+    "name": "AUTORA",
+    "categories": [
+      "web"
+    ],
+    "descriptionKey": "casesAutoraDescription",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Calculator"
+    ],
+    "type": "autora",
+    "url": "demos/autora/",
+    "own": true
   }
 ];

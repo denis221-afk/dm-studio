@@ -106,7 +106,22 @@ export default {
       "casesFlowFlow": "Головна → квіз → попередня оцінка → заявка → кабінет. Альтернативи: послуга → запис; пакет → кошик → тестовий checkout.",
       "casesFlowIntegrationTitle": "Архітектура інтеграцій",
       "casesFlowIntegration": "WordPress → збереження lead_id → outbox / retry → n8n webhook → Google Sheets / Telegram / email. Контракт підготовлений; фактична доставка не підтверджена без облікових даних.",
-      "casesFlowRepo": "Переглянути код і стан backlog"
+      "casesFlowRepo": "Переглянути код і стан backlog",
+      "casesAutoraDescription": "Сайт авто зі США: відео, каталог із фільтрами, калькулятор і підбір",
+      "casesAutoraSector": "Підбір та доставка автомобілів",
+      "casesAutoraProblem": "Завдання",
+      "casesAutoraProblemText": "Завершити початковий екран AUTORA й створити сайт, який допомагає порівняти авто, зрозуміти бюджет і сформувати запит на підбір.",
+      "casesAutoraSolution": "Рішення",
+      "casesAutoraSolutionText": "Адаптивний сайт з оригінальним відео, каталогом, пошуком, фільтрами, обраним, деталями автомобіля та прозорою демонстраційною моделлю кошторису.",
+      "casesAutoraFeature1": "Каталог та обране",
+      "casesAutoraFeature1Text": "Фільтри статусу, пошук, сортування, локальне обране й діалог із деталями автомобіля.",
+      "casesAutoraFeature2": "Калькулятор витрат",
+      "casesAutoraFeature2Text": "Перевірка параметрів та окремі рядки авто, зборів, доставки, оформлення, супроводу й ремонту.",
+      "casesAutoraFeature3": "Підбір і заявка",
+      "casesAutoraFeature3Text": "Форма з попереднім переглядом і завантаженням запиту; перевірка посилань Copart та IAA.",
+      "casesAutoraFeature4": "Надійний інтерфейс",
+      "casesAutoraFeature4Text": "Резервне зображення для відео, reduced-motion, мобільна навігація та керування з клавіатури.",
+      "casesAutoraNote": "Власний демонстраційний проєкт. Дані авто й ставки калькулятора умовні; живих аукціонів, VIN-перевірок і відправки заявок немає. Фото ілюстративні. Кейс показує реалізовану вебфункціональність без вигаданих клієнтських результатів."
     }
   },
   "en": {
@@ -216,7 +231,22 @@ export default {
       "casesFlowFlow": "Home → quiz → indicative estimate → lead → account. Alternatives: service → booking; package → cart → test checkout.",
       "casesFlowIntegrationTitle": "Integration architecture",
       "casesFlowIntegration": "WordPress → lead_id persistence → outbox / retry → n8n webhook → Google Sheets / Telegram / email. The contract is prepared; delivery is unverified without credentials.",
-      "casesFlowRepo": "View code and backlog status"
+      "casesFlowRepo": "View code and backlog status",
+      "casesAutoraDescription": "US car import website: video, filterable catalog, calculator and selection request",
+      "casesAutoraSector": "Car selection and import",
+      "casesAutoraProblem": "The brief",
+      "casesAutoraProblemText": "Complete the original AUTORA hero and build a website that helps visitors compare cars, understand a budget and prepare a selection request.",
+      "casesAutoraSolution": "The solution",
+      "casesAutoraSolutionText": "Responsive website with the supplied video, catalog, search, filters, favorites, vehicle details and a transparent illustrative cost model.",
+      "casesAutoraFeature1": "Catalog and favorites",
+      "casesAutoraFeature1Text": "Status filters, search, sorting, browser-local favorites and a vehicle detail dialog.",
+      "casesAutoraFeature2": "Cost calculator",
+      "casesAutoraFeature2Text": "Validated inputs and separate vehicle, auction, shipping, paperwork, service and repair cost items.",
+      "casesAutoraFeature3": "Selection request",
+      "casesAutoraFeature3Text": "Request form with preview and download, plus Copart and IAA URL validation.",
+      "casesAutoraFeature4": "Resilient interface",
+      "casesAutoraFeature4Text": "Video fallback, reduced-motion support, mobile navigation and keyboard access.",
+      "casesAutoraNote": "Own demonstration project. Vehicle data and calculation rates are illustrative; no live auctions, VIN checks or request delivery. Images are illustrative. This case describes implemented web features without invented client results."
     }
   },
   "pl": {
@@ -326,7 +356,22 @@ export default {
       "casesFlowFlow": "Strona główna → quiz → orientacyjna wycena → zgłoszenie → konto. Alternatywy: usługa → zapis; pakiet → koszyk → testowy checkout.",
       "casesFlowIntegrationTitle": "Architektura integracji",
       "casesFlowIntegration": "WordPress → zapis lead_id → outbox / retry → n8n webhook → Google Sheets / Telegram / email. Kontrakt gotowy; dostarczenie niepotwierdzone bez danych dostępowych.",
-      "casesFlowRepo": "Kod i stan backlogu"
+      "casesFlowRepo": "Kod i stan backlogu",
+      "casesAutoraDescription": "Strona importu aut z USA: wideo, katalog z filtrami, kalkulator i dobór",
+      "casesAutoraSector": "Dobór i import samochodów",
+      "casesAutoraProblem": "Zadanie",
+      "casesAutoraProblemText": "Dokończyć pierwszy ekran AUTORA i stworzyć stronę ułatwiającą porównanie aut, zrozumienie budżetu oraz przygotowanie zapytania.",
+      "casesAutoraSolution": "Rozwiązanie",
+      "casesAutoraSolutionText": "Responsywna strona z dostarczonym wideo, katalogiem, wyszukiwaniem, filtrami, ulubionymi, szczegółami aut i demonstracyjną kalkulacją kosztów.",
+      "casesAutoraFeature1": "Katalog i ulubione",
+      "casesAutoraFeature1Text": "Filtry statusu, wyszukiwanie, sortowanie, lokalne ulubione oraz okno szczegółów samochodu.",
+      "casesAutoraFeature2": "Kalkulator kosztów",
+      "casesAutoraFeature2Text": "Walidacja danych i oddzielne pozycje auta, aukcji, transportu, dokumentów, obsługi oraz naprawy.",
+      "casesAutoraFeature3": "Zapytanie o dobór",
+      "casesAutoraFeature3Text": "Formularz z podglądem i pobraniem zapytania oraz walidacją linków Copart i IAA.",
+      "casesAutoraFeature4": "Niezawodny interfejs",
+      "casesAutoraFeature4Text": "Obraz zastępczy dla wideo, reduced-motion, nawigacja mobilna i obsługa klawiaturą.",
+      "casesAutoraNote": "Własny projekt demonstracyjny. Dane aut i stawki kalkulatora są przykładowe; brak aukcji na żywo, weryfikacji VIN oraz wysyłania zapytań. Zdjęcia są ilustracyjne. Opis obejmuje wdrożone funkcje bez fikcyjnych wyników klientów."
     }
   }
 };
