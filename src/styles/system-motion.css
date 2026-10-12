@@ -47,3 +47,12 @@ html.intro-pending #site-loader.system-morph,.system-morph{animation:none;transi
 .service-text-arrive>div{animation:service-info-slide 1.25s cubic-bezier(.16,1,.3,1) both}
 @keyframes service-info-slide{from{opacity:0;transform:translateX(-28px);clip-path:inset(0 100% 0 0)}to{opacity:1;transform:translateX(0);clip-path:inset(0 0 0 0)}}
 @media(prefers-reduced-motion:reduce){.service-text-arrive>div{animation:none}}
+
+/* Organic hero finale: draw the original ring behind the portrait */
+.orbit.orbit-drawn{border:0;background:none}
+.orbit-drawn svg{width:100%;height:100%;display:block;transform:rotate(-90deg);overflow:visible}
+.orbit-drawn circle{fill:none;stroke:#00000015;stroke-width:14;stroke-dasharray:1;stroke-dashoffset:0}
+.scroll-motion{transform:translateY(25px);transition:opacity .95s ease,transform 1.25s cubic-bezier(.22,1,.36,1)}
+.case-card .case-card__image,.blog-card img,.sol-card img{transition:transform 1.1s cubic-bezier(.22,1,.36,1)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.case-card:hover .case-card__image,.blog-card:hover img{transform:scale(1.025)}}
+@media(prefers-reduced-motion:reduce){.scroll-motion{transform:none;opacity:1}.orbit-drawn circle{stroke-dashoffset:0}}

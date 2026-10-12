@@ -32,6 +32,7 @@ export function initLoader(){
  function land(){
   if(closed||landing)return;landing=true;
   document.documentElement.classList.remove('intro-pending');
+  animateHero();
   loader.classList.add('is-landing');
   clones.forEach((clone,i)=>{
    clone.getAnimations().forEach(a=>a.cancel());clone.style.setProperty('padding','0','important');
@@ -53,7 +54,7 @@ export function initLoader(){
 export function initScrollMotion(){
  const motion=matchMedia('(prefers-reduced-motion: reduce)');
  if(motion.matches||!('IntersectionObserver' in window))return;
- const targets=[...document.querySelectorAll('main > section:not(.hero),.svc-card,.sol-header,.solution-card,.cases-header,.case-card,.ct-header,.ct-panel,.ct-faq,.blog-card')];
+ const targets=[...document.querySelectorAll('.svc__header,.svc-card,.sol__header,.sol-card,.cases-preview__header,.case-card,.blog-section-header,.blog-card,.ct-card,.ct-faq,.footer')];
  let observer;
  const restore=()=>{observer?.disconnect();targets.forEach(el=>el.classList.add('scroll-visible'));};
  try{
@@ -62,4 +63,23 @@ export function initScrollMotion(){
   document.addEventListener('focusin',e=>e.target.closest('.scroll-motion')?.classList.add('scroll-visible'));
   motion.addEventListener('change',e=>{if(e.matches)restore();});
  }catch(e){restore();}
+}
+
+function animateHero(){
+ if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const sequence=[
+ ['.hero__intro .eyebrow',80],['.hero h1',180],['.hero__description',340],
+ ['.hero__buttons',450],['.social-proof',560],['.portrait',220],
+ ['.hero__about>h2',650],['.availability',730],['.about__description',820],
+ ['.stats>div',950],['.hero__about>.case',1100]
+ ];
+ sequence.forEach(([selector,delay])=>document.querySelectorAll(selector).forEach((el,i)=>{
+  el.animate?.([{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{duration:1050,delay:delay+i*90,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
+ }));
+ const orbit=document.querySelector('.orbit');
+ if(orbit){
+  orbit.classList.add('orbit-drawn');
+  orbit.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="43" pathLength="1"/></svg>';
+  orbit.querySelector('circle').animate([{strokeDashoffset:1,opacity:0},{strokeDashoffset:0,opacity:1}],{duration:1700,delay:1400,easing:'cubic-bezier(.22,1,.36,1)',fill:'backwards'});
+ }
 }
