@@ -15,7 +15,7 @@ html.intro-pending #site-loader.system-intro,.system-intro{display:flex!importan
 .system-table{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:12px}.system-table i{height:13px;background:#ffffff13}.system-table i:nth-child(3n){background:#c3f85c45}
 .system-intro__bottom{text-align:center;z-index:2}.system-intro__bottom p{font:600 clamp(22px,3vw,38px) Manrope,sans-serif;letter-spacing:-1px;margin:0 0 10px;animation:system-caption 1s .4s both}.system-intro__bottom>span{font:10px Manrope,sans-serif;letter-spacing:3px;color:#96a59a}.system-contact{display:block;width:max-content;margin:16px auto 0;color:#c3f85c;font-size:12px}
 @keyframes system-assemble{from{opacity:0;transform:translate(var(--from-x),var(--from-y)) rotate(var(--from-r)) rotateY(30deg) scale(.65)}to{opacity:1;transform:translate(0,0) rotate(0) rotateY(0) scale(1)}}@keyframes system-connect{to{stroke-dashoffset:0}}@keyframes system-in{to{opacity:1}}@keyframes system-core-in{from{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(-45deg)}to{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}}@keyframes system-caption{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}@keyframes system-orbit{from{opacity:0;transform:rotateX(65deg) scale(.4)}to{opacity:1;transform:rotateX(55deg) scale(1)}}@keyframes system-exit{to{opacity:0;transform:scale(1.045);visibility:hidden}}
-.system-intro-done .hero h1{animation:system-caption .8s both}.system-intro-done .hero__description{animation:system-caption .9s .12s both}.system-intro-done .hero__visual{animation:system-caption 1s .15s both}
+
 @media(max-width:600px){.system-intro{padding:20px}.system-scene{height:330px;max-height:55vh}.system-node{width:128px;height:108px;padding:11px}.system-node strong{font-size:13px}.system-node b{font-size:7px}.node-web,.node-message{left:0}.node-lead,.node-data{right:0}.system-core{width:64px;height:64px;border-radius:18px;font-size:24px}.system-core span{font-size:5px}.system-lines{display:none}.system-browser{height:34px;margin-top:7px}.system-bars,.system-chat,.system-table{margin-top:8px}.system-intro__bottom p{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.system-intro{display:none!important}.system-intro-done .hero h1,.system-intro-done .hero__description,.system-intro-done .hero__visual{animation:none}}
 
@@ -28,3 +28,15 @@ html.intro-pending #site-loader.system-morph,.system-morph{animation:none;transi
 .scroll-motion.scroll-visible{opacity:1;transform:none}
 @media(max-width:600px){.morph-card{padding:12px!important;gap:9px!important}.morph-card .service__icon{width:30px;height:30px}.morph-card h2{font-size:14px}.morph-card p{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.scroll-motion{opacity:1;transform:none;transition:none}.morph-card{display:none}}
+
+/* Icon-first intro; reveal labels only after docking */
+.morph-card.morph-icon-only{display:flex!important;align-items:center!important;justify-content:center!important;padding:12px!important;border:1px solid #ffffff20!important;background:#171b1b!important;border-radius:24px!important;box-shadow:0 20px 55px #0005!important}
+.morph-icon-only>div{display:none!important}.morph-icon-only .service__icon{width:78px!important;height:78px!important;border-radius:22px!important;box-shadow:0 0 30px currentColor}
+.morph-icon-only .service__icon svg{width:36px!important;height:36px!important}
+.service-awaiting>div{opacity:0}
+.service-text-arrive>div{animation:service-label-in .65s cubic-bezier(.22,1,.36,1) both}
+@keyframes service-label-in{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+/* No second entrance after the intro */
+.system-intro-done .hero h1,.system-intro-done .hero__description,.system-intro-done .hero__visual{animation:none!important}
+@media(max-width:600px){.morph-icon-only .service__icon{width:58px!important;height:58px!important}.morph-icon-only .service__icon svg{width:28px!important;height:28px!important}}
+@media(prefers-reduced-motion:reduce){.service-text-arrive>div{animation:none}.service-awaiting>div{opacity:1}}

@@ -7,7 +7,7 @@ export function initLoader(){
  const abort=new AbortController(),clones=[];
  function close(){
   if(closed)return;closed=true;clearTimeout(timer);clearTimeout(window.__dmIntroFallback);abort.abort();
-  cards.forEach(c=>c.style.removeProperty('visibility'));clones.forEach(c=>c.remove());
+  cards.forEach(c=>{c.style.removeProperty('visibility');c.classList.remove('service-awaiting');});clones.forEach(c=>c.remove());
   document.documentElement.classList.remove('intro-pending');document.documentElement.classList.add('system-intro-done');loader.remove();
  }
  if(motion.matches||location.hash||cards.length!==4){close();return;}
@@ -25,7 +25,8 @@ export function initLoader(){
   const width=Math.min(r.width||220,mobile?150:240),height=Math.min(r.height||120,150);
   const left=scene.left+scene.width*(i%2?.72:.08),top=scene.top+scene.height*(i<2?.08:.65);
   Object.assign(clone.style,{position:'fixed',left:left+'px',top:top+'px',right:'auto',bottom:'auto',width:width+'px',height:height+'px',margin:'0',zIndex:'10001',visibility:'visible',pointerEvents:'none',boxSizing:'border-box'});
-  document.body.append(clone);clones.push(clone);card.style.visibility='hidden';
+  clone.classList.add('morph-icon-only');
+  document.body.append(clone);clones.push(clone);card.classList.add('service-awaiting');card.style.visibility='hidden';
   clone.animate([{opacity:0,transform:'translate('+((i%2?1:-1)*160)+'px,'+(i<2?-70:70)+'px) rotate('+(i%2?15:-15)+'deg) scale(.7)'},{opacity:1,transform:'none'}],{duration:1100,delay:i*90,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards'});
  });
  function land(){
@@ -36,7 +37,7 @@ export function initLoader(){
    clone.getAnimations().forEach(a=>a.cancel());
    const from=clone.getBoundingClientRect(),to=cards[i].getBoundingClientRect();
    const animation=clone.animate([{left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px',transform:'none'},{left:to.left+'px',top:to.top+'px',width:to.width+'px',height:to.height+'px',transform:'none'}],{duration:1100,delay:i*55,easing:'cubic-bezier(.22,1,.36,1)',fill:'forwards'});
-   animation.finished.then(()=>{if(!closed){cards[i].style.removeProperty('visibility');clone.remove();}}).catch(()=>{});
+   animation.finished.then(()=>{if(!closed){cards[i].style.removeProperty('visibility');cards[i].classList.add('service-text-arrive');cards[i].classList.remove('service-awaiting');clone.remove();}}).catch(()=>{});
   });
   clearTimeout(timer);timer=setTimeout(close,1400);
  }
