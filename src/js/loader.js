@@ -34,8 +34,8 @@ export function initLoader(){
   document.documentElement.classList.remove('intro-pending');
   loader.classList.add('is-landing');
   clones.forEach((clone,i)=>{
-   clone.getAnimations().forEach(a=>a.cancel());
-   const from=clone.getBoundingClientRect(),to=cards[i].getBoundingClientRect();
+   clone.getAnimations().forEach(a=>a.cancel());clone.style.setProperty('padding','0','important');
+   const from=clone.getBoundingClientRect(),to=cards[i].querySelector('.service__icon').getBoundingClientRect();
    const animation=clone.animate([{left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px',transform:'none'},{left:to.left+'px',top:to.top+'px',width:to.width+'px',height:to.height+'px',transform:'none'}],{duration:1100,delay:i*55,easing:'cubic-bezier(.22,1,.36,1)',fill:'forwards'});
    animation.finished.then(()=>{if(!closed){cards[i].style.removeProperty('visibility');cards[i].classList.add('service-text-arrive');cards[i].classList.remove('service-awaiting');clone.remove();}}).catch(()=>{});
   });
