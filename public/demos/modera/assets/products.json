@@ -4,55 +4,63 @@
     "name": "Linea Oak",
     "category": "doors",
     "price": 8900,
-    "color": "oak"
+    "color": "oak",
+    "image": "door-modern.jpg"
   },
   {
     "id": 2,
     "name": "Linea Sand",
     "category": "doors",
     "price": 9200,
-    "color": "sand"
+    "color": "sand",
+    "image": "door-minimal.jpg"
   },
   {
     "id": 3,
     "name": "Frame Graphite",
     "category": "entry",
     "price": 16800,
-    "color": "graphite"
+    "color": "graphite",
+    "image": "door-accent.jpg"
   },
   {
     "id": 4,
     "name": "Space Glass",
     "category": "partitions",
     "price": 12500,
-    "color": "oak"
+    "color": "oak",
+    "image": "interior.jpg"
   },
   {
     "id": 5,
     "name": "Linea Walnut",
     "category": "doors",
     "price": 9700,
-    "color": "walnut"
+    "color": "walnut",
+    "image": "door-modern.jpg"
   },
   {
     "id": 6,
     "name": "Frame Oak",
     "category": "entry",
     "price": 18200,
-    "color": "oak"
+    "color": "oak",
+    "image": "door-minimal.jpg"
   },
   {
     "id": 7,
     "name": "Space Light",
     "category": "partitions",
     "price": 14300,
-    "color": "sand"
+    "color": "sand",
+    "image": "door-accent.jpg"
   },
   {
     "id": 8,
     "name": "Handle Noir",
     "category": "hardware",
     "price": 1200,
-    "color": "graphite"
+    "color": "graphite",
+    "image": "interior.jpg"
   }
 ]
