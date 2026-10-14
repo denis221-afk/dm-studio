@@ -41,9 +41,9 @@
   },
   {
     "id": 6,
-    "name": "Обідній стіл Oak",
-    "category": "dining",
-    "price": 12500,
+    "name": "Кухонна дошка Oak",
+    "category": "accessories",
+    "price": 1800,
     "color": "oak",
     "image": "table.jpg"
   },
