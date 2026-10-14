@@ -72,9 +72,10 @@ export function initScrollMotion(){
 
 function animateHero(){
  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ // The LCP portrait stays visible when the intro opens; do not fade it out again.
  const sequence=[
  ['.hero__intro .eyebrow',80],['.hero h1',180],['.hero__description',340],
- ['.hero__buttons',450],['.social-proof',560],['.portrait',220],
+ ['.hero__buttons',450],['.social-proof',560],
  ['.hero__about>h2',650],['.availability',730],['.about__description',820],
  ['.stats>div',950],['.hero__about>.case',1100]
  ];

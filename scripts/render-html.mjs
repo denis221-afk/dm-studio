@@ -108,6 +108,10 @@ export function renderHtml(source, language, siteUrl = "") {
   }
   const base = siteUrl ? new URL(siteUrl).pathname : process.env.BASE_PATH || "/";
   html = html.replace(/<a\b[^>]*data-locale-href="([^"]*)"[^>]*>/g, (tag, path) => tag.replace(/(?<![-\w])href="[^"]*"/, 'href="' + base + (language === "ua" ? "" : language + "/") + path + '"'));
+  html = html.replace(/<img\b[^>]*src="([^"]*images\/)nfc-real\.webp"[^>]*>/g, (tag, prefix) => {
+    if (tag.includes('srcset=')) return tag;
+    return tag.replace(`src="${prefix}nfc-real.webp"`, `src="${prefix}nfc-320.webp" srcset="${prefix}nfc-160.webp 160w, ${prefix}nfc-320.webp 320w, ${prefix}nfc-real.webp 459w" sizes="(max-width: 780px) 75vw, 215px"`);
+  });
   const serviceLabel = {ua:"Усі послуги", en:"All services", pl:"Wszystkie usługi"}[language];
   html = html.replace(/(<div class="footer-links">)/, `$1<a href="${base}${language === "ua" ? "" : language + "/"}services/" data-locale-href="services/">${serviceLabel}</a>`);
   return html;

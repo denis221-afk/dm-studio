@@ -13,6 +13,7 @@ for(const lang of ['ua','en','pl']){
  assert.ok(/<noscript><link[^>]*rel="stylesheet"/.test(html));
  const preload=html.match(/<link\b[^>]*imagesrcset="([^"]+)"[^>]*>/)[0];
  const portrait=html.match(/<img\b[^>]*class="portrait"[^>]*>/)[0];
+ assert.ok(preload.includes('fetchpriority="high"'));
  assert.equal(preload.match(/imagesrcset="([^"]+)"/)[1],portrait.match(/srcset="([^"]+)"/)[1]);
  assert.equal(preload.match(/imagesizes="([^"]+)"/)[1],portrait.match(/sizes="([^"]+)"/)[1]);
  for(const [,path] of portrait.matchAll(/(\/images\/denys-\d+\.webp)/g))await stat('dist'+path);
