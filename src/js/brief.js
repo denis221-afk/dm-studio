@@ -1,4 +1,5 @@
 import { trackEvent } from "./analytics.js";
+import { sendBrief } from "./brief-delivery.js";
 
 import { briefEndpoint } from "../data/forms.js";
 import { studioContacts } from "../data/contacts.js";
@@ -124,21 +125,15 @@ export function initBrief(t) {
     buttonLabel.textContent = sendingEnabled ? t.ui.ctSending : t.ui.ctCopying;
     try {
       if (sendingEnabled) {
-        const response = await fetch(briefEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...values,
-            language: document.documentElement.lang,
-          }),
-          signal: AbortSignal.timeout(15000),
+        await sendBrief(briefEndpoint, {
+          ...values,
+          language: document.documentElement.lang,
         });
-        const result = await response.json();
-        if (!response.ok || result.ok !== true)
-          throw new Error("delivery-failed");
-        trackEvent("generate_lead", { form_id: "brief" });
         status.textContent = t.ui.ctSent;
         form.reset();
+        draftWrapper.hidden = true;
+        // Analytics must never turn a confirmed delivery into a form error.
+        try { trackEvent("generate_lead", { form_id: "brief" }); } catch { /* Best effort. */ }
       } else {
         await navigator.clipboard.writeText(text);
         status.textContent = t.ui.ctCopied;
