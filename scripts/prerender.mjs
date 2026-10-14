@@ -4,6 +4,8 @@ import { writeCasePages, caseRoutes } from "./render-cases.mjs";
 import { writeAboutPages } from "./render-about.mjs";
 import { writeBlogPages, blogRoutes } from "./render-blog.mjs";
 import { writePrivacyPages } from "./render-privacy.mjs";
+import { servicePages } from "../src/data/service-pages.js";
+import { writeServicePages, serviceRoutes } from "./render-services.mjs";
 import { blogPreview } from "./blog-template.mjs";
 
 let siteUrl = process.env.SITE_URL || (process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : "https://dm-studio-production.up.railway.app");
@@ -17,6 +19,11 @@ const rawSource = await readFile("dist/index.html", "utf8");
 const source = rawSource.replace(/<section\b[^>]*id="blog"[\s\S]*?<\/section>/, blogPreview(process.env.BASE_PATH || "/"));
 for (const language of ["ua", "en", "pl"]) {
   let html = renderHtml(source, language, siteUrl);
+  const prefix = language === "ua" ? "" : language + "/";
+  const base = process.env.BASE_PATH || "/";
+  const serviceLinks = `<nav class="seo-home-links container" aria-label="${language === "ua" ? "Послуги докладніше" : language === "pl" ? "Szczegóły usług" : "Explore services"}">${servicePages.map(p=>`<a href="${base}${prefix}services/${p.slug}/">${p[language].title} ↗</a>`).join("")}</nav>`;
+  html = html.replace('<section class="sol', serviceLinks + '<section class="sol');
+
   if (siteUrl) {
     const locale = language === "ua" ? "uk" : language;
     const pageUrl = new URL(language === "ua" ? "" : language + "/", siteUrl).href;
@@ -31,8 +38,9 @@ await writeCasePages(source, siteUrl, process.env.BASE_PATH || "/");
 await writeAboutPages(source, siteUrl, process.env.BASE_PATH || "/");
 await writeBlogPages(source, siteUrl, process.env.BASE_PATH || "/");
 await writePrivacyPages(source, siteUrl, process.env.BASE_PATH || "/");
+await writeServicePages(source, siteUrl, process.env.BASE_PATH || "/");
 if (siteUrl) {
-  const routes = ["", ...caseRoutes, "about/", "privacy/", ...blogRoutes];
+  const routes = ["", ...caseRoutes, "about/", "privacy/", ...blogRoutes, ...serviceRoutes];
   const locales = [["uk", ""], ["en", "en/"], ["pl", "pl/"], ["x-default", ""]];
   const xmlEscape = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
   const entries = routes.flatMap(route => ["", "en/", "pl/"].map(prefix => {

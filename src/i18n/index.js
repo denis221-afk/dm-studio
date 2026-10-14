@@ -1,3 +1,4 @@
+import { servicePages } from "../data/service-pages.js";
 import { caseProjects } from "../data/cases.js";
 import ua from "./ua.js";
 import pl from "./pl.js";
@@ -42,6 +43,7 @@ export function changeLanguage(language) {
   const relativePath = destination.pathname.startsWith(basePath) ? destination.pathname.slice(basePath.length) : destination.pathname.slice(1);
   const parts = relativePath.split("/").filter(Boolean);
   if (supportedLanguages.includes(parts[0])) parts.shift();
+  if (document.querySelector("[data-error-page]")) parts.length = 0;
   const suffix = parts.length ? parts.join("/") + "/" : "";
   destination.pathname = `${basePath}${language === "ua" ? "" : `${language}/`}${suffix}`;
   window.location.assign(destination.href);
@@ -90,6 +92,15 @@ export function applyTranslations(language = getCurrentLanguage()) {
     const description = post ? post.description : t.ui.blogMetaDescription;
     document.title = title;
     document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+  }
+  const servicePage = document.querySelector("[data-service-page]");
+  if (servicePage || document.querySelector("[data-error-page]")) {
+    // These pre-rendered routes carry their own metadata; keep it after hydration.
+    document.title = servicePage?.dataset.servicePage !== "index" && servicePage
+      ? servicePages.find(p => p.slug === servicePage.dataset.servicePage)?.[language]?.title + " — DM Studio"
+      : document.querySelector('meta[property="og:title"]')?.content || document.title;
+    const description = document.querySelector('meta[property="og:description"]')?.content;
+    if (description) document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   }
   const select = document.getElementById("language");
   if (select) select.value = language;

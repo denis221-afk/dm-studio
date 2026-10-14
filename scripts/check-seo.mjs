@@ -46,3 +46,24 @@ for (const [from,to] of [['/ua/','/'],['/index.html?utm_source=test','/?utm_sour
 assert.equal((await request('/not-a-real-page/')).code,404);
 assert.equal((await request('/demos/modera/')).headers['X-Robots-Tag'],'noindex, follow');
 console.info(`SEO passed: ${urls.length} pages, unique titles, metadata, reciprocal hreflang, sitemap, images, JSON-LD, redirects and 404.`);
+
+// Error documents must be translated, non-indexable and retain real HTTP 404.
+for (const [path,heading] of [['/missing/','Сторінку не знайдено'],['/en/missing/','Page not found'],['/pl/missing/','Nie znaleziono strony'],['/404.html','Сторінку не знайдено']]) {
+ let code,body; const headers={};
+ const res={setHeader:(k,v)=>headers[k]=v,writeHead:(c,h={})=>{code=c;Object.assign(headers,h)},end:b=>body=b};
+ await serveStatic({method:'GET',url:path},res);
+ assert.equal(code,404); assert.ok(body.toString().includes(heading));
+ assert.equal(headers['X-Robots-Tag'],'noindex, follow');
+ assert.ok(!body.toString().includes('rel="canonical"'));
+}
+const redirect = await request('/services?utm_source=test');
+assert.equal(redirect.code,308); assert.equal(redirect.headers.Location,'/services/?utm_source=test');
+for (const [,entry] of entries) {
+ const url = entry.match(/<loc>([^<]+)<\/loc>/)[1];
+ if (!new URL(url).pathname.includes('/services/')) continue;
+ const html=await readFile(resolve('dist','.'+new URL(url).pathname,'index.html'),'utf8');
+ assert.ok(html.includes('data-service-page='));
+ assert.ok(!html.includes('"@type":"ProfilePage"'));
+ if (!/\/services\/$/.test(new URL(url).pathname)) assert.ok(html.includes('"@type":"Service"'));
+}
+console.info('Passed: localized branded 404 bodies, noindex, service schema and redirects with query parameters.');

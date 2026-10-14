@@ -108,5 +108,7 @@ export function renderHtml(source, language, siteUrl = "") {
   }
   const base = siteUrl ? new URL(siteUrl).pathname : process.env.BASE_PATH || "/";
   html = html.replace(/<a\b[^>]*data-locale-href="([^"]*)"[^>]*>/g, (tag, path) => tag.replace(/(?<![-\w])href="[^"]*"/, 'href="' + base + (language === "ua" ? "" : language + "/") + path + '"'));
+  const serviceLabel = {ua:"Усі послуги", en:"All services", pl:"Wszystkie usługi"}[language];
+  html = html.replace(/(<div class="footer-links">)/, `$1<a href="${base}${language === "ua" ? "" : language + "/"}services/" data-locale-href="services/">${serviceLabel}</a>`);
   return html;
 }

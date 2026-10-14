@@ -1,4 +1,4 @@
-import { stat } from 'node:fs/promises';
+import { stat, readFile } from 'node:fs/promises';
 import { createReadStream } from 'node:fs';
 import { resolve, sep, extname } from 'node:path';
 const root = resolve(new URL('../dist/', import.meta.url).pathname);
@@ -7,6 +7,7 @@ export async function serveStatic(req, res) {
   if (!['GET','HEAD'].includes(req.method)) { res.writeHead(405); res.end(); return; }
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    if (/\/404\.html$/.test(pathname)) throw new Error('missing');
     // Consolidate the Ukrainian alias and explicit index files into canonical URLs.
     let canonicalPath = pathname.replace(/^\/ua(?=\/|$)/, '') || '/';
     canonicalPath = canonicalPath.replace(/\/index\.html$/, '/').replace(/\/{2,}/g, '/');
@@ -21,7 +22,7 @@ export async function serveStatic(req, res) {
     let path = resolve(root, '.' + pathname);
     if (!path.startsWith(root + sep) && path !== root) throw new Error('invalid');
     if ((await stat(path)).isDirectory()) {
-      if (!pathname.endsWith('/')) { res.writeHead(308, {Location:pathname + '/'}); res.end(); return; }
+      if (!pathname.endsWith('/')) { res.writeHead(308, {Location:encodeURI(pathname) + '/' + new URL(req.url, 'http://localhost').search}); res.end(); return; }
       path = resolve(path, 'index.html');
     }
     const info = await stat(path);
@@ -29,5 +30,17 @@ export async function serveStatic(req, res) {
     res.writeHead(200, {'Content-Type':types[extname(path)] ?? 'application/octet-stream','Content-Length':info.size,'Cache-Control':path.includes('/assets/') ? 'public, max-age=31536000, immutable' : 'no-cache'});
     if (req.method === 'HEAD') res.end();
     else createReadStream(path).on('error', () => res.destroy()).pipe(res);
-  } catch { res.writeHead(404, {'Content-Type':'text/plain; charset=utf-8'}); res.end('Not found'); }
+  } catch {
+    // Missing pages keep HTTP 404; the error document is never a soft 200.
+    let prefix = '';
+    try { prefix = /^\/(en|pl)(?:\/|$)/.exec(new URL(req.url,'http://localhost').pathname)?.[1] || ''; } catch {}
+    try {
+      const body = await readFile(resolve(root, prefix, '404.html'));
+      res.setHeader('X-Robots-Tag','noindex, follow');
+      res.writeHead(404, {'Content-Type':'text/html; charset=utf-8','Content-Length':body.length,'Cache-Control':'no-cache'});
+      res.end(req.method === 'HEAD' ? undefined : body);
+    } catch {
+      res.writeHead(404, {'Content-Type':'text/plain; charset=utf-8'}); res.end(req.method === 'HEAD' ? undefined : 'Not found');
+    }
+  }
 }
