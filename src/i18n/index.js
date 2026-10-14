@@ -1,4 +1,3 @@
-import { servicePages } from "../data/service-pages.js";
 import { caseProjects } from "../data/cases.js";
 import ua from "./ua.js";
 import pl from "./pl.js";
@@ -11,12 +10,12 @@ import aboutTranslations from "./about.js";
 import contactTranslations from "./contact.js";
 import { privacyContent } from "../data/privacy.js";
 import blogTranslations from "./blog.js";
-import { blogPosts, postUi } from "../data/blog.js";
+import { blogPosts, blogUi } from "../data/blog-client.js";
 
 export const translations = Object.fromEntries(
   Object.entries({ ua, pl, en }).map(([language, translation]) => [language, {
     ...translation,
-    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui, ...contactTranslations[language].ui, ...privacyContent[language].ui, ...blogTranslations[language].ui, ...Object.assign({}, ...blogPosts.map(post => postUi(post, language, blogTranslations[language].ui))) },
+    ui: { ...translation.ui, ...serviceTranslations[language].ui, ...solutionTranslations[language].ui, ...caseTranslations[language].ui, ...aboutTranslations[language].ui, ...contactTranslations[language].ui, ...privacyContent[language].ui, ...blogTranslations[language].ui, ...blogUi[language] },
     services: serviceTranslations[language].details,
     solutions: solutionTranslations[language].details,
   }]),
@@ -96,9 +95,7 @@ export function applyTranslations(language = getCurrentLanguage()) {
   const servicePage = document.querySelector("[data-service-page]");
   if (servicePage || document.querySelector("[data-error-page]")) {
     // These pre-rendered routes carry their own metadata; keep it after hydration.
-    document.title = servicePage?.dataset.servicePage !== "index" && servicePage
-      ? servicePages.find(p => p.slug === servicePage.dataset.servicePage)?.[language]?.title + " — DM Studio"
-      : document.querySelector('meta[property="og:title"]')?.content || document.title;
+    document.title = document.querySelector('meta[property="og:title"]')?.content || document.title;
     const description = document.querySelector('meta[property="og:description"]')?.content;
     if (description) document.querySelector('meta[name="description"]')?.setAttribute("content", description);
   }

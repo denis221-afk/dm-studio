@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerender.mjs",
+    "build": "node scripts/generate-client-meta.mjs && vite build && node scripts/prerender.mjs",
     "preview": "vite preview",
     "check": "node scripts/check.mjs",
     "start": "node server/index.mjs",

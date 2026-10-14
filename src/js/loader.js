@@ -36,8 +36,12 @@ export function initLoader(){
   loader.classList.add('is-landing');
   clones.forEach((clone,i)=>{
    clone.getAnimations().forEach(a=>a.cancel());clone.style.setProperty('padding','0','important');
-   const from=clone.getBoundingClientRect(),to=cards[i].querySelector('.service__icon').getBoundingClientRect();
-   const animation=clone.animate([{left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px',transform:'none'},{left:to.left+'px',top:to.top+'px',width:to.width+'px',height:to.height+'px',transform:'none'}],{duration:1100,delay:i*55,easing:'cubic-bezier(.22,1,.36,1)',fill:'forwards'});
+   const from=clone.getBoundingClientRect(),iconFrom=clone.querySelector('.service__icon').getBoundingClientRect(),to=cards[i].querySelector('.service__icon').getBoundingClientRect();
+   const sx=to.width/iconFrom.width,sy=to.height/iconFrom.height;
+   const dx=to.left-from.left-(iconFrom.left-from.left)*sx,dy=to.top-from.top-(iconFrom.top-from.top)*sy;
+   // Measure once, then fly using compositor transforms instead of layout properties.
+   Object.assign(clone.style,{left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px',transformOrigin:'0 0'});
+   const animation=clone.animate([{transform:'translate(0,0) scale(1,1)'},{transform:'translate('+dx+'px,'+dy+'px) scale('+sx+','+sy+')'}],{duration:1100,delay:i*55,easing:'cubic-bezier(.22,1,.36,1)',fill:'forwards'});
    animation.finished.then(()=>{if(!closed){cards[i].style.removeProperty('visibility');cards[i].classList.add('service-text-arrive');cards[i].classList.remove('service-awaiting');clone.remove();}}).catch(()=>{});
   });
   clearTimeout(timer);timer=setTimeout(close,1400);

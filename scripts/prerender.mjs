@@ -1,3 +1,4 @@
+import { deferHomeStyles } from "./critical-css.mjs";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { renderHtml } from "./render-html.mjs";
 import { writeCasePages, caseRoutes } from "./render-cases.mjs";
@@ -16,6 +17,10 @@ if (siteUrl) {
   siteUrl = `${url.origin}${url.pathname.replace(/\/$/, "")}/`;
 }
 const rawSource = await readFile("dist/index.html", "utf8");
+const styleURL = rawSource.match(/<link\b[^>]*rel="stylesheet"[^>]*href="([^"]+)"/)?.[1];
+const basePath = process.env.BASE_PATH || "/";
+const styleFile = styleURL ? "dist/" + styleURL.slice(basePath.length) : "";
+const styleCSS = styleFile ? await readFile(styleFile,"utf8") : "";
 const source = rawSource.replace(/<section\b[^>]*id="blog"[\s\S]*?<\/section>/, blogPreview(process.env.BASE_PATH || "/"));
 for (const language of ["ua", "en", "pl"]) {
   let html = renderHtml(source, language, siteUrl);
@@ -30,6 +35,7 @@ for (const language of ["ua", "en", "pl"]) {
     const schema = {"@context":"https://schema.org", "@type":"WebSite", "@id":pageUrl+"#website", url:pageUrl, name:"DM Studio", inLanguage:locale, publisher:{"@id":new URL("#organization",siteUrl).href}};
     html = html.replace("</head>", `<script type="application/ld+json">${JSON.stringify(schema)}</script></head>`);
   }
+  if (styleCSS) html = deferHomeStyles(html,styleCSS);
   await mkdir(`dist/${language}`, { recursive: true });
   await writeFile(`dist/${language}/index.html`, html);
   if (language === "ua") await writeFile("dist/index.html", html);
