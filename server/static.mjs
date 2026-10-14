@@ -27,7 +27,18 @@ export async function serveStatic(req, res) {
     }
     const info = await stat(path);
     if (!info.isFile()) throw new Error('missing');
-    res.writeHead(200, {'Content-Type':types[extname(path)] ?? 'application/octet-stream','Content-Length':info.size,'Cache-Control':path.includes('/assets/') ? 'public, max-age=31536000, immutable' : 'no-cache'});
+    // Only Vite content-hashed resources are safe to cache permanently.
+    const immutable = /^\/assets\/[^/]+-[A-Za-z0-9_-]{8}\.(?:js|css|woff2?)$/.test(pathname);
+    const etag = `W/"${info.size.toString(16)}-${Math.trunc(info.mtimeMs).toString(16)}"`;
+    const headers = {'Content-Type':types[extname(path)] ?? 'application/octet-stream',
+      'Cache-Control':immutable ? 'public, max-age=31536000, immutable' : 'no-cache',
+      'ETag':etag, 'Last-Modified':info.mtime.toUTCString()};
+    // Weak comparison is valid for GET/HEAD cache validation.
+    const candidates = String(req.headers?.['if-none-match'] || '').split(',').map(v=>v.trim().replace(/^W\//,''));
+    if (candidates.includes('*') || candidates.includes(etag.replace(/^W\//,''))) {
+      res.writeHead(304,headers);res.end();return;
+    }
+    res.writeHead(200, {...headers, 'Content-Length':info.size});
     if (req.method === 'HEAD') res.end();
     else createReadStream(path).on('error', () => res.destroy()).pipe(res);
   } catch {
