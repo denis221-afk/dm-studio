@@ -1,4 +1,4 @@
-const id = import.meta.env?.VITE_GA_MEASUREMENT_ID || "";
+const id = import.meta.env?.VITE_GA_MEASUREMENT_ID || "G-74120JP105";
 const enabled =
   /^G-[A-Z0-9]+$/.test(id) &&
   typeof location !== "undefined" &&
