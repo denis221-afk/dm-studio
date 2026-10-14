@@ -48,6 +48,10 @@ function start() {
   if (started) return;
   started = true;
   window.dataLayer = window.dataLayer || [];
+  // The homepage initializes the Google tag in index.html.
+  // Reuse it without a second config, page_view, or script download.
+  if (typeof window.gtag === "function" &&
+      document.querySelector('script[src="https://www.googletagmanager.com/gtag/js?id=' + id + '"]')) return;
   // Consent is established before configuration; advertising stays disabled.
   command("consent", "default", {
     analytics_storage: "granted",
