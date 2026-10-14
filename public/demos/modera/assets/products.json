@@ -1,66 +1,74 @@
 [
   {
     "id": 1,
-    "name": "Linea Oak",
-    "category": "doors",
-    "price": 8900,
+    "name": "Кухня Linea з островом",
+    "category": "kitchens",
+    "price": 89000,
     "color": "oak",
-    "image": "door-modern.jpg"
+    "image": "kitchen.jpg"
   },
   {
     "id": 2,
-    "name": "Linea Sand",
-    "category": "doors",
-    "price": 9200,
+    "name": "Кухня Ivory",
+    "category": "kitchens",
+    "price": 74000,
     "color": "sand",
-    "image": "door-minimal.jpg"
+    "image": "light-kitchen.jpg"
   },
   {
     "id": 3,
-    "name": "Frame Graphite",
-    "category": "entry",
-    "price": 16800,
-    "color": "graphite",
-    "image": "door-accent.jpg"
+    "name": "Кухня Classic Walnut",
+    "category": "kitchens",
+    "price": 96000,
+    "color": "walnut",
+    "image": "classic-kitchen.jpg"
   },
   {
     "id": 4,
-    "name": "Space Glass",
-    "category": "partitions",
-    "price": 12500,
-    "color": "oak",
-    "image": "interior.jpg"
+    "name": "Нижні кухонні модулі",
+    "category": "modules",
+    "price": 18000,
+    "color": "sand",
+    "image": "light-kitchen.jpg"
   },
   {
     "id": 5,
-    "name": "Linea Walnut",
-    "category": "doors",
-    "price": 9700,
+    "name": "Верхні кухонні модулі",
+    "category": "modules",
+    "price": 14500,
     "color": "walnut",
-    "image": "door-modern.jpg"
+    "image": "classic-kitchen.jpg"
   },
   {
     "id": 6,
-    "name": "Frame Oak",
-    "category": "entry",
-    "price": 18200,
+    "name": "Обідній стіл Oak",
+    "category": "dining",
+    "price": 12500,
     "color": "oak",
-    "image": "door-minimal.jpg"
+    "image": "table.jpg"
   },
   {
     "id": 7,
-    "name": "Space Light",
-    "category": "partitions",
-    "price": 14300,
+    "name": "Стільниця Light",
+    "category": "worktops",
+    "price": 7800,
     "color": "sand",
-    "image": "door-accent.jpg"
+    "image": "light-kitchen.jpg"
   },
   {
     "id": 8,
-    "name": "Handle Noir",
-    "category": "hardware",
-    "price": 1200,
+    "name": "Стільниця Stone",
+    "category": "worktops",
+    "price": 16200,
     "color": "graphite",
-    "image": "interior.jpg"
+    "image": "kitchen.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Кухонний острів",
+    "category": "modules",
+    "price": 32000,
+    "color": "oak",
+    "image": "kitchen.jpg"
   }
 ]
