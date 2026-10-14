@@ -28,13 +28,14 @@ export function renderBlogPage(source,language,slug="",siteUrl="",base="/") {
   html = html.replace(/<title>[\s\S]*?<\/title>/,'<title>'+escape(title)+'</title>');
   html = html.replace(/<meta\b[^>]*>/g,tag=>{
     const key = tag.match(/(?:name|property)="([^"]+)"/)?.[1];
-    const value = ["description","og:description","twitter:description"].includes(key) ? description : ["og:title","twitter:title"].includes(key) ? title : key==="og:url"&&siteUrl ? new URL(prefix+path,siteUrl).href : key==="og:type"&&post ? "article" : null;
+    const value = ["og:image","twitter:image"].includes(key)&&post&&siteUrl ? new URL(post.image,siteUrl).href : ["description","og:description","twitter:description"].includes(key) ? description : ["og:title","twitter:title"].includes(key) ? title : key==="og:url"&&siteUrl ? new URL(prefix+path,siteUrl).href : key==="og:type"&&post ? "article" : null;
     return value ? tag.replace(/content="[^"]*"/,'content="'+escape(value)+'"') : tag;
   });
   if (siteUrl) {
     const url = new URL(prefix+path,siteUrl).href;
     html = html.replace(/<link rel="canonical" href="[^"]+">/,'<link rel="canonical" href="'+url+'">');
     html = html.replace(/<link rel="alternate" hreflang="([^"]+)" href="[^"]+">/g,(_,locale)=>'<link rel="alternate" hreflang="'+locale+'" href="'+new URL((["en","pl"].includes(locale)?locale+"/":"")+path,siteUrl).href+'">');
+    if (post) html = html.replace("</head>", `<meta property="article:published_time" content="${post.date}"><meta property="article:author" content="${new URL(prefix+"about/",siteUrl).href}"></head>`);
     const crumbs = {"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:ui.navHome,item:new URL(prefix,siteUrl).href},{"@type":"ListItem",position:2,name:ui.navBlog,item:new URL(prefix+"blog/",siteUrl).href}]};
     if (post) crumbs.itemListElement.push({"@type":"ListItem",position:3,name:content.title,item:url});
     const schema = post ? {"@context":"https://schema.org","@type":"BlogPosting","@id":url+"#article",mainEntityOfPage:{"@type":"WebPage","@id":url},headline:content.title,description,datePublished:post.date,inLanguage:language==="ua"?"uk":language,image:new URL(post.image,siteUrl).href,author:{"@type":"Person",name:ui.blogAuthor,url:new URL(prefix+"about/",siteUrl).href},publisher:{"@type":"Organization",name:"DM Studio",url:siteUrl},articleSection:content.category,articleBody:[content.intro,...content.sections.flatMap(section=>[section.title,...section.paragraphs])].join("\n\n")} : {"@context":"https://schema.org","@type":"Blog",name:ui.blogIndexMeta,description,url,inLanguage:language==="ua"?"uk":language,blogPost:blogPosts.map(item=>({"@type":"BlogPosting",headline:item[language].title,url:new URL(prefix+"blog/"+item.slug+"/",siteUrl).href,datePublished:item.date}))};

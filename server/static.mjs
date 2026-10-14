@@ -7,6 +7,17 @@ export async function serveStatic(req, res) {
   if (!['GET','HEAD'].includes(req.method)) { res.writeHead(405); res.end(); return; }
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    // Consolidate the Ukrainian alias and explicit index files into canonical URLs.
+    let canonicalPath = pathname.replace(/^\/ua(?=\/|$)/, '') || '/';
+    canonicalPath = canonicalPath.replace(/\/index\.html$/, '/').replace(/\/{2,}/g, '/');
+    if (canonicalPath !== pathname) {
+      const target = resolve(root, '.' + canonicalPath);
+      if (!target.startsWith(root + sep) && target !== root) throw new Error('invalid');
+      await stat(target);
+      const search = new URL(req.url, 'http://localhost').search;
+      res.writeHead(308, {Location:encodeURI(canonicalPath) + search}); res.end(); return;
+    }
+    if (pathname.startsWith('/demos/')) res.setHeader('X-Robots-Tag', 'noindex, follow');
     let path = resolve(root, '.' + pathname);
     if (!path.startsWith(root + sep) && path !== root) throw new Error('invalid');
     if ((await stat(path)).isDirectory()) {

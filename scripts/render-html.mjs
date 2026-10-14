@@ -10,6 +10,9 @@ const escape = (value) =>
 export function renderHtml(source, language, siteUrl = "") {
   const t = translations[language];
   const locale = language === "ua" ? "uk" : language;
+  // Re-rendering must not inherit canonical/alternate tags from another route.
+  source = source.replace(/<link\b[^>]*rel="(?:canonical|alternate)"[^>]*>/g, "")
+    .replace(/<meta\b[^>]*property="og:url"[^>]*>/g, "");
   let html = source.replace(/<html lang="[^"]*">/, `<html lang="${locale}">`);
   html = html.replace(
     /<([\w-]+)([^>]*\bdata-i18n="([^"]+)"[^>]*)>[\s\S]*?<\/\1\s*>/g,
@@ -41,6 +44,8 @@ export function renderHtml(source, language, siteUrl = "") {
     "twitter:description": t.meta.description,
     "og:locale": { ua: "uk_UA", en: "en_US", pl: "pl_PL" }[language],
   };
+  html = html.replace(/<meta\b[^>]*name="robots"[^>]*>/g,
+    '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">');
   html = html.replace(/<meta\b[^>]*>/g, (tag) => {
     const key = tag.match(/(?:name|property)="([^"]+)"/)?.[1];
     const value = metaValues[key];
@@ -57,6 +62,10 @@ export function renderHtml(source, language, siteUrl = "") {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "DM Studio",
+    "@id": siteUrl ? new URL("#organization", siteUrl).href : undefined,
+    email: "denis.mazuryk@gmail.com",
+    logo: siteUrl ? new URL("favicon.svg", siteUrl).href : undefined,
+    sameAs: ["https://github.com/denis221-afk/dm-studio", "https://t.me/MazurykD"],
     description: t.meta.description,
     knowsAbout: [
       "Web development",
