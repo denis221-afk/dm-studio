@@ -1,0 +1,1165 @@
+{
+  "checkedDate": "2026-10-15",
+  "sourceCommit": "582bfedba4ee09f5dc2e4e8986815808fdfa8f83",
+  "searchConsoleProperty": "https://dm-studio-production.up.railway.app/",
+  "dateFrom": "2026-09-17",
+  "dateTo": "2026-10-14",
+  "searchAnalyticsDaily": [],
+  "searchAnalyticsPages": [],
+  "metrics": {
+    "clicks": null,
+    "impressions": null,
+    "ctr": null,
+    "position": null,
+    "indexedPages": null
+  },
+  "emptyResultMeansZero": false,
+  "sitemaps": [
+    {
+      "path": "https://dm-studio-production.up.railway.app/sitemap.xml",
+      "last_submitted": "2026-10-14T12:58:05.625Z",
+      "last_downloaded": "2026-10-14T12:58:11.080Z",
+      "errors": 0,
+      "warnings": 0,
+      "submitted": 108
+    }
+  ],
+  "sitemapLocCount": 54,
+  "submittedDiscrepancy": "Windsor submitted=108; live sitemap has 54 unique loc. Cause unconfirmed; not an indexed URL count.",
+  "livePages": [
+    {
+      "url": "https://dm-studio-production.up.railway.app/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/",
+        "en": "https://dm-studio-production.up.railway.app/en/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/",
+        "x-default": "https://dm-studio-production.up.railway.app/"
+      },
+      "lang": "uk",
+      "title": [
+        "DM Studio — Сайти, автоматизація та AI-рішення для бізнесу"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/",
+        "en": "https://dm-studio-production.up.railway.app/en/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/",
+        "x-default": "https://dm-studio-production.up.railway.app/"
+      },
+      "lang": "en",
+      "title": [
+        "DM Studio — Websites, Automation &amp; AI for Small Business"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/",
+        "en": "https://dm-studio-production.up.railway.app/en/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/",
+        "x-default": "https://dm-studio-production.up.railway.app/"
+      },
+      "lang": "pl",
+      "title": [
+        "DM Studio — Strony, automatyzacja i AI dla małych firm"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/"
+      },
+      "lang": "uk",
+      "title": [
+        "Кейси — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/"
+      },
+      "lang": "en",
+      "title": [
+        "Cases — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/"
+      },
+      "lang": "pl",
+      "title": [
+        "Projekty — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/nfc-menu/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/nfc-menu/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/nfc-menu/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/nfc-menu/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/nfc-menu/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/nfc-menu/"
+      },
+      "lang": "uk",
+      "title": [
+        "NFC Food AI — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/nfc-menu/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/nfc-menu/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/nfc-menu/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/nfc-menu/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/nfc-menu/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/nfc-menu/"
+      },
+      "lang": "en",
+      "title": [
+        "NFC Food AI — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/nfc-menu/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/nfc-menu/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/nfc-menu/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/nfc-menu/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/nfc-menu/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/nfc-menu/"
+      },
+      "lang": "pl",
+      "title": [
+        "NFC Food AI — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/rhome-ohio/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/rhome-ohio/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/rhome-ohio/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/"
+      },
+      "lang": "uk",
+      "title": [
+        "RHome Ohio — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/rhome-ohio/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/rhome-ohio/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/rhome-ohio/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/rhome-ohio/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/"
+      },
+      "lang": "en",
+      "title": [
+        "RHome Ohio — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/rhome-ohio/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/rhome-ohio/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/rhome-ohio/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/rhome-ohio/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/rhome-ohio/"
+      },
+      "lang": "pl",
+      "title": [
+        "RHome Ohio — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/ppteplodim/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/ppteplodim/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/ppteplodim/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/ppteplodim/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/ppteplodim/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/ppteplodim/"
+      },
+      "lang": "uk",
+      "title": [
+        "PPTeploDim — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/ppteplodim/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/ppteplodim/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/ppteplodim/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/ppteplodim/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/ppteplodim/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/ppteplodim/"
+      },
+      "lang": "en",
+      "title": [
+        "PPTeploDim — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/ppteplodim/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/ppteplodim/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/ppteplodim/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/ppteplodim/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/ppteplodim/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/ppteplodim/"
+      },
+      "lang": "pl",
+      "title": [
+        "PPTeploDim — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/woodeco/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/woodeco/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/woodeco/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/woodeco/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/woodeco/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/woodeco/"
+      },
+      "lang": "uk",
+      "title": [
+        "WOOD ECO COMFORT — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/woodeco/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/woodeco/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/woodeco/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/woodeco/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/woodeco/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/woodeco/"
+      },
+      "lang": "en",
+      "title": [
+        "WOOD ECO COMFORT — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/woodeco/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/woodeco/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/woodeco/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/woodeco/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/woodeco/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/woodeco/"
+      },
+      "lang": "pl",
+      "title": [
+        "WOOD ECO COMFORT — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/serviceflow/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/serviceflow/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/serviceflow/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/serviceflow/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/serviceflow/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/serviceflow/"
+      },
+      "lang": "uk",
+      "title": [
+        "ServiceFlow — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/serviceflow/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/serviceflow/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/serviceflow/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/serviceflow/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/serviceflow/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/serviceflow/"
+      },
+      "lang": "en",
+      "title": [
+        "ServiceFlow — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/serviceflow/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/serviceflow/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/serviceflow/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/serviceflow/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/serviceflow/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/serviceflow/"
+      },
+      "lang": "pl",
+      "title": [
+        "ServiceFlow — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/cases/autora/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/cases/autora/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/autora/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/autora/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/autora/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/autora/"
+      },
+      "lang": "uk",
+      "title": [
+        "AUTORA — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/cases/autora/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/cases/autora/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/autora/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/autora/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/autora/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/autora/"
+      },
+      "lang": "en",
+      "title": [
+        "AUTORA — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/cases/autora/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/cases/autora/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/cases/autora/",
+        "en": "https://dm-studio-production.up.railway.app/en/cases/autora/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/cases/autora/",
+        "x-default": "https://dm-studio-production.up.railway.app/cases/autora/"
+      },
+      "lang": "pl",
+      "title": [
+        "AUTORA — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/about/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/about/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/about/",
+        "en": "https://dm-studio-production.up.railway.app/en/about/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/about/",
+        "x-default": "https://dm-studio-production.up.railway.app/about/"
+      },
+      "lang": "uk",
+      "title": [
+        "Про мене — Денис, засновник DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/about/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/about/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/about/",
+        "en": "https://dm-studio-production.up.railway.app/en/about/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/about/",
+        "x-default": "https://dm-studio-production.up.railway.app/about/"
+      },
+      "lang": "en",
+      "title": [
+        "About me — Denys, founder of DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/about/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/about/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/about/",
+        "en": "https://dm-studio-production.up.railway.app/en/about/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/about/",
+        "x-default": "https://dm-studio-production.up.railway.app/about/"
+      },
+      "lang": "pl",
+      "title": [
+        "O mnie — Denys, założyciel DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/privacy/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/privacy/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/privacy/",
+        "en": "https://dm-studio-production.up.railway.app/en/privacy/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/privacy/",
+        "x-default": "https://dm-studio-production.up.railway.app/privacy/"
+      },
+      "lang": "uk",
+      "title": [
+        "Політика конфіденційності — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/privacy/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/privacy/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/privacy/",
+        "en": "https://dm-studio-production.up.railway.app/en/privacy/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/privacy/",
+        "x-default": "https://dm-studio-production.up.railway.app/privacy/"
+      },
+      "lang": "en",
+      "title": [
+        "Privacy policy — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/privacy/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/privacy/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/privacy/",
+        "en": "https://dm-studio-production.up.railway.app/en/privacy/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/privacy/",
+        "x-default": "https://dm-studio-production.up.railway.app/privacy/"
+      },
+      "lang": "pl",
+      "title": [
+        "Polityka prywatności — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/blog/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/blog/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/blog/",
+        "en": "https://dm-studio-production.up.railway.app/en/blog/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/blog/",
+        "x-default": "https://dm-studio-production.up.railway.app/blog/"
+      },
+      "lang": "uk",
+      "title": [
+        "Блог DM Studio — Сайти, інтеграції та AI-автоматизація"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/blog/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/blog/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/blog/",
+        "en": "https://dm-studio-production.up.railway.app/en/blog/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/blog/",
+        "x-default": "https://dm-studio-production.up.railway.app/blog/"
+      },
+      "lang": "en",
+      "title": [
+        "DM Studio Blog — Websites, integrations and AI automation"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/blog/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/blog/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/blog/",
+        "en": "https://dm-studio-production.up.railway.app/en/blog/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/blog/",
+        "x-default": "https://dm-studio-production.up.railway.app/blog/"
+      },
+      "lang": "pl",
+      "title": [
+        "Blog DM Studio — Strony, integracje i automatyzacja AI"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/",
+        "en": "https://dm-studio-production.up.railway.app/en/blog/nfc-food-ai/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/blog/nfc-food-ai/",
+        "x-default": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/"
+      },
+      "lang": "uk",
+      "title": [
+        "NFC Food AI: як поєднати сайт, AI та історію клієнтів — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/blog/nfc-food-ai/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/blog/nfc-food-ai/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/",
+        "en": "https://dm-studio-production.up.railway.app/en/blog/nfc-food-ai/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/blog/nfc-food-ai/",
+        "x-default": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/"
+      },
+      "lang": "en",
+      "title": [
+        "NFC Food AI: connecting a website, AI and customer history — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/blog/nfc-food-ai/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/blog/nfc-food-ai/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/",
+        "en": "https://dm-studio-production.up.railway.app/en/blog/nfc-food-ai/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/blog/nfc-food-ai/",
+        "x-default": "https://dm-studio-production.up.railway.app/blog/nfc-food-ai/"
+      },
+      "lang": "pl",
+      "title": [
+        "NFC Food AI: strona, AI i historia klientów w jednym procesie — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/services/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/services/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/"
+      },
+      "lang": "uk",
+      "title": [
+        "Послуги DM Studio для малого бізнесу"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/services/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/services/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/"
+      },
+      "lang": "en",
+      "title": [
+        "DM Studio services for small businesses"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/services/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/services/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/"
+      },
+      "lang": "pl",
+      "title": [
+        "Usługi DM Studio dla małych firm"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/services/web-development/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/services/web-development/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/web-development/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/web-development/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/web-development/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/web-development/"
+      },
+      "lang": "uk",
+      "title": [
+        "Розробка сайтів для малого бізнесу — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/services/web-development/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/services/web-development/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/web-development/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/web-development/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/web-development/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/web-development/"
+      },
+      "lang": "en",
+      "title": [
+        "Website development for small businesses — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/services/web-development/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/services/web-development/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/web-development/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/web-development/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/web-development/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/web-development/"
+      },
+      "lang": "pl",
+      "title": [
+        "Tworzenie stron dla małych firm — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/services/wordpress-elementor/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/wordpress-elementor/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/wordpress-elementor/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/"
+      },
+      "lang": "uk",
+      "title": [
+        "Доопрацювання WordPress та Elementor — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/services/wordpress-elementor/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/services/wordpress-elementor/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/wordpress-elementor/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/wordpress-elementor/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/"
+      },
+      "lang": "en",
+      "title": [
+        "WordPress and Elementor improvements — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/services/wordpress-elementor/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/services/wordpress-elementor/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/wordpress-elementor/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/wordpress-elementor/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/wordpress-elementor/"
+      },
+      "lang": "pl",
+      "title": [
+        "Poprawki WordPress i Elementor — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/services/telegram-bots/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/services/telegram-bots/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/telegram-bots/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/telegram-bots/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/telegram-bots/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/telegram-bots/"
+      },
+      "lang": "uk",
+      "title": [
+        "Telegram-боти для заявок і підтримки — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/services/telegram-bots/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/services/telegram-bots/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/telegram-bots/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/telegram-bots/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/telegram-bots/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/telegram-bots/"
+      },
+      "lang": "en",
+      "title": [
+        "Telegram bots for enquiries and support — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/services/telegram-bots/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/services/telegram-bots/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/telegram-bots/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/telegram-bots/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/telegram-bots/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/telegram-bots/"
+      },
+      "lang": "pl",
+      "title": [
+        "Boty Telegram do zapytań i wsparcia — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/services/business-automation/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/services/business-automation/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/business-automation/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/business-automation/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/business-automation/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/business-automation/"
+      },
+      "lang": "uk",
+      "title": [
+        "Автоматизація заявок та інтеграції — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/services/business-automation/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/services/business-automation/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/business-automation/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/business-automation/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/business-automation/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/business-automation/"
+      },
+      "lang": "en",
+      "title": [
+        "Enquiry automation and integrations — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/services/business-automation/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/services/business-automation/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/business-automation/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/business-automation/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/business-automation/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/business-automation/"
+      },
+      "lang": "pl",
+      "title": [
+        "Automatyzacja zapytań i integracje — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/services/ai-solutions/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/services/ai-solutions/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/ai-solutions/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/ai-solutions/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/ai-solutions/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/ai-solutions/"
+      },
+      "lang": "uk",
+      "title": [
+        "AI-рішення для конкретних бізнес-задач — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/en/services/ai-solutions/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/en/services/ai-solutions/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/ai-solutions/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/ai-solutions/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/ai-solutions/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/ai-solutions/"
+      },
+      "lang": "en",
+      "title": [
+        "AI solutions for specific business tasks — DM Studio"
+      ],
+      "xrobots": null
+    },
+    {
+      "url": "https://dm-studio-production.up.railway.app/pl/services/ai-solutions/",
+      "status": 200,
+      "canonical": [
+        "https://dm-studio-production.up.railway.app/pl/services/ai-solutions/"
+      ],
+      "robots": [
+        "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      ],
+      "hreflang": {
+        "uk": "https://dm-studio-production.up.railway.app/services/ai-solutions/",
+        "en": "https://dm-studio-production.up.railway.app/en/services/ai-solutions/",
+        "pl": "https://dm-studio-production.up.railway.app/pl/services/ai-solutions/",
+        "x-default": "https://dm-studio-production.up.railway.app/services/ai-solutions/"
+      },
+      "lang": "pl",
+      "title": [
+        "Rozwiązania AI do konkretnych zadań — DM Studio"
+      ],
+      "xrobots": null
+    }
+  ]
+}
