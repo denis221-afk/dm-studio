@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-16",
+  "account": "558903268",
+  "range": {
+    "from": "2026-10-09",
+    "to": "2026-10-15"
+  },
+  "traffic": {
+    "status": "done",
+    "data": [
+      {
+        "date": "2026-10-14",
+        "hostname": "dm-studio-production.up.railway.app",
+        "session_default_channel_group": "Direct",
+        "sessions": 13,
+        "totalusers": 8
+      },
+      {
+        "date": "2026-10-14",
+        "hostname": "dm-studio-production.up.railway.app",
+        "session_default_channel_group": "Unassigned",
+        "sessions": 1,
+        "totalusers": 1
+      },
+      {
+        "date": "2026-10-15",
+        "hostname": "dm-studio-production.up.railway.app",
+        "session_default_channel_group": "Direct",
+        "sessions": 4,
+        "totalusers": 3
+      },
+      {
+        "date": "2026-10-15",
+        "hostname": "dm-studio-production.up.railway.app",
+        "session_default_channel_group": "Unassigned",
+        "sessions": 1,
+        "totalusers": 1
+      }
+    ],
+    "total_rows": 4
+  },
+  "events": {
+    "status": "done",
+    "data": [
+      {
+        "date": "2026-10-14",
+        "hostname": "dm-studio-production.up.railway.app",
+        "event_name": "page_view",
+        "event_count": 21
+      },
+      {
+        "date": "2026-10-15",
+        "hostname": "dm-studio-production.up.railway.app",
+        "event_name": "page_view",
+        "event_count": 6
+      }
+    ],
+    "total_rows": 2
+  },
+  "notes": [
+    "Only property 558903268 was read.",
+    "No Organic Search row returned; do not infer organic traffic=0.",
+    "No contact_click/generate_lead/form_start rows returned; delivery in GA4 remains unconfirmed.",
+    "Users by channel/date are not additive; no distinct user total calculated.",
+    "Historical traffic can include owner and QA visits; before consent fix collection was not fully gated."
+  ]
+}

@@ -4,6 +4,14 @@ const enabled =
   typeof location !== "undefined" &&
   location.hostname === "dm-studio-production.up.railway.app";
 const key = "dm-analytics-consent-v1";
+if (enabled) {
+  window[`ga-disable-${id}`] = true;
+  window.dataLayer = window.dataLayer || [];
+  command("consent", "default", {
+    analytics_storage: "denied", ad_storage: "denied",
+    ad_user_data: "denied", ad_personalization: "denied",
+  });
+}
 let accepted = false;
 let started = false;
 const lang =
@@ -48,12 +56,8 @@ function start() {
   if (started) return;
   started = true;
   window.dataLayer = window.dataLayer || [];
-  // The homepage initializes the Google tag in index.html.
-  // Reuse it without a second config, page_view, or script download.
-  if (typeof window.gtag === "function" &&
-      document.querySelector('script[src="https://www.googletagmanager.com/gtag/js?id=' + id + '"]')) return;
   // Consent is established before configuration; advertising stays disabled.
-  command("consent", "default", {
+  command("consent", "update", {
     analytics_storage: "granted",
     ad_storage: "denied",
     ad_user_data: "denied",
@@ -124,6 +128,10 @@ export function initAnalytics() {
       accepted = false;
       window[`ga-disable-${id}`] = true;
       clearCookies();
+      command("consent", "update", {
+        analytics_storage: "denied", ad_storage: "denied",
+        ad_user_data: "denied", ad_personalization: "denied",
+      });
       // Reload removes the already loaded tag and prevents further collection.
       if (started) location.reload();
     }
@@ -157,6 +165,7 @@ export function initAnalytics() {
     ) {
       panel.hidden = true;
       if (saved.value === "granted") start();
+      else { window[`ga-disable-${id}`] = true; clearCookies(); }
     }
   } catch {
     /* Show choices when storage is unavailable. */
