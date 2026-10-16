@@ -91,8 +91,8 @@ Windsor get_connectors підтвердив property 558903268. Після get_f
 Запит подій (event_name in page_view, form_start, contact_click, generate_lead) повернув тільки page_view: 21 за 14 жовтня та 6 за 15 жовтня. Відсутність інших рядків не є підтвердженням відсутності реальних звернень.
 
 ### Знайдено та виправлено
-1. index.html завантажував gtag.js і виконував config до вибору згоди, всупереч опису банера. Замість негайного завантаження залишено безпечний bootstrap з measurement ID; зовнішній Google script завантажується лише після дозволу (basic consent gating).
-2. analytics.js тепер починає з denied/default та ga-disable=true; при згоді виконує consent update, один config з send_page_view=false і один явний page_view. Видалено ранній return, який пропускав керовану конфігурацію при наявності HTML-тега.
+1. index.html завантажував gtag.js і виконував config до вибору згоди, всупереч опису банера. Для збереження статичного GA-snippet у head (метод підтвердження Search Console) зовнішній script лишається, але ПЕРЕД ним задано ga-disable=true, consent default denied і send_page_view=false. Google-документація підтверджує, що ga-disable блокує cookies та передавання вимірювань. Сам JS-файл Google може завантажуватися до вибору; це не реалізація повного блокування стороннього ресурсу.
+2. analytics.js тепер починає з denied/default та ga-disable=true; при згоді виконує consent update, керований config з send_page_view=false і один явний page_view після згоди; статичний head-config до згоди заблоковано ga-disable. Видалено ранній return, який пропускав керовану конфігурацію при наявності HTML-тега.
 3. При відмові/відкликанні consent явно denied, події блокуються, GA cookies очищаються; збережена відмова також очищає cookies.
 4. Відвідування без згоди не рахуються — це очікуване обмеження нових даних, а не падіння реального попиту. Історичний baseline отриманий до виправлення.
 
@@ -102,10 +102,11 @@ Windsor get_connectors підтвердив property 558903268. Після get_f
 - У цих викликах не передаються ім'я, контакт, текст завдання, бюджет або дедлайн. page_view використовує URL/referrer без query.
 - Відмітку generate_lead як key event у налаштуваннях GA4 не перевірено і не змінено: поточний Windsor read-конектор цього не підтверджує.
 - Не виконувалося production-надсилання форм, повідомлень або синтетичних подій у GA4. Реальне отримання contact_click/generate_lead у звітах ще не підтверджено.
-- Зовнішній GA-тег тепер consent-gated: якщо Google Search Console повторно вимагатиме перевірку власності саме через статичний GA-snippet, потрібен незалежний HTML/DNS verification token від власника; не вигадувати токен і не стверджувати, що нова повторна перевірка вже пройшла. Права доступу/власність у сервісах не змінювалися.
+- Статичний head snippet збережено для поточного методу Search Console; повторна перевірка власності окремо не запускалася. Права доступу/власність у сервісах не змінювалися.
+- Офіційні джерела: https://developers.google.com/tag-platform/security/guides/privacy (ga-disable блокує передачу та cookies), https://support.google.com/webmasters/answer/9008080?hl=en (GA-підтвердження через head), https://developers.google.com/analytics/devguides/collection/ga4/views (send_page_view=false).
 
 ### Перевірки
-node --test server/*.test.mjs: 10/10, включно з новими ізольованими тестами consent (без Google/Telegram мережевих запитів): відмова, невизначений вибір, збережений вибір, повторна згода, один config/page_view/tag, відкликання та очищений referrer.
+node --test server/*.test.mjs: 11/11, включно з новими ізольованими тестами consent (без Google/Telegram мережевих запитів): відмова, невизначений вибір, збережений вибір, повторна згода, один config/page_view після згоди, повторне використання head-тега, відкликання та очищений referrer.
 npm run build; npm run check; node scripts/check-seo.mjs: пройдено, 54 сторінки.
 Збережено i18n, дизайн, motion, форму та серверну доставку. Після публікації перевірити Railway status і живий HTML/bundle. Коміт цієї зміни — у git history журналу.
 

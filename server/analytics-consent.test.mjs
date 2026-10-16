@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 
 // Isolated DOM doubles: no browser, Google requests or real enquiries.
-async function setup(saved) {
+async function setup(saved, existingTag = false) {
   class Node {
     constructor(tag) { this.tag = tag; this.children = []; this.listeners = {}; }
     setAttribute() {}
@@ -18,14 +18,14 @@ async function setup(saved) {
   globalThis.localStorage = {getItem:() => saved ? JSON.stringify({value:saved,expires:Date.now()+60000}) : null,setItem() {}};
   globalThis.document = {documentElement:{lang:'uk'},referrer:'https://example.com/ref?private=secret',cookie:'',head,body,
     createElement:tag => new Node(tag),addEventListener() {},
-    querySelector:selector => selector === '.footer-links' ? footer : null};
+    querySelector:selector => selector === '.footer-links' ? footer : existingTag && selector.startsWith('script[') ? {} : null};
   const api = await import('../src/js/analytics.js?test='+Math.random());
   api.initAnalytics();
   const panel = body.children[0], actions = panel.children.at(-1);
   return {api,head,grant:() => actions.children[0].listeners.click(),deny:() => actions.children[1].listeners.click(), commands:() => window.dataLayer.map(args => [...args])};
 }
 
-test('unknown choice and saved denial load no Google script or events', async () => {
+test('unknown choice and saved denial do not activate analytics or inject another tag', async () => {
   for (const choice of [undefined,'denied']) {
     const env = await setup(choice);
     env.api.trackEvent('generate_lead',{form_id:'brief'});
@@ -56,10 +56,21 @@ test('consent starts one config, one clean page view and one tag, including repe
   assert.equal(location.reloaded,true);
 });
 
-test('saved consent starts analytics; initial HTML cannot bypass the gate', async () => {
+test('saved consent starts analytics; HTML blocks measurement before the Search Console tag loads', async () => {
   const env = await setup('granted');
   assert.equal(env.head.children.length,1);
   const html = await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
-  assert.doesNotMatch(html,/<script[^>]+src=["']https:\/\/www\.googletagmanager\.com/);
-  assert.doesNotMatch(html,/gtag\(['"]config/);
+  const disabled = html.indexOf("window['ga-disable-G-74120JP105'] = true");
+  const external = html.indexOf('src="https://www.googletagmanager.com/gtag/js?id=G-74120JP105"');
+  assert.ok(disabled >= 0 && external > disabled);
+  assert.match(html,/send_page_view: false/);
+});
+
+
+test('an existing head tag is reused but consent still configures and sends one page view', async () => {
+  const env = await setup(undefined,true);
+  env.grant();
+  assert.equal(env.head.children.length,0);
+  assert.equal(env.commands().filter(c => c[0]==='config').length,1);
+  assert.equal(env.commands().filter(c => c[0]==='event' && c[1]==='page_view').length,1);
 });

@@ -85,6 +85,7 @@ function start() {
     page_referrer: referrer,
     page_title: document.title,
   });
+  if (document.querySelector('script[src="https://www.googletagmanager.com/gtag/js?id=' + id + '"]')) return;
   const script = document.createElement("script");
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;

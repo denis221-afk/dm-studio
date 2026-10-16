@@ -1,12 +1,20 @@
 <!doctype html>
 <html lang="uk">
   <head>
-    <!-- Google tag bootstrap: no network requests or events before consent. -->
+    <!-- Keep the head tag for Search Console; measurement is disabled until consent. -->
     <script>
       window['ga-disable-G-74120JP105'] = true;
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        analytics_storage: 'denied', ad_storage: 'denied',
+        ad_user_data: 'denied', ad_personalization: 'denied'
+      });
+      gtag('js', new Date());
+      gtag('config', 'G-74120JP105', {send_page_view: false,
+        allow_google_signals: false, allow_ad_personalization_signals: false});
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-74120JP105"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>DM Studio — Сайти, автоматизація та AI-рішення для бізнесу</title>
