@@ -58,9 +58,24 @@ export const servicePages = [
       "serviceflow"
     ],
     "ua": {
-      "title": "Доопрацювання WordPress та Elementor",
-      "lead": "Виправлю конкретні проблеми сайту: адаптив, стилі, блоки й контент. Починаємо з узгодженого списку задач.",
-      "description": "Правки WordPress та Elementor: адаптивна верстка, стилі, контент і форми. Комерційний кейс RHome Ohio та проєкт ServiceFlow.",
+      "title": "Доопрацювання сайту на WordPress та Elementor",
+      "metaTitle": "Доопрацювання WordPress та Elementor — правки сайту | DM Studio",
+      "lead": "Є готовий сайт, але на телефоні з’їжджають блоки, застаріли матеріали чи потрібні зміни сторінок? Допоможу з конкретним списком правок: погодимо обсяг і критерії готовності перед початком.",
+      "description": "Доопрацювання готового сайту на WordPress та Elementor: мобільна версія, блоки, стилі, контент і форми. Перегляньте кейс і надішліть список правок.",
+      "cta": "Надіслати сайт і список правок",
+      "ctaLead": "Додайте посилання, сторінки з проблемами та бажаний результат. Якщо є — прикладіть скриншоти й готові тексти. Паролі через форму не надсилайте: потрібні доступи погодимо окремо.",
+      "detailsTitle": "Які правки можна замовити",
+      "details": [
+        {"title": "Мобільна версія", "text": "Текст виходить за екран або кнопки перекриваються? Скоригую розміри, відступи й порядок узгоджених блоків. Перевіримо змінені сторінки на погоджених ширинах: без горизонтального прокручування та перекриття елементів."},
+        {"title": "Блоки, стилі та відступи", "text": "Заголовки відрізняються, а секція не відповідає макету? Узгодимо приклад оформлення, поправлю типографіку, відступи й потрібні блоки. Звіримо результат із погодженим зразком на комп’ютері й телефоні."},
+        {"title": "Тексти та зображення", "text": "Оновлю матеріали на визначених сторінках із ваших готових текстів і фото. Під час приймання перевіримо актуальність тексту, посилання, пропорції зображень і читабельність на вузькому екрані. Підготовка нових матеріалів не входить автоматично."},
+        {"title": "Форма звернення", "text": "Узгодимо поля, обов’язкові значення й повідомлення після відправлення. Налаштую доступний функціонал форми та перевірю помилки заповнення. Перевірку фактичної доставки погоджуємо окремо; напис «успішно» сам по собі не підтверджує отримання заявки."}
+      ],
+      "faq": [
+        {"question": "Від чого залежать вартість і термін правок?", "answer": "Від кількості сторінок і змін, стану теми та плагінів, наявності доступів, готовності текстів і фото. Спочатку перегляну сайт і список задач, потім погодимо обсяг, бюджет і строк. Платні ліцензії та додаткові роботи обговорюємо окремо."},
+        {"question": "Чи обов’язково переробляти весь сайт?", "answer": "Ні. Можна почати з однієї сторінки або конкретної проблеми. До роботи визначимо, які блоки змінюємо, що має залишитися та як перевіряємо готовність. Якщо проблема потребує ширшого втручання, спочатку погодимо новий обсяг."},
+        {"question": "Як приймаємо виконані зміни?", "answer": "Проходимо погоджений список задач на змінених сторінках, звіряємо тексти й оформлення, перевіряємо узгоджені ширини екрана та потрібні сценарії. Передаю перелік виконаних змін і пояснення щодо редагування, якщо воно потрібне. Інтеграції й зовнішню доставку перевіряємо лише в погоджених межах."}
+      ],
       "scope": [
         "Правки блоків, відступів і типографіки",
         "Адаптив для телефона й планшета",
@@ -72,9 +87,24 @@ export const servicePages = [
       "answer": "Так: RHome Ohio — виконані правки WordPress/Elementor. ServiceFlow — окремий власний проєкт; його демо не підтверджує приймання реальних оплат."
     },
     "en": {
-      "title": "WordPress and Elementor improvements",
-      "lead": "Fix specific website issues: responsive layouts, styling, content and sections. We start with an agreed task list.",
-      "description": "WordPress and Elementor fixes for responsive layouts, styling, content and forms. See the RHome Ohio client project and ServiceFlow.",
+      "title": "Improvements to your WordPress and Elementor website",
+      "metaTitle": "WordPress and Elementor improvements — website fixes | DM Studio",
+      "lead": "Already have a website, but sections break on mobile, content is outdated or pages need changes? I can help with a specific list of fixes. We agree the scope and acceptance criteria before starting.",
+      "description": "Improve your existing WordPress and Elementor website: mobile layouts, sections, styling, content and forms. Explore a case and send your list of changes.",
+      "cta": "Send your website and change list",
+      "ctaLead": "Include a link, affected pages and the outcome you need. Add screenshots and prepared copy if available. Do not send passwords through the form: we will agree the required access separately.",
+      "detailsTitle": "Changes you can request",
+      "details": [
+        {"title": "Mobile layouts", "text": "Does text overflow the screen or do buttons overlap? I will adjust sizes, spacing and the order of agreed sections. We check the changed pages at agreed screen widths for horizontal overflow and overlapping elements."},
+        {"title": "Sections, styling and spacing", "text": "Inconsistent headings or a section that does not match your design? We agree a visual reference, then I adjust typography, spacing and the required sections. We compare the result with that reference on desktop and mobile."},
+        {"title": "Text and images", "text": "I update specified pages using your prepared copy and photos. At handover, we check the text, links, image proportions and readability on narrow screens. Creating new content is not automatically included."},
+        {"title": "Enquiry forms", "text": "We agree the fields, required values and messages after submission. I configure the available form features and check validation errors. Actual delivery testing is agreed separately: a success message alone does not confirm receipt of an enquiry."}
+      ],
+      "faq": [
+        {"question": "What affects the price and timeline?", "answer": "The number of pages and changes, the state of the theme and plugins, available access and prepared copy and photos. I first review the website and task list, then we agree the scope, budget and timeline. Paid licences and additional work are discussed separately."},
+        {"question": "Does the whole website need a redesign?", "answer": "No. We can start with one page or a specific issue. Before starting, we define the sections to change, what should stay and how to check completion. If the issue needs broader work, we agree the new scope first."},
+        {"question": "How do we accept the completed changes?", "answer": "We work through the agreed task list on changed pages, compare the content and styling, and check agreed screen widths and relevant flows. I provide a list of completed changes and editing guidance where needed. Integrations and external delivery are checked only within the agreed scope."}
+      ],
       "scope": [
         "Section, spacing and typography adjustments",
         "Mobile and tablet layout fixes",
@@ -86,9 +116,24 @@ export const servicePages = [
       "answer": "Yes: RHome Ohio involved completed WordPress/Elementor changes. ServiceFlow is a separate own project; its demo does not prove live payment processing."
     },
     "pl": {
-      "title": "Poprawki WordPress i Elementor",
-      "lead": "Poprawię konkretne problemy strony: responsywność, style, treść i sekcje. Zaczynamy od uzgodnionej listy zadań.",
-      "description": "Poprawki WordPress i Elementor: responsywność, style, treść i formularze. Projekt klienta RHome Ohio oraz ServiceFlow.",
+      "title": "Poprawki istniejącej strony WordPress i Elementor",
+      "metaTitle": "Poprawki WordPress i Elementor — rozwój strony | DM Studio",
+      "lead": "Masz już stronę, ale na telefonie rozjeżdżają się sekcje, treści są nieaktualne lub potrzebujesz zmian na podstronach? Pomogę z konkretną listą poprawek. Przed rozpoczęciem ustalimy zakres i kryteria odbioru.",
+      "description": "Poprawki istniejącej strony WordPress i Elementor: wersja mobilna, sekcje, style, treść i formularze. Zobacz realizację i prześlij listę zmian.",
+      "cta": "Prześlij stronę i listę poprawek",
+      "ctaLead": "Dodaj adres strony, podstrony z problemami i oczekiwany rezultat. Jeśli masz, dołącz zrzuty ekranu i gotowe teksty. Nie wysyłaj haseł przez formularz: potrzebne dostępy ustalimy osobno.",
+      "detailsTitle": "Jakie poprawki możesz zlecić",
+      "details": [
+        {"title": "Wersja mobilna", "text": "Tekst wychodzi poza ekran lub przyciski nachodzą na siebie? Poprawię rozmiary, odstępy i kolejność uzgodnionych sekcji. Sprawdzimy zmienione podstrony przy ustalonych szerokościach ekranu: bez poziomego przewijania i nakładania się elementów."},
+        {"title": "Sekcje, style i odstępy", "text": "Nagłówki są niespójne, a sekcja nie odpowiada projektowi? Uzgodnimy wzór, następnie poprawię typografię, odstępy i potrzebne sekcje. Porównamy wynik z ustalonym przykładem na komputerze i telefonie."},
+        {"title": "Teksty i zdjęcia", "text": "Zaktualizuję wskazane podstrony na podstawie Twoich gotowych tekstów i zdjęć. Przy odbiorze sprawdzimy treść, linki, proporcje obrazów i czytelność na wąskim ekranie. Przygotowanie nowych materiałów nie jest automatycznie wliczone."},
+        {"title": "Formularz kontaktowy", "text": "Uzgodnimy pola, wymagane wartości i komunikaty po wysłaniu. Skonfiguruję dostępne funkcje formularza i sprawdzę błędy walidacji. Test rzeczywistego dostarczenia ustalamy osobno: sam komunikat o sukcesie nie potwierdza odbioru zgłoszenia."}
+      ],
+      "faq": [
+        {"question": "Od czego zależą cena i termin?", "answer": "Od liczby podstron i zmian, stanu motywu i wtyczek, dostępów oraz gotowości tekstów i zdjęć. Najpierw przejrzę stronę i listę zadań, potem ustalimy zakres, budżet i termin. Płatne licencje i dodatkowe prace omawiamy osobno."},
+        {"question": "Czy trzeba przebudować całą stronę?", "answer": "Nie. Możemy zacząć od jednej podstrony lub konkretnego problemu. Przed pracą określimy, które sekcje zmieniamy, co zostaje i jak sprawdzimy gotowość. Jeśli problem wymaga szerszych zmian, najpierw uzgodnimy nowy zakres."},
+        {"question": "Jak odbieramy wykonane poprawki?", "answer": "Przechodzimy uzgodnioną listę zadań na zmienionych podstronach, porównujemy treści i wygląd, sprawdzamy ustalone szerokości ekranu i potrzebne scenariusze. Przekazuję listę wykonanych zmian oraz potrzebne wskazówki edycji. Integracje i dostarczanie do zewnętrznych usług sprawdzamy wyłącznie w uzgodnionym zakresie."}
+      ],
       "scope": [
         "Poprawki sekcji, odstępów i typografii",
         "Dostosowanie do telefonu i tabletu",
