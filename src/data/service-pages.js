@@ -153,45 +153,147 @@ export const servicePages = [
     ],
     "ua": {
       "title": "Telegram-боти для заявок і підтримки",
-      "lead": "Бот допомагає зібрати звернення, провести клієнта через короткий сценарій і передати інформацію відповідальній людині.",
-      "description": "Розробка Telegram-ботів для заявок, консультацій і простих бізнес-сценаріїв. Форми, сповіщення та інтеграції з таблицями.",
-      "scope": [
-        "Меню та сценарій діалогу під вашу задачу",
-        "Збір структурованих заявок без зайвих кроків",
-        "Сповіщення менеджеру та підключення таблиці",
-        "Перевірка помилок і передача інструкції"
+      "metaTitle": "Telegram-боти для бізнесу — заявки й підтримка | DM Studio",
+      "lead": "Розроблю бота, у якому клієнт обирає потрібний пункт, відповідає на погоджені питання, а менеджер отримує структуроване звернення.",
+      "description": "Розробка Telegram-ботів для бізнесу: меню, питання, структуровані заявки та передача менеджеру. Сценарій, межі й критерії готовності до старту.",
+      "cta": "Описати сценарій бота",
+      "ctaLead": "Напишіть мету бота, запитання для клієнта та кому передавати результат. Запропоную перший перевірний етап без зайвих функцій.",
+      "detailsTitle": "Який сценарій потрібен",
+      "details": [
+        {
+          "title": "Клієнт відповідає в боті",
+          "text": "Наприклад: обирає послугу, залишає контакт і коротко описує задачу. Перед розробкою фіксуємо послідовність кроків та обов’язкові поля."
+        },
+        {
+          "title": "Менеджер отримує звернення",
+          "text": "Після завершення сценарію бот передає погоджений набір даних відповідальній людині. Формат повідомлення і поведінку при помилці узгоджуємо окремо."
+        },
+        {
+          "title": "Діалог передається людині",
+          "text": "Якщо автоматичного сценарію недостатньо, визначаємо момент і спосіб переходу до менеджера. Бот не замінює спеціаліста у складній консультації."
+        }
       ],
-      "limit": "Бот не обходить обмеження Telegram. Розсилки, платежі й AI-функції додаємо лише за окремо погодженим сценарієм.",
+      "scope": [
+        "Меню та послідовність запитань під одну конкретну задачу",
+        "Перевірка обов’язкових відповідей і структурована заявка",
+        "Передача погоджених даних менеджеру або в доступну систему",
+        "Перевірка основних сценаріїв і коротка інструкція"
+      ],
+      "limit": "Бот не обходить обмеження Telegram і не гарантує роботу сторонніх сервісів. Розсилки, платежі, AI та складні інтеграції оцінюємо як окремі функції.",
       "question": "Бот обов’язково має використовувати AI?",
-      "answer": "Ні. Для запису, заявки чи повідомлення менеджеру часто достатньо звичайного сценарію. AI додаємо там, де він має практичну користь."
+      "answer": "Ні. Для заявки або передачі звернення менеджеру часто достатньо звичайного сценарію. AI додаємо лише там, де є окрема практична задача й спосіб перевірити відповідь.",
+      "faq": [
+        {
+          "question": "Що потрібно для попередньої оцінки?",
+          "answer": "Опишіть мету бота, кроки користувача, дані для збору, отримувача результату та потрібні інтеграції. Доступи погоджуємо після визначення обсягу."
+        },
+        {
+          "question": "Чим бот відрізняється від повідомлення про форму із сайту?",
+          "answer": "У боті клієнт взаємодіє з меню та питаннями всередині Telegram. Якщо клієнт заповнює форму на сайті, а Telegram лише сповіщає менеджера, це насамперед автоматизація передачі заявки."
+        }
+      ],
+      "relatedService": {
+        "slug": "business-automation",
+        "title": "Потрібно передавати заявки із сайту в Telegram або Google Sheets?",
+        "text": "Це окремий сценарій автоматизації: дані надходять із форми, а Telegram, таблиця чи API отримують погоджені поля й статуси.",
+        "label": "Передача заявок у таблицю та інші сервіси"
+      }
     },
     "en": {
       "title": "Telegram bots for enquiries and support",
-      "lead": "A bot collects enquiries, guides customers through a short flow and passes useful information to the right person.",
-      "description": "Telegram bot development for enquiries, consultations and simple business workflows. Forms, notifications and spreadsheet integrations.",
-      "scope": [
-        "Menus and conversation flows for your task",
-        "Structured enquiry collection",
-        "Manager notifications and spreadsheet connection",
-        "Error checks and handover instructions"
+      "metaTitle": "Telegram bots for business enquiries and support | DM Studio",
+      "lead": "I build bots where customers choose an option, answer agreed questions and send a structured enquiry to the right manager.",
+      "description": "Telegram bot development for business: menus, questions, structured enquiries and manager handoff. Agree the flow, limits and acceptance criteria first.",
+      "cta": "Describe your bot flow",
+      "ctaLead": "Share the bot's goal, customer questions and who should receive the result. I will propose a focused first stage without unnecessary features.",
+      "detailsTitle": "Choose the right flow",
+      "details": [
+        {
+          "title": "The customer answers in the bot",
+          "text": "For example, they choose a service, leave contact details and briefly describe the task. We define the steps and required fields before development."
+        },
+        {
+          "title": "The manager receives the enquiry",
+          "text": "When the flow is complete, the bot passes the agreed data to the responsible person. We define the message format and error behaviour separately."
+        },
+        {
+          "title": "A person takes over",
+          "text": "If an automated flow is not enough, we define when and how the enquiry moves to a manager. The bot does not replace a specialist in a complex consultation."
+        }
       ],
-      "limit": "Bots do not bypass Telegram restrictions. Broadcasts, payments and AI features need a separately agreed scope.",
+      "scope": [
+        "A menu and question sequence for one defined task",
+        "Required-answer checks and a structured enquiry",
+        "Agreed data delivery to a manager or available system",
+        "Core-flow checks and concise handover instructions"
+      ],
+      "limit": "A bot cannot bypass Telegram restrictions or guarantee third-party services. Broadcasts, payments, AI and complex integrations are estimated as separate features.",
       "question": "Does a bot always need AI?",
-      "answer": "No. Enquiries, bookings and manager notifications often need only a straightforward flow. AI is added when it brings practical value."
+      "answer": "No. An enquiry or manager handoff often needs only a straightforward flow. AI is added only for a defined practical task with a way to review its output.",
+      "faq": [
+        {
+          "question": "What do you need for an initial estimate?",
+          "answer": "Describe the bot's goal, user steps, data to collect, result recipient and required integrations. We agree access after defining the scope."
+        },
+        {
+          "question": "How is a bot different from a website-form notification?",
+          "answer": "In a bot, the customer uses menus and answers questions inside Telegram. If the customer submits a website form and Telegram only notifies a manager, the main task is enquiry-delivery automation."
+        }
+      ],
+      "relatedService": {
+        "slug": "business-automation",
+        "title": "Need to send website enquiries to Telegram or Google Sheets?",
+        "text": "That is a separate automation flow: data starts in the form, while Telegram, a spreadsheet or an API receives the agreed fields and statuses.",
+        "label": "Enquiry delivery to spreadsheets and other services"
+      }
     },
     "pl": {
       "title": "Boty Telegram do zapytań i wsparcia",
-      "lead": "Bot zbiera zapytania, prowadzi klienta przez krótki scenariusz i przekazuje informacje odpowiedniej osobie.",
-      "description": "Tworzenie botów Telegram do zapytań, konsultacji i prostych procesów biznesowych. Formularze, powiadomienia i arkusze.",
-      "scope": [
-        "Menu i scenariusz rozmowy do konkretnego zadania",
-        "Zbieranie uporządkowanych zapytań",
-        "Powiadomienia dla pracownika i połączenie z arkuszem",
-        "Kontrola błędów i instrukcja obsługi"
+      "metaTitle": "Boty Telegram dla firm — zapytania i wsparcie | DM Studio",
+      "lead": "Tworzę boty, w których klient wybiera opcję, odpowiada na ustalone pytania, a opiekun otrzymuje uporządkowane zgłoszenie.",
+      "description": "Tworzenie botów Telegram dla firm: menu, pytania, uporządkowane zgłoszenia i przekazanie opiekunowi. Najpierw ustalamy scenariusz i odbiór.",
+      "cta": "Opisz scenariusz bota",
+      "ctaLead": "Podaj cel bota, pytania do klienta i odbiorcę wyniku. Zaproponuję mały, sprawdzalny pierwszy etap bez zbędnych funkcji.",
+      "detailsTitle": "Wybierz właściwy scenariusz",
+      "details": [
+        {
+          "title": "Klient odpowiada w bocie",
+          "text": "Na przykład wybiera usługę, podaje kontakt i krótko opisuje zadanie. Przed wdrożeniem ustalamy kroki oraz pola obowiązkowe."
+        },
+        {
+          "title": "Opiekun otrzymuje zgłoszenie",
+          "text": "Po zakończeniu scenariusza bot przekazuje ustalone dane odpowiedniej osobie. Format wiadomości i zachowanie przy błędzie ustalamy osobno."
+        },
+        {
+          "title": "Rozmowę przejmuje człowiek",
+          "text": "Jeśli automatyczny scenariusz nie wystarcza, określamy moment i sposób przekazania do opiekuna. Bot nie zastępuje specjalisty w złożonej konsultacji."
+        }
       ],
-      "limit": "Bot nie omija ograniczeń Telegrama. Wysyłki, płatności i funkcje AI wymagają osobno ustalonego zakresu.",
+      "scope": [
+        "Menu i sekwencja pytań do jednego określonego zadania",
+        "Kontrola odpowiedzi obowiązkowych i uporządkowane zgłoszenie",
+        "Przekazanie ustalonych danych opiekunowi lub do dostępnego systemu",
+        "Kontrola głównych scenariuszy i krótka instrukcja"
+      ],
+      "limit": "Bot nie omija ograniczeń Telegrama i nie gwarantuje działania usług zewnętrznych. Wysyłki, płatności, AI i złożone integracje wyceniamy jako osobne funkcje.",
       "question": "Czy bot zawsze potrzebuje AI?",
-      "answer": "Nie. Zapytania, zapisy i powiadomienia często wymagają tylko prostego scenariusza. AI dodajemy, gdy daje praktyczną korzyść."
+      "answer": "Nie. Zgłoszenie lub przekazanie do opiekuna często wymaga tylko prostego scenariusza. AI dodajemy do konkretnego zadania, gdy można zweryfikować jego odpowiedź.",
+      "faq": [
+        {
+          "question": "Co jest potrzebne do wstępnej wyceny?",
+          "answer": "Opisz cel bota, kroki użytkownika, zbierane dane, odbiorcę wyniku i potrzebne integracje. Dostępy ustalamy po określeniu zakresu."
+        },
+        {
+          "question": "Czym bot różni się od powiadomienia o formularzu ze strony?",
+          "answer": "W bocie klient korzysta z menu i odpowiada na pytania w Telegramie. Jeśli wypełnia formularz na stronie, a Telegram tylko powiadamia opiekuna, głównym zadaniem jest automatyzacja przekazania zgłoszenia."
+        }
+      ],
+      "relatedService": {
+        "slug": "business-automation",
+        "title": "Chcesz wysyłać zgłoszenia ze strony do Telegrama lub Google Sheets?",
+        "text": "To osobny scenariusz automatyzacji: dane pochodzą z formularza, a Telegram, arkusz lub API otrzymuje ustalone pola i statusy.",
+        "label": "Przekazywanie zgłoszeń do arkuszy i innych usług"
+      }
     }
   },
   {
