@@ -27,6 +27,13 @@ export function casesOverview(base, language) {
   return '<div class="cases-page container" data-case-page="index"><header class="cases-heading"><div><p class="eyebrow">' + text("casesEyebrow") + '</p><h1>' + text("casesTitle") + '<br><span>' + text("casesTitleAccent") + '</span></h1></div><p>' + text("casesIntro") + '</p></header><div class="cases-filters" role="group" aria-label="' + caseLocales.ua.ui.casesFilters + '" data-i18n-attr="aria-label:casesFilters" hidden>' + [["all","casesAll"],["web","casesWeb"],["ai","casesAI"]].map(([id,key]) => '<button type="button" data-case-filter="' + id + '" aria-pressed="' + (id === "all") + '" aria-controls="cases-grid">' + text(key) + '</button>').join("") + '</div><p class="sr-only" id="cases-status" role="status" aria-live="polite"></p><div class="cases-grid" id="cases-grid">' + caseProjects.map(project => caseCard(project, base, language)).join("") + '</div>' + caseCta(base,language) + '</div>';
 }
 export function caseDetail(project, base, language) {
+  const markup = caseDetailBody(project, base, language);
+  if (project.type !== "nfc") return markup;
+  const services = base + (language === "ua" ? "" : language + "/") + "services/";
+  const integrations = '<section class="case-future"><h2>' + text("casesNfcIntegrationTitle") + '</h2><p>' + text("casesNfcIntegrationDescription") + '</p><p>' + text("casesNfcAutomationDescription") + '</p><div class="seo-actions"><a class="button button--dark" href="' + services + 'business-automation/">' + text("casesNfcAutomationLink") + ' ↗</a><a href="' + services + 'telegram-bots/">' + text("casesNfcBotLink") + ' ↗</a></div></section>';
+  return markup.replace('<div class="cases-cta">', integrations + '<div class="cases-cta">');
+}
+function caseDetailBody(project, base, language) {
   if(project.type === "autora") return autoraDetail(project,base,language);
   if(project.type === "serviceflow") return flowDetail(project,base,language);
   if(project.type === "wood") return woodDetail(project,base,language);
