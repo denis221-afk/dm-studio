@@ -1,4 +1,5 @@
-export const blogPosts = [
+import { wordpressArticle } from './wordpress-article.js';
+export const blogPosts = [wordpressArticle,
   {
     "slug": "nfc-food-ai",
     "date": "2026-10-09",
