@@ -1,5 +1,6 @@
 import { wordpressArticle } from './wordpress-article.js';
-export const blogPosts = [wordpressArticle,
+import { telegramArticle } from './telegram-article.js';
+export const blogPosts = [telegramArticle,wordpressArticle,
   {
     "slug": "nfc-food-ai",
     "date": "2026-10-09",

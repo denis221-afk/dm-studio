@@ -34,6 +34,13 @@ export function blogArticle(post,base,language) {
   let markup = blogArticleBody(post,base,language);
   if (!post.serviceSlug) return markup;
   const home = base + (language === 'ua' ? '' : language+'/');
+  if(post.editorial){
+    const labels={ua:['Ілюстрація передачі даних із форми','Автоматизація заявок та інтеграції','Telegram-боти з меню та питаннями','Офіційна документація Telegram'],en:['Illustration of form data delivery','Enquiry automation and integrations','Telegram bots with menus and questions','Official Telegram documentation'],pl:['Ilustracja przekazywania danych formularza','Automatyzacja zgłoszeń i integracje','Boty Telegram z menu i pytaniami','Oficjalna dokumentacja Telegrama']}[language];
+    markup=markup.replace(cover(base,language),'<img src="'+base+post.image+'" alt="" width="1200" height="630">').replace(text('blogCoverCaption',language),escape(labels[0]));
+    markup=markup.replace(/<a class="button button--dark" href="[^"]*cases\/undefined\/[\s\S]*?<\/a>/,'');
+    const links='<section class="blog-cta"><div><p><a href="'+home+'services/business-automation/">'+escape(labels[1])+' ↗</a></p><p><a href="'+home+'services/telegram-bots/">'+escape(labels[2])+' ↗</a></p><p><a href="https://core.telegram.org/bots/api#sendmessage">'+escape(labels[3])+'</a></p></div></section>';
+    return markup.replace('<section class="blog-cta"',links+'<section class="blog-cta"');
+  }
   const labels = {ua:['Нейтральна ілюстрація списку правок','Доопрацювання WordPress та Elementor','Офіційні джерела'],en:['Illustration of a change checklist','WordPress and Elementor improvements','Official sources'],pl:['Ilustracja listy poprawek','Poprawki WordPress i Elementor','Oficjalne źródła']}[language];
   markup = markup.replace(cover(base,language), '<img src="'+base+post.image+'" alt="" width="1200" height="630">').replace(text('blogCoverCaption',language),escape(labels[0]));
   const links = '<section class="blog-cta"><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(labels[1])+' ↗</a><div><h2>'+escape(labels[2])+'</h2><p><a href="https://wordpress.org/documentation/article/updating-wordpress/">WordPress: updates</a> · <a href="https://elementor.com/help/responsive-editing/">Elementor: responsive editing</a></p></div></section>';
