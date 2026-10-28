@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-28",
+  "ga4Range": [
+    "2026-10-19",
+    "2026-10-25"
+  ],
+  "gscRange": [
+    "2026-10-15",
+    "2026-10-25"
+  ],
+  "traffic": {
+    "status": "done",
+    "data": [
+      {
+        "date": "2026-10-19",
+        "hostname": "dm-studio-production.up.railway.app",
+        "session_default_channel_group": "Direct",
+        "sessions": 2,
+        "totalusers": 1
+      },
+      {
+        "date": "2026-10-22",
+        "hostname": "dm-studio-production.up.railway.app",
+        "session_default_channel_group": "Direct",
+        "sessions": 2,
+        "totalusers": 1
+      }
+    ],
+    "total_rows": 2
+  },
+  "events": {
+    "status": "done",
+    "data": [
+      {
+        "date": "2026-10-19",
+        "hostname": "dm-studio-production.up.railway.app",
+        "event_name": "page_view",
+        "event_count": 1
+      },
+      {
+        "date": "2026-10-22",
+        "hostname": "dm-studio-production.up.railway.app",
+        "event_name": "page_view",
+        "event_count": 1
+      }
+    ],
+    "total_rows": 2
+  },
+  "gscDaily": {
+    "status": "done",
+    "data": [
+      {
+        "date": "2026-10-15",
+        "clicks": 0,
+        "impressions": 10,
+        "ctr": 0,
+        "position": 6.7
+      },
+      {
+        "date": "2026-10-16",
+        "clicks": 0,
+        "impressions": 4,
+        "ctr": 0,
+        "position": 6
+      },
+      {
+        "date": "2026-10-17",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 6.2857
+      },
+      {
+        "date": "2026-10-18",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "position": 0
+      },
+      {
+        "date": "2026-10-19",
+        "clicks": 0,
+        "impressions": 6,
+        "ctr": 0,
+        "position": 7
+      },
+      {
+        "date": "2026-10-20",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 7.4286
+      },
+      {
+        "date": "2026-10-21",
+        "clicks": 0,
+        "impressions": 5,
+        "ctr": 0,
+        "position": 7.4
+      },
+      {
+        "date": "2026-10-22",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr": 0,
+        "position": 8
+      },
+      {
+        "date": "2026-10-23",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "position": 0
+      },
+      {
+        "date": "2026-10-24",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "position": 0
+      },
+      {
+        "date": "2026-10-25",
+        "clicks": 0,
+        "impressions": 0,
+        "ctr": null,
+        "position": 0
+      }
+    ],
+    "total_rows": 11
+  },
+  "gscPages": {
+    "status": "done",
+    "data": [
+      {
+        "page": "https://dm-studio-production.up.railway.app/en/",
+        "clicks": 0,
+        "impressions": 34,
+        "position": 6.9412
+      },
+      {
+        "page": "https://dm-studio-production.up.railway.app/en/blog/nfc-food-ai/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 11
+      },
+      {
+        "page": "https://dm-studio-production.up.railway.app/en/cases/autora/",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 6.3333
+      },
+      {
+        "page": "https://dm-studio-production.up.railway.app/en/cases/nfc-menu/",
+        "clicks": 0,
+        "impressions": 3,
+        "position": 8.3333
+      },
+      {
+        "page": "https://dm-studio-production.up.railway.app/en/cases/woodeco/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 6
+      },
+      {
+        "page": "https://dm-studio-production.up.railway.app/pl/about/",
+        "clicks": 0,
+        "impressions": 1,
+        "position": 7
+      }
+    ],
+    "total_rows": 6
+  }
+}
