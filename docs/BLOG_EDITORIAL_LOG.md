@@ -1,5 +1,9 @@
 # Редакційний журнал
 
+## 29.10.2026 — доповнення WordPress-статті
+
+Намір: допомогти описати й прийняти виправлення мобільного меню Elementor. Через значний перетин з існуючим brief доповнено /blog/wordpress-change-brief/ замість нового URL. Повні UA/EN/PL: відтворення, визначення компонента, breakpoint, довгі назви, keyboard/focus і межі діагностики. Навчальний приклад позначений; новий досвід або метрики не заявляються. Джерела перевірено вебпошуком 29.10: https://elementor.com/help/nav-menu-widget-pro/, https://elementor.com/help/the-menu-widget/, https://elementor.com/help/troubleshooting-issues-with-mobiles/. Посилання responsive-editing у статті збережене. Первинна дата 25.10 збережена, schema dateModified=29.10. Коміт у git history. Перевірки: build/check/SEO60/11 тестів; Railway й live після коміту. GA4/GSC не запитувалися. Учорашній коміт документації мав Railway failure; причина без логів не встановлена, чинний сайт доступний. Новий контент не вважати живим до read-back.
+
 ## 27.10.2026 — етап 13, публікація
 
 «Форма сайту → Telegram: як перевіряти відправлення і не створювати дублікати». Намір: зрозуміти підтвердження API-відправлення та невизначені результати. Власна форма DM Studio; повні UA/EN/PL, нейтральна SVG, дата 27.10.2026. Джерела: src/js/brief-delivery.js, server/index.mjs, локальні тести, https://core.telegram.org/bots/api#sendmessage (повторно відкрито 27.10). URL: https://dm-studio-production.up.railway.app/blog/website-form-telegram-delivery/ та /en/, /pl/. Коміт — у git history. Build/check/SEO60 та 11 тестів успішні; responsive перевірено за HTML/CSS без фізичного телефону. Підтвердження живого тексту й Railway відбувається після коміту; до нього публікація не підтверджена. Наступне — етап 14, без нової статті до завершення плану.
