@@ -24,3 +24,27 @@ export function addMobileMenuGuide(post){
  for(const lang of ['ua','en','pl'])post[lang].sections.splice(2,0,{id:'mobile-menu-checklist',...content[lang]});
  post.modified='2026-10-29';
 }
+
+export function addHorizontalScrollGuide(post) {
+  const content = {
+    ua: ['Сторінка їде вбік на телефоні: як знайти причину',
+      'Спочатку з’ясуйте, що саме прокручується: вся сторінка чи один блок. Якщо після свайпу вбік зміщується навіть шапка, шукайте елемент, який виходить за ширину сторінки. Якщо прокручується лише таблиця з багатьма колонками, це може бути доречно: важливо, щоб решта сторінки залишалася читабельною.',
+      'Відкрийте проблемну адресу в режимі адаптивного перегляду браузера. Почніть із 320 CSS-пікселів як орієнтира для перевірки перенесення вмісту за WCAG, потім повторіть на ширині, де помітили збій. Перевірте довгі назви, польський та англійський тексти й відкриті підменю. У засобах розробника тимчасово вимикайте підозрілі блоки по одному: карту, широке зображення, віджет зі сталою шириною. Якщо прокручування зникло, перевірте також батьківський контейнер, його відступи та ширину.',
+      'Навчальний приклад: у картці послуги довга адреса сайту виходить за край, хоча фото вміщується. Спершу перевірте перенесення адреси й те, чи може картка звужуватися всередині колонки. Після правки повна адреса має бути доступна, а кнопка під нею — видима й натискатися. Приховування горизонтального прокручування на всій сторінці може просто обрізати частину вмісту.',
+      'Для приймання передайте адресу, мову, ширину й коротке відео свайпу. Перевірте, що звичайний текст читається без руху вбік, усі дії залишилися доступними, а широка таблиця, якщо вона є, прокручується окремо. Це перевірка конкретного дефекту; один перегляд на ширині 320 пікселів не підтверджує повну відповідність WCAG.'],
+    en: ['Page scrolls sideways on mobile: how to find the cause',
+      'First check what moves: the whole page or one block. If the header moves when you swipe sideways, look for an element extending beyond the page width. If only a wide data table scrolls, that may be appropriate as long as the rest of the page remains readable.',
+      'Open the affected URL in your browser’s responsive mode. Start at 320 CSS pixels as a reference for checking WCAG reflow, then reproduce the original viewport width. Check long labels, the Polish and English text, and expanded submenus. In developer tools, temporarily disable suspect blocks one by one: a map, a wide image or a fixed-width widget. If scrolling stops, inspect the parent container, including its width and spacing.',
+      'Illustrative example: a long web address spills out of a service card even though the photo fits. Check whether the address can wrap and whether the card can shrink inside its column. After the fix, the full address should be accessible and the button underneath visible and usable. Hiding horizontal overflow for the whole page can merely clip content.',
+      'For acceptance, provide the URL, language, width and a short recording of the swipe. Check that ordinary text reads without sideways movement, all controls remain usable and any wide table scrolls on its own. This checks one defect; a single 320-pixel preview does not establish full WCAG conformance.'],
+    pl: ['Strona przewija się w bok na telefonie: jak znaleźć przyczynę',
+      'Najpierw sprawdź, co się przesuwa: cała strona czy jeden blok. Jeśli gest w bok przesuwa także nagłówek, poszukaj elementu wystającego poza szerokość strony. Osobne przewijanie szerokiej tabeli może być właściwe, o ile reszta strony pozostaje czytelna.',
+      'Otwórz adres w trybie responsywnym przeglądarki. Zacznij od 320 pikseli CSS jako punktu odniesienia dla sprawdzenia dopasowania treści według WCAG, a następnie odtwórz szerokość, przy której wystąpił błąd. Sprawdź długie etykiety, polski i angielski tekst oraz rozwinięte podmenu. W narzędziach deweloperskich tymczasowo wyłączaj podejrzane bloki po kolei: mapę, szeroki obraz lub widżet o stałej szerokości. Jeśli przewijanie ustąpi, sprawdź także szerokość i odstępy kontenera nadrzędnego.',
+      'Przykład edukacyjny: długi adres internetowy wystaje poza kartę usługi, chociaż zdjęcie się mieści. Sprawdź, czy adres może się zawijać i czy karta może się zwężać w kolumnie. Po poprawce pełny adres powinien być dostępny, a przycisk poniżej widoczny i użyteczny. Ukrycie przewijania poziomego na całej stronie może jedynie uciąć treść.',
+      'Do odbioru podaj adres, język, szerokość i krótkie nagranie gestu. Sprawdź, czy zwykły tekst da się czytać bez przesuwania w bok, wszystkie elementy sterujące działają, a ewentualna szeroka tabela przewija się osobno. To kontrola konkretnej usterki; jeden podgląd przy 320 pikselach nie potwierdza pełnej zgodności z WCAG.']
+  };
+  for (const [lang, [title, ...paragraphs]] of Object.entries(content)) {
+    post[lang].sections.splice(3, 0, {id: 'mobile-horizontal-scroll', title, paragraphs});
+  }
+  post.modified = '2026-11-05';
+}

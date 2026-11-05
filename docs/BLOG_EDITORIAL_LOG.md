@@ -1,5 +1,9 @@
 # Редакційний журнал
 
+## 05.11.2026 — горизонтальне прокручування на мобільному
+
+Доповнено WordPress-статтю UA/EN/PL: діагностика переповнення сторінки й критерії приймання. Це інформаційне доповнення до наявної теми адаптивності, без нового URL. Приклад навчальний. Джерело: https://www.w3.org/WAI/WCAG21/Understanding/reflow (перевірено 05.11). URL: https://dm-studio-production.up.railway.app/blog/wordpress-change-brief/#mobile-horizontal-scroll. Коміт у git history. Перевірки перед публікацією: build/check/SEO/серверні тести; після — Railway та HTML трьох мов.
+
 ## 02.11.2026 — облік заявок у Google Sheets
 
 Доповнення /blog/website-form-telegram-delivery/#sheets-lead-ledger замість дублюючої статті. Намір A2 з актуальної карти: структура обліку, відповідальний і наступна дія. Перечитано main 86295e4aeab99ae6c4016dd0cc87f19660eea601, blog.js, статтю, карту та журнал. Повні UA/EN/PL; навчальний приклад відокремлено від власної форми, інтеграцію Sheets у DM Studio не заявлено. Джерело перевірено вебпошуком та відкрито 02.11: https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets.values/append. Рекомендації обліку — редакційний приклад, не гарантія exactly-once. Початкова дата 27.10 збережена, dateModified=02.11.2026. Живий URL: https://dm-studio-production.up.railway.app/blog/website-form-telegram-delivery/ та /en/, /pl/. Коміт — у git history цього запису. Build/check/SEO та серверні тести виконуються перед комітом, Railway і живий текст перевіряються після; до read-back публікацію не вважати підтвердженою. GA4/GSC не запитувалися, форма не надсилалася.

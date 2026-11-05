@@ -43,7 +43,7 @@ export function blogArticle(post,base,language) {
   }
   const labels = {ua:['Нейтральна ілюстрація списку правок','Доопрацювання WordPress та Elementor','Офіційні джерела'],en:['Illustration of a change checklist','WordPress and Elementor improvements','Official sources'],pl:['Ilustracja listy poprawek','Poprawki WordPress i Elementor','Oficjalne źródła']}[language];
   markup = markup.replace(cover(base,language), '<img src="'+base+post.image+'" alt="" width="1200" height="630">').replace(text('blogCoverCaption',language),escape(labels[0]));
-  const links = '<section class="blog-cta"><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(labels[1])+' ↗</a><div><h2>'+escape(labels[2])+'</h2><p><a href="https://wordpress.org/documentation/article/updating-wordpress/">WordPress: updates</a> · <a href="https://elementor.com/help/responsive-editing/">Elementor: responsive editing</a></p></div></section>';
+  const links = '<section class="blog-cta"><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(labels[1])+' ↗</a><div><h2>'+escape(labels[2])+'</h2><p><a href="https://wordpress.org/documentation/article/updating-wordpress/">WordPress: updates</a> · <a href="https://elementor.com/help/responsive-editing/">Elementor: responsive editing</a> · <a href="https://www.w3.org/WAI/WCAG21/Understanding/reflow">W3C: Reflow</a></p></div></section>';
   return markup.replace('<section class="blog-cta"',links+'<section class="blog-cta"');
 }
 function blogArticleBody(post,base,language) {
