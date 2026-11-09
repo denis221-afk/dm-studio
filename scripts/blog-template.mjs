@@ -34,6 +34,14 @@ export function blogArticle(post,base,language) {
   let markup = blogArticleBody(post,base,language);
   if (!post.serviceSlug) return markup;
   const home = base + (language === 'ua' ? '' : language+'/');
+  if (post.guide) {
+    const copy = post[language];
+    markup = markup.replace(cover(base,language), '<img src="'+base+post.image+'" alt="" width="1200" height="630">')
+      .replace(text('blogCoverCaption',language),escape(copy.coverCaption))
+      .replace(/<a class="button button--dark" href="[^"]*cases\/undefined\/[\s\S]*?<\/a>/,'');
+    const links = '<section class="blog-cta"><div><p><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(copy.serviceLabel)+' ↗</a></p><p><a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/">n8n Docs: Webhook</a></p></div></section>';
+    return markup.replace('<section class="blog-cta"',links+'<section class="blog-cta"');
+  }
   if(post.editorial){
     const labels={ua:['Ілюстрація передачі даних із форми','Автоматизація заявок та інтеграції','Telegram-боти з меню та питаннями','Офіційна документація Telegram'],en:['Illustration of form data delivery','Enquiry automation and integrations','Telegram bots with menus and questions','Official Telegram documentation'],pl:['Ilustracja przekazywania danych formularza','Automatyzacja zgłoszeń i integracje','Boty Telegram z menu i pytaniami','Oficjalna dokumentacja Telegrama']}[language];
     markup=markup.replace(cover(base,language),'<img src="'+base+post.image+'" alt="" width="1200" height="630">').replace(text('blogCoverCaption',language),escape(labels[0]));
