@@ -64,3 +64,22 @@ export const n8nWebhookArticle = {
     ])
   }
 };
+
+const acceptedButMissing = {
+  ua: ['4. Що робити, якщо відповідь 2xx, але рядка немає',
+    'Візьміть час і технічний ID одного звернення. Знайдіть відповідне виконання та відкрийте вузол, який мав записати дані. Якщо вузол не запускався, перевірте умову переходу до гілки. Якщо він завершився помилкою, перевірте повідомлення й доступ до таблиці. Якщо запис позначено успішним, звірте цільовий файл, вкладку та ID рядка. Ці три випадки потребують різних виправлень.',
+    'Умовний приклад для ізольованої копії: вузол запису замінено контрольованим збоєм. За негайної відповіді відправник може вже отримати 2xx, а виконання згодом завершиться помилкою. Критерій приймання: оператор бачить збій і може знайти його за ID. У n8n для невдалих виконань можна призначити окремий процес із вузлом Error Trigger. Це засіб спостереження: він сам не відновлює запис і не помітить пропущену гілку, якщо весь процес завершився успішно.',
+    'Перед повтором звірте, що вже встигло виконатися. Якщо рядок є, але зірвалося сповіщення, повторіть лише крок сповіщення через передбачений механізм. Якщо стан запису невідомий, спершу знайдіть заявку за тим самим ID. Не запускайте весь процес повторно, доки не зрозумієте, чи можуть повторитися зовнішні дії.'],
+  en: ['4. What to do when the response is 2xx but no row appears',
+    'Take the timestamp and technical ID of one enquiry. Find its execution and open the node that should have written the data. If it never ran, check the branch condition. If it failed, check the error and spreadsheet access. If the write reports success, verify the destination file, tab and row ID. Each outcome needs a different fix.',
+    'Illustrative test for an isolated copy: replace the write node with a controlled failure. With an immediate response, the sender can receive 2xx before the execution fails. The acceptance criterion is that an operator can see the failure and locate it by ID. In n8n, you can assign a separate workflow starting with Error Trigger to handle failed executions. It helps surface failures; it does not restore the write or detect a skipped branch if the execution succeeds.',
+    'Check what already ran before retrying. If the row exists but notification failed, retry only the notification through the mechanism provided for it. If the write status is unknown, first look up the same enquiry ID. Avoid rerunning the whole workflow until you know which external actions could repeat.'],
+  pl: ['4. Co zrobić, gdy odpowiedź to 2xx, ale brakuje wiersza',
+    'Weź czas i techniczny identyfikator jednego zgłoszenia. Znajdź wykonanie i otwórz węzeł odpowiedzialny za zapis. Jeśli węzeł się nie uruchomił, sprawdź warunek wyboru gałęzi. Jeśli zgłosił błąd, sprawdź komunikat i dostęp do arkusza. Jeśli zapis zakończył się sukcesem, zweryfikuj plik docelowy, kartę i identyfikator wiersza. Każdy z tych wyników wymaga innej poprawki.',
+    'Przykład dla odizolowanej kopii: zastąp węzeł zapisu kontrolowanym błędem. Przy natychmiastowej odpowiedzi nadawca może dostać 2xx przed nieudanym zakończeniem procesu. Kryterium odbioru: operator widzi błąd i potrafi znaleźć go po identyfikatorze. W n8n można przypisać do obsługi nieudanych wykonań osobny proces rozpoczynający się od Error Trigger. Ułatwia on zauważenie błędów, ale sam nie odtwarza zapisu ani nie wykrywa pominiętej gałęzi, jeśli wykonanie zakończy się sukcesem.',
+    'Przed ponowieniem sprawdź, co już się wykonało. Jeśli wiersz istnieje, lecz powiadomienie nie dotarło, ponów tylko krok powiadomienia przez przeznaczony do tego mechanizm. Jeśli stan zapisu jest nieznany, najpierw wyszukaj zgłoszenie po tym samym ID. Nie uruchamiaj ponownie całego procesu, dopóki nie ustalisz, które działania zewnętrzne mogą się powtórzyć.']
+};
+for (const [locale, entry] of Object.entries(acceptedButMissing)) {
+  n8nWebhookArticle[locale].sections.push(...sections([['accepted-but-missing', ...entry]]));
+}
+n8nWebhookArticle.modified = '2026-11-12';

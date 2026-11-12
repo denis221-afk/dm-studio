@@ -39,7 +39,7 @@ export function blogArticle(post,base,language) {
     markup = markup.replace(cover(base,language), '<img src="'+base+post.image+'" alt="" width="1200" height="630">')
       .replace(text('blogCoverCaption',language),escape(copy.coverCaption))
       .replace(/<a class="button button--dark" href="[^"]*cases\/undefined\/[\s\S]*?<\/a>/,'');
-    const links = '<section class="blog-cta"><div><p><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(copy.serviceLabel)+' ↗</a></p><p><a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/">n8n Docs: Webhook</a></p></div></section>';
+    const links = '<section class="blog-cta"><div><p><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(copy.serviceLabel)+' ↗</a></p><p><a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/">n8n Docs: Webhook</a> · <a href="https://docs.n8n.io/flow-logic/error-handling/">n8n Docs: Error handling</a></p></div></section>';
     return markup.replace('<section class="blog-cta"',links+'<section class="blog-cta"');
   }
   if(post.editorial){

@@ -1,5 +1,9 @@
 # Редакційний журнал
 
+## 12.11.2026 — n8n повертає 2xx, але рядка немає
+
+Доповнення до наявного матеріалу A3, без дублювання URL. UA/EN/PL: пошук виконання за ID, три причини відсутності рядка, умовний приклад часткового збою та межі Error Trigger. Джерела: https://docs.n8n.io/flow-logic/error-handling/ і https://docs.n8n.io/workflows/executions/all-executions/ (12.11). URL: https://dm-studio-production.up.railway.app/blog/n8n-webhook-404/#accepted-but-missing. Коміт в історії запису. Перевірки: build, check, SEO, серверні тести, HTML трьох мов; після оновлення main — статус Railway та живі URL. Власне впровадження n8n не заявлено, реальні заявки не надсилалися.
+
 ## 09.11.2026 — вебхук n8n повертає 404 після тесту
 
 Намір A3: діагностика маршруту, публікації та методу HTTP. Окрема тема від матеріалів про доставку в Telegram та облік у Sheets. UA/EN/PL, нейтральна SVG-схема, умовний приклад конфігурації. Офіційне джерело перевірено 09.11: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.webhook/. Стаття не заявляє клієнтського впровадження чи тесту на робочому n8n. URL: https://dm-studio-production.up.railway.app/blog/n8n-webhook-404/ та відповідні /en/ і /pl/. Коміт — в історії цього запису. Перед комітом: build, check, SEO, локальні серверні тести та перевірка HTML усіх мов. Після коміту: окреме підтвердження Railway і живих URL. GA4/GSC не запитувалися; заявок не надсилали.
