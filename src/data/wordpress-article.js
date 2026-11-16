@@ -3,3 +3,22 @@ export const wordpressArticle = {slug:'wordpress-change-brief',date:'2026-10-25'
 addMobileMenuGuide(wordpressArticle);
 import { addMobileMenuGuide, addHorizontalScrollGuide } from './wordpress-mobile-menu.js';
 addHorizontalScrollGuide(wordpressArticle);
+
+const templateScope = {
+  ua: ['Правка Elementor: одна сторінка чи спільний шаблон?',
+    'Перед заміною телефону або кнопки з’ясуйте, звідки цей елемент береться. Якщо він належить до вмісту конкретної сторінки, перевіряйте її. Якщо це шапка чи підвал із Theme Builder, відкрийте умови показу: шаблон може діяти на всьому сайті або лише на вибраних сторінках. Якщо Theme Builder не керує блоком, перевірте налаштування теми перед правкою.',
+    'Навчальний приклад: на сторінці послуги потрібно змінити номер лише для одного відділу. Якщо номер стоїть у спільній шапці, її редагування може зачепити всі сторінки, де вона діє. Погодьте, чи потрібен номер у вмісті однієї сторінки, чи окремий шаблон із власними умовами показу. У другому випадку перевірте, що умови двох шапок не конфліктують.',
+    'Для приймання запишіть дві адреси: де зміна має бути і де її бути не повинно. Перевірте обидві після публікації, бажано без входу в адмінку. Для номера звірте і видимий текст, і ціль посилання для дзвінка, а на багатомовному сайті — відповідні мовні версії. Додайте ці адреси до завдання разом із назвою шаблону, якщо вона відома.'],
+  en: ['Elementor edit: one page or a shared template?',
+    'Before changing a phone number or button, find where it comes from. If it belongs to the content of one page, check that page. For a Theme Builder header or footer, inspect the display conditions: the template may apply sitewide or only on selected pages. If Theme Builder does not control the block, check the theme settings before editing.',
+    'Example: only one department’s service page needs a different number. Editing a shared header could affect every page that uses it. Agree whether to put the number in that page’s content or use a separate template with its own display conditions. In the second case, check that the two headers’ conditions do not conflict.',
+    'For acceptance, write down two URLs: one where the change should appear and one where it should not. Check both after publishing, preferably while signed out. For a number, verify the displayed text and the call link target. On multilingual sites, also check the relevant language versions. Add these URLs and the template name, if known, to the brief.'],
+  pl: ['Zmiana w Elementorze: jedna strona czy wspólny szablon?',
+    'Przed zmianą numeru telefonu lub przycisku sprawdź, skąd pochodzi element. Jeśli należy do treści jednej strony, sprawdź tę stronę. W przypadku nagłówka lub stopki z Theme Buildera przejrzyj warunki wyświetlania: szablon może obowiązywać w całym serwisie lub tylko na wybranych stronach. Jeśli blokiem nie zarządza Theme Builder, sprawdź ustawienia motywu.',
+    'Przykład: inny numer ma się pojawić tylko na stronie usługi jednego działu. Zmiana wspólnego nagłówka może objąć wszystkie strony, które go używają. Ustal, czy dodać numer do treści jednej strony, czy użyć osobnego szablonu z własnymi warunkami wyświetlania. W drugim przypadku sprawdź, czy warunki obu nagłówków się nie nakładają.',
+    'Do odbioru zapisz dwa adresy: jeden, na którym zmiana ma być widoczna, i drugi, na którym nie powinna się pojawić. Sprawdź oba po publikacji, najlepiej bez logowania. Dla numeru sprawdź widoczny tekst i cel linku do połączenia, a w serwisie wielojęzycznym także odpowiednie wersje językowe. Dodaj do zlecenia oba adresy i nazwę szablonu, jeśli jest znana.']
+};
+for (const [locale, [title, ...paragraphs]] of Object.entries(templateScope)) {
+  wordpressArticle[locale].sections.splice(4, 0, {id: 'elementor-template-scope', title, paragraphs});
+}
+wordpressArticle.modified = '2026-11-16';

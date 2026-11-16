@@ -1,5 +1,9 @@
 # Редакційний журнал
 
+## 16.11.2026 — межі правки шаблону Elementor
+
+Намір K4: відрізнити локальну правку від спільного шаблону й задати критерії приймання. Доповнення UA/EN/PL, навчальний приклад. Джерело: https://elementor.com/help/conditions/ (16.11). URL: https://dm-studio-production.up.railway.app/blog/wordpress-change-brief/#elementor-template-scope. Коміт в історії запису. Перевірки: build/check/SEO/локальні серверні тести й HTML трьох мов; Railway та живі URL після коміту.
+
 ## 12.11.2026 — n8n повертає 2xx, але рядка немає
 
 Доповнення до наявного матеріалу A3, без дублювання URL. UA/EN/PL: пошук виконання за ID, три причини відсутності рядка, умовний приклад часткового збою та межі Error Trigger. Джерела: https://docs.n8n.io/flow-logic/error-handling/ і https://docs.n8n.io/workflows/executions/all-executions/ (12.11). URL: https://dm-studio-production.up.railway.app/blog/n8n-webhook-404/#accepted-but-missing. Коміт в історії запису. Перевірки: build, check, SEO, серверні тести, HTML трьох мов; після оновлення main — статус Railway та живі URL. Власне впровадження n8n не заявлено, реальні заявки не надсилалися.
