@@ -38,7 +38,7 @@ export function blogArticle(post,base,language) {
     const copy = post[language];
     markup = markup.replace(cover(base,language), '<img src="'+base+post.image+'" alt="" width="1200" height="630">')
       .replace(text('blogCoverCaption',language),escape(copy.coverCaption))
-      .replace(/<a class="button button--dark" href="[^"]*cases\\/undefined\\/[\\s\\S]*?<\\/a>/,'');
+      .replace(/<a class="button button--dark" href="[^"]*cases\/undefined\/[\s\S]*?<\/a>/,'');
     const links = '<section class="blog-cta"><div><p><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(copy.serviceLabel)+' ↗</a></p><p><a href="'+home+'blog/wordpress-change-brief/">'+escape(copy.relatedLabel)+' ↗</a></p><h2>'+escape(copy.sourceLabel)+'</h2><p><a href="https://developer.wordpress.org/apis/responsive-images/">WordPress: responsive images</a> · <a href="https://make.wordpress.org/core/2024/02/23/wordpress-6-5-adds-avif-support/">WordPress: AVIF support</a> · <a href="https://elementor.com/help/image-loading-optimization/">Elementor: image loading</a> · <a href="https://web.dev/articles/optimize-lcp">web.dev: LCP</a></p></div></section>';
     return markup.replace('<section class="blog-cta"',links+'<section class="blog-cta"');
   }
