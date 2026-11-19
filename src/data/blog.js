@@ -1,7 +1,8 @@
 import { n8nWebhookArticle } from './n8n-webhook-article.js';
 import { wordpressArticle } from './wordpress-article.js';
 import { telegramArticle } from './telegram-article.js';
-export const blogPosts = [n8nWebhookArticle,telegramArticle,wordpressArticle,
+import { wordpressImageGuide } from './wordpress-image-guide.js';
+export const blogPosts = [wordpressImageGuide,n8nWebhookArticle,telegramArticle,wordpressArticle,
   {
     "slug": "nfc-food-ai",
     "date": "2026-10-09",

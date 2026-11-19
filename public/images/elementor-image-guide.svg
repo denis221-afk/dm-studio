@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Responsive image preparation</title>
+<desc id="desc">Abstract illustration of image crops and responsive sizes</desc>
+<rect width="1200" height="630" fill="#111719"/>
+<circle cx="1000" cy="110" r="250" fill="#263638"/>
+<rect x="90" y="86" width="650" height="458" rx="28" fill="#1b2527" stroke="#405052" stroke-width="2"/>
+<rect x="126" y="122" width="578" height="320" rx="18" fill="#27383a"/>
+<path d="M126 365 L286 224 L395 322 L500 205 L704 392 L704 442 L126 442Z" fill="#86a7a0" opacity=".8"/>
+<circle cx="570" cy="215" r="42" fill="#c7d7b2"/>
+<rect x="788" y="156" width="290" height="180" rx="22" fill="#d4e2c8"/>
+<rect x="820" y="188" width="226" height="116" rx="14" fill="#7e9e96"/>
+<path d="M820 282 L880 226 L928 266 L976 216 L1046 282 L1046 304 L820 304Z" fill="#e8eedf"/>
+<rect x="788" y="372" width="132" height="86" rx="14" fill="#6f8e87"/>
+<rect x="938" y="372" width="140" height="86" rx="14" fill="#a8bca7"/>
+<rect x="90" y="478" width="650" height="14" rx="7" fill="#405052"/>
+<rect x="90" y="512" width="430" height="10" rx="5" fill="#718985"/>
+<path d="M748 240 C785 240 790 240 810 240" stroke="#b4cf9d" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 12"/>
+<path d="M748 415 C770 415 780 415 800 415" stroke="#b4cf9d" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 12"/>
+</svg>

@@ -1,5 +1,20 @@
 # Редакційний журнал
 
+## 19.11.2026 — зображення в Elementor: розмір, формат і мобільне кадрування
+
+Намір: інформаційний запит власника готового WordPress/Elementor-сайту, у якого фото розмите, завелике або обрізається на телефоні. Slug: `elementor-image-sizing`; запланований live URL: https://dm-studio-production.up.railway.app/blog/elementor-image-sizing/ та мовні версії `/en/blog/elementor-image-sizing/`, `/pl/blog/elementor-image-sizing/`. Дата статті: 19.11.2026. Повні тексти UA/EN/PL; новий URL не конкурує з посадковою правок WordPress. Комерційний CTA веде на `/services/wordpress-elementor/`, без заяв про повний performance-аудит чи гарантії PageSpeed.
+
+Тема перевірена вебпошуком 19.11.2026. Публічні приклади задач: https://freelancehunt.com/ua/project/optimizatsiya-wordpress-saytu-produktivnist-mobilnoyi-versiyi/1635213.html (15.06.2026 у результаті пошуку), https://freelancehunt.com/ua/project/trebuetsya-optimizatsiya-shvidkosti-zavantazhennya-saytu-na/1630076.html та https://freelancehunt.com/ua/project/zmenshiti-vagu-zobrazhen-bez-vtrati-yakosti/1566735.html. Конкурентний приклад широкої пропозиції: https://id13.dev/wordpress-optymizaciya. Це лише приклади формулювання проблем/пропозицій, не вимір частотності чи поточного обсягу попиту.
+
+Технічні джерела, перевірені 19.11.2026:
+- https://developer.wordpress.org/apis/responsive-images/ — `srcset`, `sizes` і автоматичні розміри WordPress.
+- https://make.wordpress.org/core/2024/02/23/wordpress-6-5-adds-avif-support/ — AVIF у WordPress 6.5 за підтримки хостингу.
+- https://elementor.com/help/image-loading-optimization/ — Optimized Image Loading, пріоритет важливого зображення й lazy loading.
+- https://web.dev/articles/optimize-lcp та https://web.dev/learn/design/responsive-images — не lazy-load LCP-зображення; обережно використовувати fetch priority.
+
+Власний приклад або клієнтський кейс не заявляється. Стаття пояснює загальні механізми WordPress/Elementor та навчальні перевірки; вона не стверджує, що DM Studio вже виконувала оптимізацію медіатеки чи досягла конкретних показників. Коміт реалізації та результати CI/Railway будуть записані після перевірки. Live URL перед змінами не вдалося прочитати: web gateway і container egress не відкрили Railway-домен; попередній commit status Railway був success, але це не замінює live read-back.
+
+
 ## 16.11.2026 — межі правки шаблону Elementor
 
 Намір K4: відрізнити локальну правку від спільного шаблону й задати критерії приймання. Доповнення UA/EN/PL, навчальний приклад. Джерело: https://elementor.com/help/conditions/ (16.11). URL: https://dm-studio-production.up.railway.app/blog/wordpress-change-brief/#elementor-template-scope. Коміт в історії запису. Перевірки: build/check/SEO/локальні серверні тести й HTML трьох мов; Railway та живі URL після коміту.
