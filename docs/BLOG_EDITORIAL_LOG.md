@@ -1,5 +1,17 @@
 # Редакційний журнал
 
+## 23.11.2026 — помилка 429 у n8n: обмеження запитів до API
+
+Намір: інформаційна діагностика для власника n8n-workflow, який отримує HTTP 429 від зовнішнього API й хоче зменшити частоту запитів без нескінченних повторів та дублів. Slug: `n8n-api-rate-limit-429`. Планований URL: https://dm-studio-production.up.railway.app/blog/n8n-api-rate-limit-429/ та мовні версії `/en/blog/n8n-api-rate-limit-429/`, `/pl/blog/n8n-api-rate-limit-429/`. Дата статті: 23.11.2026. Повні UA/EN/PL. Комерційний власник — `/services/business-automation/`; внутрішній перехід на попередню статтю про 404 вебхука. Тема не дублює статті про 404 webhook, 2xx без рядка, облік заявок у Sheets або форму → Telegram.
+
+Тема перевірена вебпошуком 23.11.2026. Офіційний матеріал n8n від 18.09.2026 пояснює API rate limiting, 429, Retry-After, batching і pacing: https://blog.n8n.io/api-rate-limiting/ . Поточна документація n8n окремо описує Retry On Fail, межі п’яти спроб / 5000 мс, Loop Over Items + Wait і Batching: https://docs.n8n.io/integrations/builtin/handle-rate-limits/ . Довідка HTTP Request описує 429 і доступні Batching / Retry On Fail: https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/common-issues/ . MDN підтверджує семантику Retry-After та два формати значення (секунди або HTTP-date): https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Retry-After .
+
+Комерційний контекст перевірено 23.11.2026: https://maximorum.com/uk/services/business-automation (сторінка автоматизації n8n та API/webhook інтеграцій), https://devicoo.com/n8n-automation (опис логування й сповіщень про помилки), https://kalyna.pro/automation-n8n/ (опис retry-логіки та error handling). Це самоописи постачальників і якісні приклади пропозицій, не доказ їхніх результатів або обсягу ринку. Пошук не дає підстав заявляти частотність, позиції чи кількість запитів; їх не вигадували. Новий матеріал відповідає вузькому інформаційному питанню 429, а не створює ще одну комерційну сторінку n8n.
+
+Умовний приклад 60 запитів/хв і 120 items явно позначено як ілюстрацію, а не конфігурацію реального клієнта. Ніякий досвід впровадження n8n чи виконаний кейс DM Studio не приписується. Тестові зовнішні API-виклики не запускалися; жодних повідомлень, форм або реальних заявок не надсилали.
+
+Публікація, commit та перевірки будуть доповнені після CI на окремій гілці й оновлення main. HTTP read-back сайту перед змінами недоступний: середовище не розв’язує Railway-домен; попередній commit main має Railway status success. Це не підтвердження поточного HTML або індексації.
+
 ## 19.11.2026 — зображення в Elementor: розмір, формат і мобільне кадрування
 
 Намір: інформаційний запит власника готового WordPress/Elementor-сайту, у якого фото розмите, завелике або обрізається на телефоні. Slug: `elementor-image-sizing`; запланований live URL: https://dm-studio-production.up.railway.app/blog/elementor-image-sizing/ та мовні версії `/en/blog/elementor-image-sizing/`, `/pl/blog/elementor-image-sizing/`. Дата статті: 19.11.2026. Повні тексти UA/EN/PL; новий URL не конкурує з посадковою правок WordPress. Комерційний CTA веде на `/services/wordpress-elementor/`, без заяв про повний performance-аудит чи гарантії PageSpeed.

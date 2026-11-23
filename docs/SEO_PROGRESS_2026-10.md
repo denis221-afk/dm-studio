@@ -1,5 +1,11 @@
 # SEO-прогрес DM Studio — жовтень 2026
 
+## 23.11.2026 — блог: підготовлено статтю про HTTP 429 у n8n
+
+Початкові етапи 1–14 були завершені 28.10.2026; цього запуску їх не повторювали. Перечитано main `47089d7c2d0c0d5605e0febac6ff28d11c0aee9c`, актуальні `src/data/blog.js`, усі активні статті, `docs/BLOG_EDITORIAL_LOG.md` і карти WordPress та Telegram/автоматизації. Обрано новий вузький інформаційний намір: діагностика 429 та керування швидкістю API-запитів у n8n. UA/EN/PL, нейтральна SVG-ілюстрація, локалізовані метадані, внутрішні посилання на automation і попередній webhook-гайд, офіційні технічні джерела. Публікація ще не підтверджена до CI, main та Railway status.
+
+Вихідний сайт перед змінами: спроби HTTP HEAD головної, /blog/ та /sitemap.xml завершилися DNS resolution failure у контейнері; web gateway також не відкриває Railway-домен. Це обмеження середовища, а не висновок про downtime. Поточний main `47089d7c2d0c0d5605e0febac6ff28d11c0aee9c` має GitHub commit status `supportive-consideration - dm-studio: success` (Railway). Live HTML до змін незалежно не прочитаний. GA4/GSC не запитувалися: для цієї редакційної теми вони необов'язкові. Частотність, позиції та заявки не оцінювалися.
+
 ## Поточний стан
 - 19.11.2026 — статтю `/blog/elementor-image-sizing/` додано до main через merge commit `20fee5f0f6be9731b2fa17bd453240d56a25b222`. UA/EN/PL; 748/895/787 слів. CI на кодовому commit `868854a88d251b8e2dcd843d33ae1e1c4ca2c94f` і на main merge commit: `npm run check`, `npm run build`, SEO-перевірка (66 сторінок) та серверні тести (11/11) — success. Railway commit status для merge commit — success. Живий HTML read-back недоступний у цьому середовищі (web gateway і container egress не відкрили домен), тому не заявляти незалежну перевірку H1/HTML. GitHub Pages deploy також success, але це не доказ Railway. `npm ci` вивів одну high-severity dependency audit warning; залежності не змінювалися. Джерела й межі — BLOG_EDITORIAL_LOG та карта WordPress.
 - 16.11.2026 — блог: доповнено WordPress-посібник межами правок Elementor (UA/EN/PL). Базовий main 537794510c1ef32d50c20884622631b1f4219d00, стаття до змін HTTP 200. Джерело й критерії в редакційному журналі.
