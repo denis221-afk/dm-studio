@@ -10,7 +10,7 @@
 
 Умовний приклад 60 запитів/хв і 120 items явно позначено як ілюстрацію, а не конфігурацію реального клієнта. Ніякий досвід впровадження n8n чи виконаний кейс DM Studio не приписується. Тестові зовнішні API-виклики не запускалися; жодних повідомлень, форм або реальних заявок не надсилали.
 
-Публікація, commit та перевірки будуть доповнені після CI на окремій гілці й оновлення main. HTTP read-back сайту перед змінами недоступний: середовище не розв’язує Railway-домен; попередній commit main має Railway status success. Це не підтвердження поточного HTML або індексації.
+Гілковий commit із реалізацією: `dcf51b53b01285659945aadddd872a24284d8a4a` (https://github.com/denis221-afk/dm-studio/commit/dcf51b53b01285659945aadddd872a24284d8a4a). GitHub Actions run #45124535333 — success: `npm ci`, `npm run check`, `npm run build`, `node scripts/check-seo.mjs` (69 сторінок: metadata, canonical, reciprocal hreflang, sitemap, images, JSON-LD, redirects і 404), `node --test server/*.test.mjs` (11/11). Перший branch-run `04a91048cdb66b2a19f9dcad792b6e732fc66a5d` зупинився на `npm run check`, бо перед ним не було оновлено generated `src/data/blog-client.js`; додано згенеровані локалізовані ключі, повторний CI пройшов. `npm ci` повідомив одну high-severity audit warning; залежності не змінювалися. Далі main буде оновлено fast-forward із `expected_sha` поточного main без force; Railway status перевірити після оновлення. HTTP read-back сайту недоступний: середовище не розв’язує Railway-домен. Це не доказ HTML-відповіді або індексації.
 
 ## 19.11.2026 — зображення в Elementor: розмір, формат і мобільне кадрування
 
