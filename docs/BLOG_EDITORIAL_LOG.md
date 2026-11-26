@@ -1,5 +1,20 @@
 # Редакційний журнал
 
+## 26.11.2026 — n8n: API повертає лише першу сторінку
+
+Намір: власник інтеграції бачить лише перші записи, хоча workflow завершується без помилки; потрібно налаштувати пагінацію та перевірити повноту списку. Slug: `n8n-api-pagination`. URL: https://dm-studio-production.up.railway.app/blog/n8n-api-pagination/ та мовні версії /en/blog/n8n-api-pagination/ і /pl/blog/n8n-api-pagination/. Дата: 26.11.2026. Повні UA/EN/PL тексти (665/800/694 слів), локалізовані title/description/category/date/reading, нейтральна SVG-обкладинка. Комерційний власник — /services/business-automation/; додано внутрішнє посилання на попередній гайд про HTTP 429. Тема не дублює 404 вебхука, 2xx без запису, облік заявок у Sheets, форму → Telegram або rate limiting: основний намір — отримати всі сторінки одного API-відповіді.
+
+Технічні твердження перевірено за первинною документацією n8n 26.11.2026:
+- https://docs.n8n.io/build/code-in-n8n/cookbook/http-request-node/pagination/ — Response Contains Next URL, Update a Parameter in Each Request, приклад $pageCount + 1 та передавання page через body.
+- https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/ — спершу оглянути дані API; Pagination, змінні $pageCount/$response, окремий page size та режими.
+Якісний контекст проблеми: публічна дискусія n8n Community про cursor/offset і повтор сторінок (https://www.reddit.com/r/n8n/comments/1wz5o9c/whats_the_most_annoying_n8n_limitation_youve_run/, 06.10.2026); конкурентний практичний гайд DevelopWhale (https://www.developwhale.com/n8n-http-request-pagination-cursor-offset/, опублікований приблизно місяць тому); комерційна сторінка Lytvynov Production про розробку на n8n (https://lytvynov-production.com/uk/services/n8n-development, оновлена 20.11.2026). Це якісні приклади проблеми та пропозицій, не вимір частотності, розміру ринку, позицій або результатів конкурентів. Пошукові обсяги не вигадувалися.
+
+Приклад параметрів і offset у статті умовний. Клієнтський кейс, реальне API-впровадження або досвід DM Studio з цією конкретною пагінацією не заявляються. Жодних зовнішніх API-запитів, форм, Telegram/email-повідомлень або тестових side effects не запускали.
+
+Реалізаційний commit: 519e2c7a36d64e5f373d06967718897b2bd9a187 (https://github.com/denis221-afk/dm-studio/commit/519e2c7a36d64e5f373d06967718897b2bd9a187). Після першого CI-run #45770393361, який виявив помилку екранування regex у шаблоні, її виправлено окремим commit 0e9d083e3b8c0b82fbf843705fe58bd108cf1eae. GitHub Actions run #45770492693 — success: npm ci, npm run check, npm run build, node scripts/check-seo.mjs (72 сторінки: унікальні title, metadata, canonical, взаємні hreflang, sitemap, images, JSON-LD, redirects і 404), node --test server/*.test.mjs (11/11). npm ci повторно показав одну high-severity dependency audit warning; залежності не змінювалися, оскільки це поза межами редакційної задачі.
+
+Перед змінами HEAD-запити до головної, /blog/ і /sitemap.xml завершилися DNS resolution failure; web gateway не відкриває Railway-домен. Це обмеження доступу середовища, не доказ downtime. На вихідному main 473b4ab99d150b253d5a6b76b3b3689cff1c3f5d Railway commit status був success. Після fast-forward main статус Railway та live URL перевіряються окремо; до незалежного read-back не стверджувати, що HTML/HTTP доступні або що URL проіндексовано.
+
 ## 23.11.2026 — помилка 429 у n8n: обмеження запитів до API
 
 Намір: інформаційна діагностика для власника n8n-workflow, який отримує HTTP 429 від зовнішнього API й хоче зменшити частоту запитів без нескінченних повторів та дублів. Slug: `n8n-api-rate-limit-429`. Планований URL: https://dm-studio-production.up.railway.app/blog/n8n-api-rate-limit-429/ та мовні версії `/en/blog/n8n-api-rate-limit-429/`, `/pl/blog/n8n-api-rate-limit-429/`. Дата статті: 23.11.2026. Повні UA/EN/PL. Комерційний власник — `/services/business-automation/`; внутрішній перехід на попередню статтю про 404 вебхука. Тема не дублює статті про 404 webhook, 2xx без рядка, облік заявок у Sheets або форму → Telegram.
