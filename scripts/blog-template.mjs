@@ -66,7 +66,7 @@ export function blogArticle(post,base,language) {
     const copy=post[language];
     markup=markup.replace(cover(base,language),'<img src="'+base+post.image+'" alt="" width="1200" height="630">')
       .replace(text('blogCoverCaption',language),escape(copy.coverCaption))
-      .replace(/<a class="button button--dark" href="[^"]*cases\\/undefined\\/[\\s\\S]*?<\\/a>/,'');
+      .replace(/<a class="button button--dark" href="[^"]*cases\/undefined\/[\s\S]*?<\/a>/,'');
     const links='<section class="blog-cta"><div><p><a href="'+home+'services/'+post.serviceSlug+'/">'+escape(copy.serviceLabel)+' ↗</a></p><p><a href="'+home+'blog/n8n-api-rate-limit-429/">'+escape(copy.relatedLabel)+' ↗</a></p><h2>'+escape(copy.sourceLabel)+'</h2><p><a href="https://docs.n8n.io/build/code-in-n8n/cookbook/http-request-node/pagination/">n8n Docs: Pagination</a> · <a href="https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.httprequest/">n8n Docs: HTTP Request</a></p></div></section>';
     return markup.replace('<section class="blog-cta"',links+'<section class="blog-cta"');
   }
